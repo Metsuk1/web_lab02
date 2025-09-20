@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_reservation.css">
+    <title>Hotel Reservation</title>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Making a reservation</h1>
+        </header>
+        
+        <div class="form-description">
+            <p>Customize the query to suit your needs and save</p>
+        </div>
+        
+        <form class="booking-form">
+            <div class="form-top" id="form-top">
+                <div class="field">
+                    <label for="day">Day</label>
+                    <select id="day" name="day" required>
+                        <option>1</option><option>2</option><option>3</option>
+                        <option>4</option><option>5</option>
+                        <option>6</option><option>7</option><option>8</option>
+                        <option>9</option><option>10</option>
+                        <option>11</option><option>12</option><option>13</option>
+                        <option>14</option><option>15</option>
+                        <option>16</option><option>17</option><option>18</option>
+                        <option>19</option><option>20</option>
+                        <option>21</option><option>22</option><option>23</option>
+                        <option>24</option><option>25</option>
+                        <option>26</option><option>27</option><option>28</option>
+                        <option>29</option><option>30</option>
+                        <option>31</option>
+                    </select>
+                </div>
+                
+                <div class="field">
+                    <label for="month">Month</label>
+                    <select id="month" name="month" required>
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="people">Number of people</label>
+                    <input id="people" type="number" min="1" value="2" name="people" required>
+                </div>
+
+                <div class="field">
+                    <label for="from">From</label>
+                    <input id="from" type="text" placeholder="Departure city" name="from" required>
+                </div>
+
+                <div class="field actions">
+                    <button type="submit" class="btn primary">Save</button>
+                </div>
+            </div>
+
+            <div class="duration-selection">
+                <h3 class="duration-title">Select duration of stay</h3>
+                <div class="duration-options">
+                    <label class="duration-label">
+                        <input class="duration-input" type="radio" name="duration" required>
+                        <div class="duration-option">
+                            <div class="days">5 days</div>
+                        </div>
+                    </label>
+                    <label class="duration-label">
+                        <input class="duration-input" type="radio" name="duration" required>
+                        <div class="duration-option">
+                            <div class="days">6 days</div>
+                        </div>
+                    </label>
+                    <label class="duration-label">
+                        <input class="duration-input" type="radio" name="duration" required>
+                        <div class="duration-option">
+                            <div class="days">7 days</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="rooms-container">
+                <label class="room-label">
+                    <input class="room-input" id="room-standard" type="radio" name="room" required>
+                    <div class="room-option">
+                        <h2 class="room-name">Standard Room</h2>
+                        <div class="room-inner">
+                            <div class="room-photo">
+                                <img src="daryn_images/standard_room.jpg" alt="Standard room">
+                            </div>
+                            <div class="room-content">
+                                <p class="room-description">A comfortable 
+                                    one-room suite with or without a balcony.
+                                     The room has one double bed and one single 
+                                     bed. It is located in the main 
+                                     building/bungalow/annex.</p>
+                                <div class="prices">
+                                    <div class="price-option">
+                                        <div class="days">5 days</div>
+                                        <div class="price">150 000 TG</div>
+                                    </div>
+                                    <div class="price-option">
+                                        <div class="days">6 days</div>
+                                        <div class="price">175 000 TG</div>
+                                    </div>
+                                    <div class="price-option">
+                                        <div class="days">7 days</div>
+                                        <div class="price">200 000 TG</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+                <label class="room-label">
+                    <input class="room-input" id="room-family" type="radio" name="room" required>
+                    <div class="room-option">
+                        <h2 class="room-name">Family Room</h2>
+                        <div class="room-inner">
+                            <div class="room-photo">
+                                <img src="daryn_images/family_room.jpg" alt="Family room">
+                            </div>
+                            <div class="room-content">
+                                <p class="room-description">A spacious, comfortable
+                                     room with two bedrooms, one with a double bed
+                                      and the other with two single beds. Perfect 
+                                      for families with children.</p>
+                                <div class="prices">
+                                    <div class="price-option">
+                                        <div class="days">5 days</div>
+                                        <div class="price">200 000 TG</div>
+                                    </div>
+                                    <div class="price-option">
+                                        <div class="days">6 days</div>
+                                        <div class="price">250 000 TG</div>
+                                    </div>
+                                    <div class="price-option">
+                                        <div class="days">7 days</div>
+                                        <div class="price">300 000 TG</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
