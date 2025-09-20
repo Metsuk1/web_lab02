@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* хедер */
+.site-header {
+  background: #0b3a5b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+ /* главный блок */
+.master {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(120deg, #0f172a, #0b3a5b);
+  color: white;
+}
+
+.master .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff8a65;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.master .btn:hover {
+  background: #ff7043;
+}
+
+   /* популярные направления */
+.highlights {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h4 {
+  margin-top: 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;  
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+#top-banner{
+  background: #0b3a5b;
+  color:#fff;
+  padding:20px 0;
+  text-align:center;
+}
+
+
+    /* футер */
+.site-footer {
+  text-align: center;
+  padding: 15px;
+  background: #0b3a5b;
+  color: white;
+  margin-top: 30px;
+}
