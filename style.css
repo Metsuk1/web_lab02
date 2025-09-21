@@ -1,0 +1,75 @@
+header{
+    width : 100%;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);  /* background */
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{  /*removing default margin (white lines)*/
+    margin: 0; 
+    padding: 0;
+}
+
+.theBestPlaces {
+    display: flex;  /*flexbox for cards*/
+    flex-wrap: wrap;  /*allows wrapping to next line*/
+    justify-content: center;  
+    gap: 20px;  /*space between cards*/
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.theBestPlaces h2 {
+    flex-basis: 100%;         /* makes the header take full width */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0b486b;
+}
+
+.theBestPlaces a {
+    text-decoration: none; /* removing the underscore */
+    color: inherit;        /* text without color */
+    display: block;        /* making the entire card clickable */
+}
+
+
+.theBestPlaces a:hover h2{  /* changing the color of the title when hovering over */
+    color:#0a6cff; 
+}  
+
+.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy {  /*card of each city*/
+    flex: 1 1 45%;   /* 2 cards in a row */
+    max-width: 600px;            
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+    margin: 15px;
+    transition: transform 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Astana:hover, .Almaty:hover, .Aktobe:hover, .Turkestan:hover, .AlmatyOblysy:hover {  /*gives a small interactive effect to make the card seem "alive".*/
+    transform: translateY(-5px);  /* slight lift on hover */
+}
+
+.Astana img, .Almaty img, .Aktobe img, .Turkestan img, .AlmatyOblysy img {  /*image inside the card*/
+    width: 100%;
+    height: 140px;            
+    object-fit: cover;        
+}
+
+.Astana h3, .Almaty h3, .Aktobe h3, .Turkestan h3, .AlmatyOblysy h3 {  /*city name*/
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #0b486b;
+}
+
+.Astana p, .Almaty p, .Aktobe p, .Turkestan p, .AlmatyOblysy p {  /*description text*/
+    font-size: 13px;
+    color: #555;
+    margin: 0 10px 15px;
+}
