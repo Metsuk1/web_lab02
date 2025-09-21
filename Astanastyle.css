@@ -1,0 +1,223 @@
+header{
+    width : 100%;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);  /* background */
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{  /*removing default margin (white lines)*/
+    margin: 0; 
+    padding: 0;
+}
+
+.FirstInfo{
+     width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.InfoContainer {
+    display: flex;     /* in row */
+    justify-content: center;    
+    gap: 40px;       /* space between blocks */
+    background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.InfoContainer div {
+    flex: 1;
+    max-width: 200px;
+}
+
+.InfoContainer i {  
+    font-size: 40px;
+    color: #4682B4;
+    margin-bottom: 10px;
+}
+
+.InfoContainer h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #222;
+}
+
+.InfoContainer p {
+    font-size: 14px;
+    color: #555;
+}
+
+.main-nav{
+  background:#0b486b;
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  padding:12px 16px;
+}
+.main-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 10px;
+  border-radius:6px;
+  transition:color .2s, 
+}
+.main-nav a:hover{
+  color:#C9D6DF;
+  background:rgba(255,255,255,.08);
+  text-decoration:underline;   /* underline on hover */
+}
+
+.Description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 19px;
+    color: #66686b;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#top-banner {
+    text-align: left;          
+    font-size: 26px;
+    color: #0b486b;
+    margin: 40px auto 10px;   
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 800px;
+ }
+
+ #top-banner::after, .AttractionsTitle::after{
+  content:"";
+  display:block;
+  width:80px; height:4px;
+  background:linear-gradient(90deg,#0b486b,#16222A);
+  border-radius:2px;
+  margin-top:8px;
+}
+
+.Gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /* adaptive grid */
+    gap: 15px;   /* the distance between the pictures */
+    max-width: 1000px;
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+.Gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;   /* ensures the image covers the area without distortion */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.Gallery img:hover {
+    transform: scale(1.05);   /* slight zoom on hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.AttractionsTitle {
+   text-align: left;          
+    font-size: 26px;
+    color: #0b486b;
+    margin: 40px auto 10px;    
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 800px;
+}
+
+.LeftBank, .RightBank, .Culture, .Events {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 19px;
+    color: #687c99;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.LeftBankDescription, .RightBankDescription, .CultureDescription, .EventsDescription {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 21px;
+    color: #435164;
+    line-height: 1.6;  /* increased line height for better readability */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.GalleryTitle, .MapTitle {
+    text-align: center;
+    font-size: 28px;
+    color: #0b486b;
+    margin: 40px 0 20px;  /* spacing above and below */
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.MapContainer {
+    width: 100%;
+    margin: 30px 0;
+    border-radius: 0;
+    overflow: hidden;   /* rounding the corners */
+}
+
+.MapContainer iframe {
+    width: 100%;       /* full width map*/
+    height: 500px;            
+    border: none;
+}
+
+.FormTitle{  /* contact form title */
+  text-align:center; 
+  font-size:28px; 
+  color:#0b486b; 
+  margin:40px 0 10px;
+}
+
+.contact-form{
+  max-width:600px; 
+  margin:0 auto 40px;
+   display:grid;   /* grid layout for form elements */
+   gap:12px; 
+   padding:0 20px;
+  font-family:'Montserrat',sans-serif;
+}
+
+.contact-form input, .contact-form textarea{
+  width:100%; 
+  padding:12px 14px; 
+  border:1px solid #cbd5e1;   
+  border-radius:10px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+  outline:none; 
+  border-color:#0b486b; 
+  box-shadow:0 0 0 3px rgba(11,72,107,.15);  /* focus effect */
+}
+
+.contact-form button{
+  padding:12px 16px; 
+  background:#0b486b; 
+  color:#fff; 
+  border:0; 
+  border-radius:10px;
+  cursor:pointer; 
+  font-weight:600; 
+  transition:background .2s,transform .2s;
+}
+
+.contact-form button:hover{ 
+    background:#16222A; 
+    transform:translateY(-2px);   /* slight lift on hover */
+}
+
+
+
