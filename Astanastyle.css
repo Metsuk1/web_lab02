@@ -220,7 +220,7 @@ body{  /*removing default margin (white lines)*/
 }
 
 /* footer */
-.footer2 {
+.footer02 {
   text-align: center;
   padding: 15px;
   background: #0b3a5b;
@@ -228,14 +228,14 @@ body{  /*removing default margin (white lines)*/
   margin-top: 30px;
 }
 
-#github2{
+#github02{
   display: inline-block;
   color: #f8f9fa;
   text-decoration: none;
   margin-top: 10px;
 }
 
-#github2:hover{
+#github02:hover{
   color: blue;
 }
 

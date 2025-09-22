@@ -75,7 +75,7 @@ body{  /*removing default margin (white lines)*/
 }
 
 /* footer */
-.footer1{
+.footer01{
   text-align: center;
   padding: 15px;
   background: #0b3a5b;
@@ -83,13 +83,13 @@ body{  /*removing default margin (white lines)*/
   margin-top: 30px;
 }
 
-#github1{
+#github01{
   display: inline-block;
   color: #f8f9fa;
   text-decoration: none;
   margin-top: 10px;
 }
 
-#github1:hover{
+#github01:hover{
   color: blue;
 }
