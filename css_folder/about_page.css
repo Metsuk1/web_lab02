@@ -1,3 +1,9 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,6 +11,78 @@ body {
   color: #333;
   line-height: 1.6;
 }
+
+ /* Task 1: Navigation Bar with Flexbox */
+    .site-header {
+      background: #0b3a5b;
+      color: white;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* 2. Turn the header container into a flex container */
+    .nav-container {
+      display: flex;
+      /* 3. Align the logo and the links horizontally */
+      justify-content: space-between;
+      /* 5. Make sure the logo and links are vertically centered */
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 1. Website logo on the left */
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .logo::before {
+      content: "🇰🇿";
+      margin-right: 0.5rem;
+      font-size: 2rem;
+    }
+
+    /* 1. List of links on the right */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      /* 4. Apply spacing between the links using Flexbox properties */
+      gap: 2rem;
+      /* 5. Vertically center the links */
+      align-items: center;
+    }
+
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
 /* headears */
 h1 {
@@ -50,22 +128,26 @@ h1 {
 }
 
 /*info*/
-.info-block {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 25px;
-  background: #ffffff;
-  border-left: 6px solid #0b3a5b;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+ .info-block {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-left: 6px solid #0b3a5b;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
+    .info-block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
 
-.info-block h3 {
-  margin-top: 0;
-  color: #0b3a5b;
-}
+    .info-block h3 {
+      margin-top: 0;
+      color: #0b3a5b;
+    }
 
 /* page search */
 .search-box {
@@ -115,7 +197,7 @@ h1 {
 .ftr {
   text-align: center;
   padding: 15px;
-  background: #0b3a5b;
+  background: hsl(205, 78%, 20%);
   color: white;
   margin-top: 30px;
 }
@@ -125,6 +207,10 @@ h1 {
   color: #f8f9fa;
   text-decoration: none;
   margin-top: 10px;
+}
+
+#email{
+  color: #ccc;
 }
 
 #github5:hover{

@@ -7,11 +7,25 @@
 </head>
 <body>
   <header class="site-header">
-    <h1>About Kazakhstan</h1>
+    <nav class="nav-container">
+      <!-- Logo on the left -->
+      <a href="#" class="logo">About Kazakhstan</a>
+      
+      <!-- List of links on the right -->
+        <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#culture">Culture</a></li>
+        <li><a href="#nature">Nature</a></li>
+        <li><a href="#search">Search</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
   </header>
 
-  <main class="about">
-    <h2 class="decorator">Kazakhstan is the heart of Eurasia</h2>
+  <main class="about" >
+    <h2 class="decorator" id="home">Kazakhstan is the heart of Eurasia</h2>
     <p class="intro">
      Kazakhstan is a country of amazing contrasts: modern cities, endless steppes,
      majestic mountains and rich cultural heritage. 
@@ -27,7 +41,7 @@
 
     </section>
 
-    <section class="info-block">
+    <section class="info-block" id="history">
       <h3>History of Kazakhstan</h3>
       <p>
         The history of Kazakhstan spans thousands of years,
@@ -41,7 +55,7 @@
       </p>
     </section>
 
-    <section class="info-block">
+    <section class="info-block" id="culture">
       <h3>Culture</h3>
       <p>
        The culture of Kazakhstan is a rich synthesis of nomadic traditions,
@@ -52,7 +66,7 @@
       </p>
     </section>
 
-    <section class="info-block">
+    <section class="info-block" id="nature">
       <h3>Nature</h3>
       <p>
         Kazakhstan impresses with a variety of natural landscapes: from endless steppes and deserts 
@@ -73,7 +87,7 @@
   </p>
     </section>
 
-    <section class="search-box">
+    <section class="search-box" id="search">
       <h3>Page Search</h3>
       <form>
         <input type="text" id="searchInput" placeholder="Enter the word...">
@@ -82,11 +96,11 @@
     </section>
   </main>
 
-<footer class="ftr">
+<footer class="ftr" id="contact">
     <p>Team: Bayazit, Arslan , Daryn</p>
     <p>© 2025 Discover Kazakhstan</p>
      <p>Contact us: 
-    <a href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
+    <a id="email" href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
     <a id="github5" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
   </p>
   </footer>

@@ -1,0 +1,142 @@
+body{  /*removing default margin (white lines)*/
+    margin: 0; 
+    padding: 0;
+}
+
+/* Grid container */
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  gap: 10px;
+}
+
+/* Grid areas */
+.header { 
+  grid-area: header; 
+  background: #0b3a5b; 
+  color: white; 
+  padding: 20px; 
+  text-align: center;
+}
+
+.sidebar { 
+  grid-area: sidebar; 
+  background: #e3eef5; 
+  padding: 20px; 
+  align-self: start;
+  border-radius: 8px;
+}
+
+.main { 
+  grid-area: main; 
+  background: white; 
+  padding: 20px; 
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.footer { 
+  grid-area: footer; 
+  background: #0b3a5b; 
+  color: white; 
+  text-align: center; 
+  padding: 10px; 
+}
+
+/* Sidebar navigation */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #0b3a5b;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Image */
+.canyon-img {
+  margin-top: 15px;
+  max-width: 25%;
+  border-radius: 8px;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Caption overlay */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+  opacity: 1;
+}
+
+.footer-almatyOblysy {
+  text-align: center;
+  padding: 15px;
+  background: #0b3a5b;
+  color: white;
+  margin-top: 30px;
+}
+
+#github7{
+  display: inline-block;
+  color: #f8f9fa;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+#github7:hover{
+  color: blue;
+}
