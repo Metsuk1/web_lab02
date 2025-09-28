@@ -1,0 +1,308 @@
+.headerAktobe{
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+  padding: 14px 24px;
+  background: #0b486b; /* фирменный цвет — можно поменять */
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-nav{
+  display: flex;
+  align-items: center;
+  gap: 22px;              /* free places through Flexbox */
+}
+
+.main-nav a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color .15s ease, color .15s ease, transform .15s ease;
+}
+.main-nav a:hover{
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+
+.brend{ display: inline-flex; align-items: center; gap: 10px; }  /* logo in one line */
+.brend i{ font-size: 20px; }
+
+body{  /*removing default margin (white lines)*/
+    margin: 0; 
+    padding: 0;
+}
+
+.FirstInfo{
+     width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.InfoContainer {
+    display: flex;     /* in row */
+    justify-content: center;    
+    gap: 40px;       /* space between blocks */
+    background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.InfoContainer div {
+    flex: 1;
+    max-width: 200px;
+}
+
+.InfoContainer i {  
+    font-size: 40px;
+    color: #4682B4;
+    margin-bottom: 10px;
+}
+
+.InfoContainer h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #222;
+}
+
+.InfoContainer p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.Description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 19px;
+    color: #66686b;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#top-banner {
+    text-align: left;          
+    font-size: 26px;
+    color: #0b486b;
+    margin: 40px auto 10px;   
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 800px;
+ }
+
+ #top-banner::after, .AttractionsTitle::after{
+  content:"";
+  display:block;
+  width:80px; height:4px;
+  background:linear-gradient(90deg,#0b486b,#16222A);
+  border-radius:2px;
+  margin-top:8px;
+}
+
+
+.AttractionsTitle {
+   text-align: left;          
+    font-size: 26px;
+    color: #0b486b;
+    margin: 40px auto 10px;    
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 800px;
+}
+
+.LeftBank, .RightBank, .Culture, .Events {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 19px;
+    color: #687c99;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.LeftBankDescription, .RightBankDescription, .CultureDescription, .EventsDescription {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 21px;
+    color: #435164;
+    line-height: 1.6;  /* increased line height for better readability */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.GalleryTitle, .MapTitle {
+    text-align: center;
+    font-size: 28px;
+    color: #0b486b;
+    margin: 40px 0 20px;  /* spacing above and below */
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.MapContainer {
+    width: 100%;
+    margin: 30px 0;
+    border-radius: 0;
+    overflow: hidden;   /* rounding the corners */
+}
+
+.MapContainer iframe {
+    width: 100%;       /* full width map*/
+    height: 500px;            
+    border: none;
+}
+
+.FormTitle{  /* contact form title */
+  text-align:center; 
+  font-size:28px; 
+  color:#0b486b; 
+  margin:40px 0 10px;
+}
+
+.contact-form{
+  max-width:600px; 
+  margin:0 auto 40px;
+   display:grid;   /* grid layout for form elements */
+   gap:12px; 
+   padding:0 20px;
+  font-family:'Montserrat',sans-serif;
+}
+
+.contact-form input, .contact-form textarea{
+  width:100%; 
+  padding:12px 14px; 
+  border:1px solid #cbd5e1;   
+  border-radius:10px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+  outline:none; 
+  border-color:#0b486b; 
+  box-shadow:0 0 0 3px rgba(11,72,107,.15);  /* focus effect */
+}
+
+.contact-form button{
+  padding:12px 16px; 
+  background:#0b486b; 
+  color:#fff; 
+  border:0; 
+  border-radius:10px;
+  cursor:pointer; 
+  font-weight:600; 
+  transition:background .2s,transform .2s;
+}
+
+.contact-form button:hover{ 
+    background:#16222A; 
+    transform:translateY(-2px);   /* slight lift on hover */
+}
+
+/* footer */
+.footer02 {
+  text-align: center;
+  padding: 15px;
+  background: #0b3a5b;
+  color: white;
+  margin-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#github02{
+  display: inline-block;
+  color: #f8f9fa;
+  text-decoration: none;
+  margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#github02:hover{
+  color: blue;
+}
+
+/*3rd assignment*/
+
+/* so that the padding/border fits into the width and doesnt break the calculation */
+.Gallery, .GalleryItem, .GalleryItem * { box-sizing: border-box; }
+
+.Gallery{
+  display: flex !important;         
+  flex-wrap: wrap;                   /* multiple lines of 3 */
+  gap: 20px;                         /* intervals between cards */
+  padding: 12px 24px 32px;
+  max-width: 1000px;                 /* container for 3 columns */
+  margin: 0 auto;                    /* center */
+  justify-content: center;          
+}
+
+/* 3 Columns: without fixed pixels, taking into account gap */
+.GalleryItem{
+  flex: 0 1 calc((100% - 40px)/3);   /* (container width − 2*gap) / 3 */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06); /* now the border is included in the width */
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 420px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.GalleryItem:hover{   
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.14);
+}
+
+
+.GalleryItem img{   /* images */
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.GalleryItem .card-body{    /* body */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+.GalleryItem .card-body h3{
+  margin: 4px 0 2px;
+  font-size: 20px;
+  color: #0b486b;
+}
+.GalleryItem .card-body p{
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+
+.GalleryItem .btn{    /* the button is pressed down */
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #0b486b;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.GalleryItem .btn:hover{ background:#0e5c89; transform:translateY(-2px); }
+.GalleryItem .btn:focus-visible{
+  outline: 3px solid rgba(11,72,107,.35);
+  outline-offset: 2px;
+}

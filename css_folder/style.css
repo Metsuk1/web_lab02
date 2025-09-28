@@ -22,7 +22,7 @@ body{  /*removing default margin (white lines)*/
 }
 
 .theBestPlaces h2 {
-    flex-basis: 100%;         /* makes the header take full width */
+    flex-basis: 100%;    /* makes the header take full width */
     text-align: center;
     margin-bottom: 20px;
     color: #0b486b;
