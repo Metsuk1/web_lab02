@@ -227,8 +227,8 @@ body{  /*removing default margin (white lines)*/
 
 /*3rd assignment*/
 
-/* so that the padding/border fits into the width and doesnt break the calculation */
-.Gallery, .GalleryItem, .GalleryItem * { box-sizing: border-box; }
+
+.Gallery, .GalleryItem, .GalleryItem * { box-sizing: border-box; }   /* so that the padding/border fits into the width and doesnt break the calculation */
 
 .Gallery{
   display: flex !important;         
@@ -305,4 +305,96 @@ body{  /*removing default margin (white lines)*/
 .GalleryItem .btn:focus-visible{
   outline: 3px solid rgba(11,72,107,.35);
   outline-offset: 2px;
+}
+
+
+
+.page-grid{     /*Task 3*/
+  display: grid;                                  /* parent grid */
+  grid-template-columns: 280px 1fr;               /* sidebar main */
+  grid-template-rows: auto 1fr auto;              /* header | content | footer */
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  gap: 16px;
+  min-height: 100dvh; /* on full height of the window */
+}
+
+/* assigning areas */
+.headerAlmaty{ grid-area: header; }  /* header styles remain */
+.page-sidebar{ grid-area: sidebar; }
+.page-main{ grid-area: main; }
+.footer02{ grid-area: footer; }
+
+
+.page-sidebar{   /* sidebar styles */
+  background:#fff;
+  border:1px solid #e9eef3;
+  border-radius:12px;
+  padding:16px;
+  font-family:'Montserrat',sans-serif;
+}
+.side-nav ul{ list-style:none; margin:8px 0 0; padding:0; display:grid; gap:8px; }
+.side-nav a{ display:block; text-decoration:none; color:#0b486b; background:#f6fbff; padding:8px 10px; border-radius:8px; }
+.side-nav a:hover{ background:#e9f5ff; }
+
+.page-main{
+  background:#fff;
+  border:1px solid #e9eef3;
+  border-radius:12px;
+  padding:16px;
+}
+
+/* адаптив: sidebar под контентом */
+@media (max-width: 900px){               /*CSS media query. I use it to apply different styles in different conditions: 
+                                           screen width, orientation, dark theme, animation preference, etc.*/
+  .page-grid{
+    grid-template-columns: 1fr;              /* only one column */
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+}
+
+
+.gallery-grid-section{ padding: 10px 0 30px; }   /*Task 4*/
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  grid-auto-rows: 200px;                   /* each row 200px high */
+  gap: 12px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.gallery-item{
+  position: relative;   /* for caption */
+  overflow: hidden;     /* for zoom effect */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  background: #eef4f8;
+}
+.gallery-item img{
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;   /* to remove bottom gap */
+  transition: transform .35s ease;   /* zoom effect */
+}
+.gallery-item::after{
+  content: attr(data-caption);   /* caption from attribute */
+  position: absolute; inset: 0;   /* cover the entire item */
+  display: flex; align-items: center; justify-content: center;   
+  padding: 10px 14px; text-align: center;
+  color: #fff; background: rgba(0,0,0,.45);
+  opacity: 0; transition: opacity .25s ease;  /* initially hidden */
+  font-weight: 600; letter-spacing: .2px; backdrop-filter: blur(1px);
+}
+.gallery-item:hover img{ transform: scale(1.06); }   /* zoom on hover */
+.gallery-item:hover::after{ opacity: 1; }  /* show caption on hover */
+@media (max-width: 900px){   /* 2 columns on medium screens */
+  .gallery-grid{ grid-template-columns: repeat(2, 1fr); }  /* 2 equal columns */
+}
+@media (max-width: 560px){  /* 1 column on small screens */
+  .gallery-grid{ grid-template-columns: 1fr; grid-auto-rows: 220px; }  /* each row 220px high */
 }
