@@ -1,11 +1,37 @@
-header{
-    width : 100%;
-    padding: 40px 0;
-    text-align: center;
-    color: white;
-    background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);  /* background */
-    font-family: 'Montserrat', sans-serif;
+.headerAktobe{
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+  padding: 14px 24px;
+  background: #0b486b; /* фирменный цвет — можно поменять */
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  font-family: 'Montserrat', sans-serif;
 }
+
+.main-nav{
+  display: flex;
+  align-items: center;
+  gap: 22px;              /* free places through Flexbox */
+}
+
+.main-nav a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color .15s ease, color .15s ease, transform .15s ease;
+}
+.main-nav a:hover{
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+
+.brend{ display: inline-flex; align-items: center; gap: 10px; }  /* logo in one line */
+.brend i{ font-size: 20px; }
 
 body{  /*removing default margin (white lines)*/
     margin: 0; 
@@ -52,26 +78,6 @@ body{  /*removing default margin (white lines)*/
     color: #555;
 }
 
-.main-nav{
-  background:#0b486b;
-  display:flex;
-  justify-content:center;
-  gap:24px;
-  padding:12px 16px;
-}
-.main-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  padding:6px 10px;
-  border-radius:6px;
-  transition:color .2s, 
-}
-.main-nav a:hover{
-  color:#C9D6DF;
-  background:rgba(255,255,255,.08);
-  text-decoration:underline;   /* underline on hover */
-}
 
 .Description {
     max-width: 800px;
@@ -101,28 +107,6 @@ body{  /*removing default margin (white lines)*/
   margin-top:8px;
 }
 
-.Gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /* adaptive grid */
-    gap: 15px;   /* the distance between the pictures */
-    max-width: 1000px;
-    margin: 0 auto; 
-    padding: 20px;
-}
-
-.Gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;   /* ensures the image covers the area without distortion */
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.Gallery img:hover {
-    transform: scale(1.05);   /* slight zoom on hover */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
 
 .AttractionsTitle {
    text-align: left;          
@@ -234,12 +218,91 @@ body{  /*removing default margin (white lines)*/
   color: #f8f9fa;
   text-decoration: none;
   margin-top: 10px;
-  font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #github02:hover{
   color: blue;
 }
 
+/*3rd assignment*/
+
+/* so that the padding/border fits into the width and doesnt break the calculation */
+.Gallery, .GalleryItem, .GalleryItem * { box-sizing: border-box; }
+
+.Gallery{
+  display: flex !important;         
+  flex-wrap: wrap;                   /* multiple lines of 3 */
+  gap: 20px;                         /* intervals between cards */
+  padding: 12px 24px 32px;
+  max-width: 1000px;                 /* container for 3 columns */
+  margin: 0 auto;                    /* center */
+  justify-content: center;          
+}
+
+/* 3 Columns: without fixed pixels, taking into account gap */
+.GalleryItem{
+  flex: 0 1 calc((100% - 40px)/3);   /* (container width − 2*gap) / 3 */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06); /* now the border is included in the width */
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 420px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.GalleryItem:hover{   
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.14);
+}
 
 
+.GalleryItem img{   /* images */
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.GalleryItem .card-body{    /* body */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+.GalleryItem .card-body h3{
+  margin: 4px 0 2px;
+  font-size: 20px;
+  color: #0b486b;
+}
+.GalleryItem .card-body p{
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+
+.GalleryItem .btn{    /* the button is pressed down */
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #0b486b;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.GalleryItem .btn:hover{ background:#0e5c89; transform:translateY(-2px); }
+.GalleryItem .btn:focus-visible{
+  outline: 3px solid rgba(11,72,107,.35);
+  outline-offset: 2px;
+}
