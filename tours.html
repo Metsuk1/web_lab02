@@ -1,83 +1,275 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
-    <head lang="en">
+<head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css_folder/style_tours.css" />
     <title>Reservations</title>
-    </head>
-    <body>
-        <div class="top-header">
-            <h1>Book a tour in Kazakhstan!</h1>
-        </div>
-        <div class="page">
-            <h2>Best tours</h2>
-        <div class="card-grid">
-
-            <a class="card-link" href="reservation.html" target="_self">
-                <article class="card">
-                    <div class="card-top">
-                        <div class="badge">Astana</div>
-                        <img class="card-img" src="images2/problem1.jpg" alt="Astana img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Astana - City Tour</h3>
-                        <p class="card-desc">The Astana City Tour is a professional sightseeing trip around Kazakhstan’s
-                         capital city. The tour includes a visit to the 21st century Hazrat Sultan 
-                         Mosque and the Palace of Peace and Reconciliation, built to reflect the
-                          world’s major religions. Stroll through Independence Square, Nurzhol 
-                          Boulevard and Round Square before visits to the iconic Bayterek Tower 
-                          and Khan-Shatyr, without which no tour of Astana would be complete.</p>
-                    </div>
-                </article>
-            </a>
-
-            <a class="card-link" href="reservation.html" target="_self">
-                <article class="card">
-                <div class="card-top">
-                    <div class="badge">Almaty</div>
-                    <img class="card-img" src="images2/problem2.jpg" alt="Almaty jpg" loading="lazy">
+</head>
+<body>
+    <div class="page-layout">
+        <header class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Book a tour in Kazakhstan!</h1>
                 </div>
-                <div class="card-body">
-                    <h3 class="card-title">Almaty - Nature Tour</h3>
-                    <p class="card-desc">This tour combines all of the most famous sights
-                         in Almaty. In one day you will experience our famous central 
-                         park, a large outdoor market, the beauty of Tien Shen mountains
-                          as we travel to Shymbulak, and Kok-Tobe, a popular tourist
-                           destination. This is one of the best tours if you want to see
-                            the best of Almaty.</p>
-                </div>
-            </article>
-            </a>
+                <nav class="nav-links">
+                    <ul>
+                        <li><a href="index.html" target="_self">Home</a></li>
+                        <li><a href="about.html" target="_self">About</a></li>
+                        <li><a href="mailto:240918@astanait.edu.kz">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-             <a class="card-link" href="reservation.html" target="_self">
-                <article class="card">`
-                <div class="card-top">
-                    <div class="badge">Altai</div>
-                    <img class="card-img" src="images2/altai.jpg" alt="Altay jpg" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Altai forests — Nature Tour</h3>
-                    <p class="card-desc">Multi-day Altai tour: guided hikes and 
-                        horseback rides through alpine meadows, forests, and river
-                         valleys with views of glaciers and Mount Belukha. Overnight 
-                         stays in cozy guesthouses and traditional yurts, local meals, 
-                         waterfall visits, and cultural encounters with Altai families
-                          — a moderate-activity nature adventure.</p>
-                </div>
-            </article>
-            </a>
-        </div>
-        </div>
+        <aside class="sidebar">
+            <h3>Tour Categories</h3>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#best-tours">Best Tours</a></li>
+                    <li><a href="#city-tours">City Tours</a></li>
+                    <li><a href="#nature-tours">Nature Tours</a></li>
+                    <li><a href="#historical">Historical</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <footer class="footer-site">
-    <p>Team: Bayazit, Arslan , Daryn</p>
-    <p>© 2025 Discover Kazakhstan</p>
-     <p>Contact us: 
-    <a href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
-    <a id="github4" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
-  </p>
-  </footer>
+        <main class="main-content">
+            <section class="tours-section" id="best-tours">
+                <h2 class="section-title">Best Tours</h2>
+                <div class="card-grid">
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Astana</div>
+                                <img class="card-img" src="images2/problem1.jpg" alt="Astana img">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Astana - City Tour</h3>
+                                <p class="card-desc">The Astana City Tour is a professional sightseeing trip around Kazakhstan’s
+                                    capital city. The tour includes a visit to the 21st century Hazrat Sultan 
+                                    Mosque and the Palace of Peace and Reconciliation, built to reflect the
+                                    world’s major religions. Stroll through Independence Square, Nurzhol 
+                                    Boulevard and Round Square before visits to the iconic Bayterek Tower 
+                                    and Khan-Shatyr, without which no tour of Astana would be complete.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
 
-    </body>
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Almaty</div>
+                                <img class="card-img" src="images2/problem2.jpg" alt="Almaty jpg" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Almaty - Nature Tour</h3>
+                                <p class="card-desc">This tour combines all of the most famous sights
+                                    in Almaty. In one day you will experience our famous central 
+                                    park, a large outdoor market, the beauty of Tien Shen mountains
+                                    as we travel to Shymbulak, and Kok-Tobe, a popular tourist
+                                    destination. This is one of the best tours if you want to see
+                                    the best of Almaty.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Altai</div>
+                                <img class="card-img" src="images2/altai.jpg" alt="Altay jpg" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Altai forests — Nature Tour</h3>
+                                <p class="card-desc">Multi-day Altai tour: guided hikes and 
+                                    horseback rides through alpine meadows, forests, and river
+                                    valleys with views of glaciers and Mount Belukha. Overnight 
+                                    stays in cozy guesthouses and traditional yurts, local meals, 
+                                    waterfall visits, and cultural encounters with Altai families
+                                    — a moderate-activity nature adventure.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+
+            <section class="tours-section" id="city-tours">
+                <h2 class="section-title">City Tours</h2>
+                <div class="card-grid">
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Astana</div>
+                                <img class="card-img" src="images2/problem1.jpg" alt="Astana img">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Astana - City Tour</h3>
+                                <p class="card-desc">The Astana City Tour is a professional sightseeing trip around Kazakhstan’s
+                                    capital city. The tour includes a visit to the 21st century Hazrat Sultan 
+                                    Mosque and the Palace of Peace and Reconciliation, built to reflect the
+                                    world’s major religions. Stroll through Independence Square, Nurzhol 
+                                    Boulevard and Round Square before visits to the iconic Bayterek Tower 
+                                    and Khan-Shatyr, without which no tour of Astana would be complete.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Almaty</div>
+                                <img class="card-img" src="almaty_city.jpg" alt="City tour 2">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Almaty - City Tour</h3>
+                                <p class="card-desc">The cultural and commercial heart of Kazakhstan with 
+                                    lively markets, leafy boulevards, and easy 
+                                    access to city viewpoints and cafés.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Shymkent</div>
+                                <img class="card-img" src="shymkent_city.jpg" alt="City tour 3">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Shymkent - City Tour</h3>
+                                <p class="card-desc">A bustling southern city with vibrant bazaars, local
+                                     cuisine, and nearby parks — great for an authentic urban experience.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+
+            <section class="tours-section" id="nature-tours">
+                <h2 class="section-title">Nature Tours</h2>
+                <div class="card-grid">
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Burabay</div>
+                                <img class="card-img" src="burabay_nature.jpg" alt="Nature tour 1">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Burabay - Nature Tour</h3>
+                                <p class="card-desc">Scenic lakes, rocky outcrops and pine forests offering
+                                     easy nature walks, boating, and peaceful views.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Altai</div>
+                                <img class="card-img" src="images2/altai.jpg" alt="Altay jpg" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Altai forests — Nature Tour</h3>
+                                <p class="card-desc">Multi-day Altai tour: guided hikes and 
+                                    horseback rides through alpine meadows, forests, and river
+                                    valleys with views of glaciers and Mount Belukha. Overnight 
+                                    stays in cozy guesthouses and traditional yurts, local meals, 
+                                    waterfall visits, and cultural encounters with Altai families
+                                    — a moderate-activity nature adventure.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Almaty</div>
+                                <img class="card-img" src="images2/problem2.jpg" alt="Almaty jpg" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Almaty - Nature Tour</h3>
+                                <p class="card-desc">This tour combines all of the most famous sights
+                                    in Almaty. In one day you will experience our famous central 
+                                    park, a large outdoor market, the beauty of Tien Shen mountains
+                                    as we travel to Shymbulak, and Kok-Tobe, a popular tourist
+                                    destination. This is one of the best tours if you want to see
+                                    the best of Almaty.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+
+            <section class="tours-section" id="historical">
+                <h2 class="section-title">Historical Tours</h2>
+                <div class="card-grid">
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Turkestan</div>
+                                <img class="card-img" src="turkestan_hist.jpg" alt="Historical tour 1">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Turkestan - Historical Tour</h3>
+                                <p class="card-desc">Home to the UNESCO-listed Khoja Ahmed Yasawi Mausoleum 
+                                    and a major pilgrimage site, rich with Islamic architecture and history.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Taraz</div>
+                                <img class="card-img" src="taraz_hist.jpg" alt="Historical tour 2">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Taraz - Historical Tour</h3>
+                                <p class="card-desc">One of Central Asia’s oldest cities with archaeological
+                                     sites, ancient caravanserais and silk-road heritage to explore.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a class="card-link" href="reservation.html" target="_self">
+                        <article class="card">
+                            <div class="card-top">
+                                <div class="badge">Otrar</div>
+                                <img class="card-img" src="otrar_hist.jpg" alt="Historical tour 3">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Otrar - Historical Tour</h3>
+                                <p class="card-desc">Ruins of an important medieval Silk Road city with fortifications
+                                     and layers of history for archaeology and history lovers.</p>
+                                <button class="card-button">More</button>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-site">
+            <p>Team: Bayazit, Arslan , Daryn</p>
+            <p>© 2025 Discover Kazakhstan</p>
+            <p>Contact us: 
+            <a href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
+            <a id="github4" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+</body>
 </html>
