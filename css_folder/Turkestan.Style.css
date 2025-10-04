@@ -256,22 +256,15 @@ body{  /*removing default margin (white lines)*/
 
 
 .GalleryItem .btn{    /* the button is pressed down */
-  margin-top: auto;
-  display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  border-radius: 10px;
-  background: #0b486b;
-  color: #fff;
   font-weight: 600;
   text-decoration: none;
   transition: transform .15s ease, background-color .15s ease;
 }
-.GalleryItem .btn:hover{ background:#0e5c89; transform:translateY(-2px); }
+.GalleryItem .btn:hover{ }
 .GalleryItem .btn:focus-visible{
-  outline: 3px solid rgba(11,72,107,.35);
-  outline-offset: 2px;
 }
 
 
@@ -422,5 +415,40 @@ body{  /*removing default margin (white lines)*/
 .Gallery.row{ gap:0; padding-left:0; padding-right:0; max-width:100%; margin:0; }    /* removing unnecessary indents and gaps from Bootstrap */
 .Gallery.row .GalleryItem{ flex: initial !important; max-width: 100% !important; min-height: auto; }  /* cards take full width */
 
+
+:root{  /* brand colors */
+  --brand: #0b486b;
+  --brand-hover: #0e5c89;
+  --brand-rgb: 11,72,107;
+  
+  --bs-primary: var(--brand);        /* overriding Bootstrap primary color */
+  --bs-primary-rgb: var(--brand-rgb);
+}
+
+
+.btn-primary{  /* solid version in brand color */
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--brand-hover);
+  --bs-btn-hover-border-color: var(--brand-hover);
+  --bs-btn-active-bg: var(--brand-hover);
+  --bs-btn-active-border-color: var(--brand-hover);
+  --bs-btn-disabled-bg: var(--brand);
+  --bs-btn-disabled-border-color: var(--brand);
+  --bs-btn-focus-shadow-rgb: var(--brand-rgb);
+}
+
+.btn-outline-primary{  /* outline version in brand color */
+  --bs-btn-color: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--brand);
+  --bs-btn-hover-border-color: var(--brand);
+  --bs-btn-active-bg: var(--brand);
+  --bs-btn-active-border-color: var(--brand);
+  --bs-btn-disabled-color: var(--brand);
+}
 
 
