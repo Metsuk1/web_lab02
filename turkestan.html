@@ -14,17 +14,30 @@
           <div class="page-grid">
     
     <header class="headerTurkestan py-2 px-3 px-sm-4"> <!-- header -->
-        <div class="brend">
-            <i class="fa-solid fa-mosque"></i>
-            Turkestan
-        </div>
-        <nav class="main-nav">
-            <a href="page1.html">Home</a>
-            <a href="#top-banner">About</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#map">Map</a>
-        </nav>
-        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top py-2">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <i class="fa-solid fa-mosque"></i>
+        Turkestan
+      </a>
+
+      <button class="navbar-toggler" type="button"   
+              data-bs-toggle="collapse" data-bs-target="#mainNav"          
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">  <!-- Hamburger button -->
+        <span class="navbar-toggler-icon"></span>  
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">  <!-- Navigation links -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link px-3 active" href="page1.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#top-banner">About city</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#gallery">Photos</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
         <aside class="page-sidebar p-3 p-md-4">        <!-- Sidebar: on the left -->
         <nav class="side-nav">
@@ -250,6 +263,7 @@
   </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

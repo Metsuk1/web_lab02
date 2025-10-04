@@ -1,12 +1,28 @@
 .headerTurkestan{
-  position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 24px;
-  background: #0b486b; /* фирменный цвет — можно поменять */
-  color: #fff;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-  font-family: 'Montserrat', sans-serif;
+  padding: 0 !important;  /* removing default padding from Bootstrap */
 }
+
+
+.headerTurkestan .navbar{  /* navbar styles */
+  width: 100%;
+  border-radius: 0;
+  --bs-navbar-padding-y: .85rem;   /* height on mobile */
+}
+
+
+@media (min-width: 992px){  /* large screens */
+  .headerTurkestan .navbar{  
+    --bs-navbar-padding-y: 1rem;   /* height on desktop */
+  }
+  .headerTurkestan .navbar-brand{ font-size: 1.2rem; }  /* logo size on desktop */
+  .headerTurkestan .nav-link{ padding: .5rem .9rem; }  /* menu item padding on desktop */
+}
+
+:root{  
+  --bs-primary: #0b486b;           /* main color */
+  --bs-primary-rgb: 11,72,107;     /* for rgba() */
+}
+
 
 .main-nav{
   display: flex;
