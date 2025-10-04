@@ -2,7 +2,6 @@
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   gap: 24px;
-  padding: 14px 24px;
   background: #0b486b; /* фирменный цвет — можно поменять */
   color: #fff;
   border-bottom: 1px solid rgba(255,255,255,.12);
@@ -19,7 +18,6 @@
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  padding: 6px 10px;
   border-radius: 8px;
   transition: background-color .15s ease, color .15s ease, transform .15s ease;
 }
@@ -35,53 +33,18 @@
 
 body{  /*removing default margin (white lines)*/
     margin: 0; 
-    padding: 0;
 }
 
 .FirstInfo{
      width: 100%;
-    padding: 40px 20px;
     text-align: center;
     background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
     font-family: 'Montserrat', sans-serif;
-}
-
-.InfoContainer {
-    display: flex;     /* in row */
-    justify-content: center;    
-    gap: 40px;       /* space between blocks */
-    background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
-    padding: 40px 20px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.InfoContainer div {
-    flex: 1;
-    max-width: 200px;
-}
-
-.InfoContainer i {  
-    font-size: 40px;
-    color: #4682B4;
-    margin-bottom: 10px;
-}
-
-.InfoContainer h2 {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #222;
-}
-
-.InfoContainer p {
-    font-size: 14px;
-    color: #555;
 }
 
 
 .Description {
     max-width: 800px;
-    margin: 0 auto;
     font-size: 19px;
     color: #66686b;
     line-height: 1.6;
@@ -91,8 +54,7 @@ body{  /*removing default margin (white lines)*/
 #top-banner {
     text-align: left;          
     font-size: 26px;
-    color: #0b486b;
-    margin: 40px auto 10px;   
+    color: #0b486b; 
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     max-width: 800px;
@@ -111,8 +73,7 @@ body{  /*removing default margin (white lines)*/
 .AttractionsTitle {
    text-align: left;          
     font-size: 26px;
-    color: #0b486b;
-    margin: 40px auto 10px;    
+    color: #0b486b;   
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     max-width: 800px;
@@ -120,7 +81,6 @@ body{  /*removing default margin (white lines)*/
 
 .LeftBank, .RightBank, .Culture, .Events {
     max-width: 800px;
-    margin: 0 auto 40px;
     font-size: 19px;
     color: #687c99;
     line-height: 1.6;
@@ -129,7 +89,6 @@ body{  /*removing default margin (white lines)*/
 
 .LeftBankDescription, .RightBankDescription, .CultureDescription, .EventsDescription {
     max-width: 800px;
-    margin: 0 auto 40px;
     font-size: 21px;
     color: #435164;
     line-height: 1.6;  /* increased line height for better readability */
@@ -140,14 +99,12 @@ body{  /*removing default margin (white lines)*/
     text-align: center;
     font-size: 28px;
     color: #0b486b;
-    margin: 40px 0 20px;  /* spacing above and below */
     font-family: 'Montserrat', sans-serif;
 }
 
 
 .MapContainer {
     width: 100%;
-    margin: 30px 0;
     border-radius: 0;
     overflow: hidden;   /* rounding the corners */
 }
@@ -162,15 +119,12 @@ body{  /*removing default margin (white lines)*/
   text-align:center; 
   font-size:28px; 
   color:#0b486b; 
-  margin:40px 0 10px;
 }
 
 .contact-form{
   max-width:600px; 
-  margin:0 auto 40px;
    display:grid;   /* grid layout for form elements */
    gap:12px; 
-   padding:0 20px;
   font-family:'Montserrat',sans-serif;
 }
 
@@ -206,10 +160,8 @@ body{  /*removing default margin (white lines)*/
 /* footer */
 .footer02 {
   text-align: center;
-  padding: 15px;
   background: #0b3a5b;
   color: white;
-  margin-top: 30px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -218,11 +170,11 @@ body{  /*removing default margin (white lines)*/
   color: #f8f9fa;
   text-decoration: none;
   margin-top: 10px;
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #github02:hover{
-  color: blue;
+  color: rgb(219,219,235);
 }
 
 /*3rd assignment*/
@@ -234,7 +186,6 @@ body{  /*removing default margin (white lines)*/
   display: flex !important;         
   flex-wrap: wrap;                   /* multiple lines of 3 */
   gap: 20px;                         /* intervals between cards */
-  padding: 12px 24px 32px;
   max-width: 1000px;                 /* container for 3 columns */
   margin: 0 auto;                    /* center */
   justify-content: center;          
@@ -332,7 +283,6 @@ body{  /*removing default margin (white lines)*/
   background:#fff;
   border:1px solid #e9eef3;
   border-radius:12px;
-  padding:16px;
   font-family:'Montserrat',sans-serif;
 }
 .side-nav ul{ list-style:none; margin:8px 0 0; padding:0; display:grid; gap:8px; }
@@ -343,7 +293,6 @@ body{  /*removing default margin (white lines)*/
   background:#fff;
   border:1px solid #e9eef3;
   border-radius:12px;
-  padding:16px;
 }
 
 /* адаптив: sidebar под контентом */
@@ -360,7 +309,7 @@ body{  /*removing default margin (white lines)*/
 }
 
 
-.gallery-grid-section{ padding: 10px 0 30px; }   /*Task 4*/
+.gallery-grid-section{ }   /*Task 4*/
 .gallery-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
@@ -453,9 +402,9 @@ body{  /*removing default margin (white lines)*/
 }
 
 
-/* Когда галерея используется как .row Bootstrap */
-.Gallery.row{ gap:0; padding-left:0; padding-right:0; max-width:100%; margin:0; }
-.Gallery.row .GalleryItem{ flex: initial !important; max-width: 100% !important; min-height: auto; }
+  
+.Gallery.row{ gap:0; padding-left:0; padding-right:0; max-width:100%; margin:0; }    /* removing unnecessary indents and gaps from Bootstrap */
+.Gallery.row .GalleryItem{ flex: initial !important; max-width: 100% !important; min-height: auto; }  /* cards take full width */
 
 
 
