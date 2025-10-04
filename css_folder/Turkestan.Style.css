@@ -398,3 +398,58 @@ body{  /*removing default margin (white lines)*/
 @media (max-width: 560px){  /* 1 column on small screens */
   .gallery-grid{ grid-template-columns: 1fr; grid-auto-rows: 220px; }  /* each row 220px high */
 }
+
+/*Assignment 4 */
+
+:root{   /* mobile */
+  --fs-h1: 24px;   /* large titles: GalleryTitle/MapTitle/FormTitle */
+  --fs-h2: 22px;   /* sections: #top-banner, .AttractionsTitle */
+  --fs-h3: 18px;   /* subheadings: .LeftBank/.RightBank/.Culture/.Events, h3 in the cards */
+  --fs-text: 15.5px; /* text */
+}
+
+@media (min-width: 560px){  /* tablet */
+  :root{
+    --fs-h1: 28px;
+    --fs-h2: 24px;
+    --fs-h3: 19px;
+    --fs-text: 16.5px;
+  }
+}
+
+@media (min-width: 900px){  /* desktop */
+  :root{
+    --fs-h1: 32px;
+    --fs-h2: 26px;
+    --fs-h3: 20px;
+    --fs-text: 18px;
+  }
+}
+
+.GalleryTitle, .MapTitle, .FormTitle{ font-size: var(--fs-h1); }  /* large titles */
+#top-banner, .AttractionsTitle{ font-size: var(--fs-h2); }  /* section titles */
+
+.LeftBank, .RightBank, .Culture, .Events{ font-size: var(--fs-h3); }  /* section subtitles */
+.GalleryItem .card-body h3{ font-size: var(--fs-h3); }  /* card titles */
+
+.Description,
+.LeftBankDescription, .RightBankDescription,
+.CultureDescription, .EventsDescription,
+.GalleryItem .card-body p{
+  font-size: var(--fs-text);
+}  /* text */
+
+
+@media (max-width: 900px){  /* Tablet: 2 cards in a row */
+  .GalleryItem{
+    flex: 0 1 calc((100% - 20px)/2);   /* (container width − 1*gap) / 2 */
+  }
+}
+
+@media (max-width: 560px){  /* Mobile: 1 card in a row */
+  .GalleryItem{
+    flex: 0 1 100%;  /* full width */
+  }
+}
+
+
