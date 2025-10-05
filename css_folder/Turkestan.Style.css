@@ -137,41 +137,6 @@ body{  /*removing default margin (white lines)*/
   color:#0b486b; 
 }
 
-.contact-form{
-  max-width:600px; 
-   display:grid;   /* grid layout for form elements */
-   gap:12px; 
-  font-family:'Montserrat',sans-serif;
-}
-
-.contact-form input, .contact-form textarea{
-  width:100%; 
-  padding:12px 14px; 
-  border:1px solid #cbd5e1;   
-  border-radius:10px;
-}
-
-.contact-form input:focus, .contact-form textarea:focus{
-  outline:none; 
-  border-color:#0b486b; 
-  box-shadow:0 0 0 3px rgba(11,72,107,.15);  /* focus effect */
-}
-
-.contact-form button{
-  padding:12px 16px; 
-  background:#0b486b; 
-  color:#fff; 
-  border:0; 
-  border-radius:10px;
-  cursor:pointer; 
-  font-weight:600; 
-  transition:background .2s,transform .2s;
-}
-
-.contact-form button:hover{ 
-    background:#16222A; 
-    transform:translateY(-2px);   /* slight lift on hover */
-}
 
 /* footer */
 .footer02 {
@@ -304,15 +269,15 @@ body{  /*removing default margin (white lines)*/
   border-radius:12px;
 }
 
-/* адаптив: sidebar под контентом */
+  /* content reorganization on small screens */
 @media (max-width: 900px){               /*CSS media query. I use it to apply different styles in different conditions: 
                                            screen width, orientation, dark theme, animation preference, etc.*/
   .page-grid{
     grid-template-columns: 1fr;              /* only one column */
     grid-template-areas:
       "header"
-      "main"
       "sidebar"
+      "main"
       "footer";
   }
 }

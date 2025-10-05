@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
         <title>Turkestan</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,10 +15,10 @@
           <div class="page-grid">
     
     <header class="headerTurkestan py-2 px-3 px-sm-4"> <!-- header -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top py-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top py-2" >
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <i class="fa-solid fa-mosque"></i>
+      <a class="nav-link px-3 active text-white me-1 " href="page1.html" aria-current="page">  <!-- Logo and home link -->
+        <i class="fa-solid fa-mosque text-white me-1"></i>
         Turkestan
       </a>
 
@@ -40,7 +41,7 @@
 </header>
 
         <aside class="page-sidebar p-3 p-md-4">        <!-- Sidebar: on the left -->
-        <nav class="side-nav">
+        <nav class="side-nav" aria-label="Section navigation">
             <h3>Sidebar</h3>
             <ul>
                 <li><a href="#top-banner">About</a></li>
@@ -52,7 +53,7 @@
       </nav>
     </aside>
 
-    <main class="page-main p-3 p-md-4">     <!-- Main content: in the center -->
+    <main id="main-content" class="page-main p-3 p-md-4">     <!-- Main content: in the center -->
        <section class="container my-4">
     <div class="row g-4 text-center">
 
@@ -83,7 +84,7 @@
     </div>
   </section>
 
-    <section class="container mt-4 mt-lg-5">
+    <section class="container mt-4 mt-lg-5" aria-labelledby="top-banner" tabindex="-1">
       <h2 id="top-banner" class="mb-2">Turkestan</h2>
       <div class="Description px-2 px-sm-0 mb-3 mb-md-4">
         <p>Turkestan is a Silk Road city centered on the Mausoleum of Khoja Ahmed Yasawi, the Keruen-Saray complex and a walkable old town-heritage and city life in one place.</p>
@@ -328,27 +329,79 @@
       <div class="MapContainer">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46460.47188436065!2d68.21978762093437!3d43.29793930681124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4200c26160a6c6bf%3A0xc25a313979c57875!2z0KLRg9GA0LrQtdGB0YLQsNC9!5e0!3m2!1sru!2skz!4v1759471392409!5m2!1sru!2skz"
-          width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+         width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       </section>
 
-      <section id="contact" class="container my-5">
-  <h2 class="FormTitle text-center mb-3">Contact us</h2>
-  <form class="contact-form mx-auto p-3 p-sm-4">
-        <label> Name
-          <input type="text" name="name" placeholder="Your name">
-        </label>
-        <label> Email
-          <input type="email" name="email" placeholder="you@example.com">
-        </label>
-        <label> Message
-          <textarea name="message" rows="4" placeholder="Your message"></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary btn-lg w-100 w-sm-auto">Send</button>
+
+
+      <section id="contact" class="container my-5">  
+  <h2 class="FormTitle text-center mb-3">Contact us</h2>    <!-- Contact Form -->
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="needs-validation" novalidate>
+        <div class="row g-3">
+          <!-- Name -->
+          <div class="col-sm-6">
+            <label for="name" class="form-label">Name</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-sm-6">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+              <div class="invalid-feedback">Please provide a valid email.</div>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message"></textarea>
+          </div>
+
+          <!-- Radios -->
+          <div class="col-12">
+            <label class="form-label d-block">Preferred contact method</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="contact_pref" id="prefEmail" value="email" checked>
+              <label class="form-check-label" for="prefEmail">Email</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="contact_pref" id="prefPhone" value="phone">
+              <label class="form-check-label" for="prefPhone">Phone</label>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="agree" required>
+              <label class="form-check-label" for="agree">I agree to the terms.</label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="col-12 d-grid d-sm-flex gap-2 justify-content-sm-end">
+            <button type="reset" class="btn btn-outline-primary btn-sm">Clear</button>
+            <button type="submit" class="btn btn-primary btn-lg">Send</button>
+          </div>
+        </div>
       </form>
-        </section>
-    </main>
+    </div>
+  </div>
+</section>
+
 
 
     <footer class="footer02 py-3 px-3 px-sm-4">
