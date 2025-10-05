@@ -1,0 +1,89 @@
+.page-sidebar {
+    height: 0px;
+    width: 200px;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.page-sidebar .side-nav h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.page-sidebar .side-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.page-sidebar .side-nav li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+.page-sidebar .side-nav li a:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .page-sidebar {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .content {
+        margin-left: 0;
+    }
+    .page-sidebar.active {
+        width: 250px;
+        padding: 20px;
+        overflow: auto;
+    }
+}
+
+/* Карусель */
+.carousel-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 500px;
+}
+
+/* Footer */
+.footer02 {
+    text-align: center;
+    background: #0b3a5b;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#github02 {
+    display: inline-block;
+    color: #f8f9fa;
+    text-decoration: none;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#github02:hover {
+    color: rgb(219,219,235);
+}

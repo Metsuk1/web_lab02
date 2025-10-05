@@ -39,7 +39,7 @@ body{  /*removing default margin (white lines)*/
     color:#0a6cff; 
 }  
 
-.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy {  /*card of each city*/
+.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay{  /*card of each city*/
     flex: 1 1 45%;   /* 2 cards in a row */
     max-width: 600px;            
     background: #fff;
@@ -52,23 +52,23 @@ body{  /*removing default margin (white lines)*/
     font-family: 'Montserrat', sans-serif;
 }
 
-.Astana:hover, .Almaty:hover, .Aktobe:hover, .Turkestan:hover, .AlmatyOblysy:hover {  /*gives a small interactive effect to make the card seem "alive".*/
+.Astana:hover, .Almaty:hover, .Aktobe:hover, .Turkestan:hover, .AlmatyOblysy:hover , .Kostanay:hover {  /*gives a small interactive effect to make the card seem "alive".*/
     transform: translateY(-5px);  /* slight lift on hover */
 }
 
-.Astana img, .Almaty img, .Aktobe img, .Turkestan img, .AlmatyOblysy img {  /*image inside the card*/
+.Astana img, .Almaty img, .Aktobe img, .Turkestan img, .AlmatyOblysy img, .Kostanay img{  /*image inside the card*/
     width: 100%;
     height: 140px;            
     object-fit: cover;        
 }
 
-.Astana h3, .Almaty h3, .Aktobe h3, .Turkestan h3, .AlmatyOblysy h3 {  /*city name*/
+.Astana h3, .Almaty h3, .Aktobe h3, .Turkestan h3, .AlmatyOblysy h3, .Kostanay h3 {  /*city name*/
     margin: 10px 0 5px;
     font-size: 18px;
     color: #0b486b;
 }
 
-.Astana p, .Almaty p, .Aktobe p, .Turkestan p, .AlmatyOblysy p {  /*description text*/
+.Astana p, .Almaty p, .Aktobe p, .Turkestan p, .AlmatyOblysy p , .Kostanay p{  /*description text*/
     font-size: 13px;
     color: #555;
     margin: 0 10px 15px;
