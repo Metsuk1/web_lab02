@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.description-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.itinerary-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.itinerary-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .description-text {
+        font-size: 1.1rem;
+    }
+    
+    .itinerary-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .itinerary-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .description-text {
+        font-size: 1.2rem;
+    }
+    
+    .itinerary-subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .itinerary-text {
+        font-size: 1.2rem;
+    }
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images2/problem4.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.feature-item {
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+}
+
+.tour-description {
+    background: var(--white);
+}
+
+.cards-section {
+    background: var(--white);
+}
+
+.carousel-section {
+    background: var(--light-gray);
+}
+
+.itinerary {
+    background: var(--white);
+}
+
+.footer-site{
+    background: #0b3a5b;
+}
+
+.footer-site a {
+    text-decoration: none;
+}
+
+.carousel-item img {
+    border-radius: 8px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+
+.card-group.gap-3 .card {
+    margin: 0 0.5rem;
+}
+
+.card-group.gap-4 .card {
+    margin: 0 1rem;
+}
