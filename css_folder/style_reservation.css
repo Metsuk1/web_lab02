@@ -21,7 +21,7 @@
     background: white;
 }
 
-.form-check-card .form-check-input:checked + .form-check-label {
+.form-check-card .form-check-input:checked+.form-check-label {
     border-color: var(--accent) !important;
     background-color: #f0f5ff;
     box-shadow: 0 0 0 2px rgba(39, 90, 255, 0.1);
@@ -53,25 +53,37 @@
         padding-left: 15px !important;
         padding-top: 50px !important;
     }
-    
+
     .form-check-card .form-check-input {
         top: 15px;
         left: 15px;
     }
-    
+
     .room-photo {
         margin-bottom: 15px;
     }
-    
+
     .room-photo img {
         height: 150px;
     }
 }
 
-.foot{
+.foot {
     background: #0b3a5b;
 }
 
-.foot a{
+.foot a {
     text-decoration: none;
+}
+
+/* small helper to show group-level error under radio groups */
+.group-invalid {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.group-invalid.show {
+    display: block;
 }
