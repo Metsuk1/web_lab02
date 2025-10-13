@@ -306,3 +306,24 @@ body{  /*removing default margin (white lines)*/
   outline: 3px solid rgba(11,72,107,.35);
   outline-offset: 2px;
 }
+
+
+/* ==== Task 4: background via CSS variable ==== */
+:root { --page-bg: #ffffff; }            /* default white */
+html { background: var(--page-bg); }          /* apply to html */
+html, body { transition: background-color .25s ease, color .25s ease; }
+
+
+/* button style*/
+.bg-btn{
+  margin-left: 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ffffff66;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.bg-btn:hover{ background:#ffffff2a; transform: translateY(-1px); }

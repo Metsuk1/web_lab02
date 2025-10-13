@@ -415,5 +415,3 @@ body{  /*removing default margin (white lines)*/
   --bs-btn-active-border-color: var(--brand);
   --bs-btn-disabled-color: var(--brand);
 }
-
-
