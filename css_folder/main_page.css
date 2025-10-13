@@ -14,12 +14,12 @@ p {
 }
 
 @media (min-width: 600px) {
-  h1 { font-size: 36px; }
+  h2 { font-size: 36px; }
   p { font-size: 18px; }
 }
 
 @media (min-width: 992px) {
-  h1 { font-size: 48px; }
+  h2 { font-size: 48px; }
   p { font-size: 20px; }
 }
 
@@ -158,6 +158,18 @@ p {
   margin-top: 10px;
 }
 
+#link{
+  color: #f8f9fa;
+}
+
 #github:hover{
   color: blue;
+}
+
+/* Task 5: Date & Time Block */
+.datetime-block {
+  margin-top: 15px;
+  font-size: 16px;
+  color:#f8f9fa;
+  font-weight: 500;
 }
