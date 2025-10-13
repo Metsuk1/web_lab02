@@ -13,3 +13,37 @@
     i = (i + 1) % colors.length; // prepairing next color index
   });
 })();
+
+// POPUP
+(() => {
+  const openBtn = document.getElementById('openPopup');  // button to open popup
+  const overlay = document.getElementById('popupOverlay');  // popup overlay
+  const closeBtn = overlay?.querySelector('.popup-close');  // cross button to close popup
+  const cancelBtn = document.getElementById('cancelPopup');  // cancel button to close popup
+
+  if (!openBtn || !overlay) return;  
+
+  const open = () => {  
+    overlay.hidden = false;    
+    requestAnimationFrame(() => overlay.classList.add('show'));   // smooth animation
+    document.body.style.overflow = 'hidden'; // disable scrolling of the page behind
+  };
+
+  const close = () => {  // close popup
+    overlay.classList.remove('show');  
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+  };
+
+  // open popup
+  openBtn.addEventListener('click', open);
+
+  // close popup
+  closeBtn?.addEventListener('click', close);
+  cancelBtn?.addEventListener('click', close);
+
+  // close by clicking on overlay(not on cross)
+  overlay.addEventListener('mousedown', (e) => {
+    if (e.target === overlay) close();
+  });
+})();
