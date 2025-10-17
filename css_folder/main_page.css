@@ -5,29 +5,25 @@ body {
   color: #333;
 }
 
-/* хедер */
-.site-header {
-  background: #0b3a5b;
-  color: white;
-  padding: 20px;
-  text-align: center;
+/* Responsive Typography (Task 1) */
+h1 {
+  font-size: 28px;
+}
+p {
+  font-size: 16px;
 }
 
-.site-header h1 {
-  margin: 0 0 10px 0;
+@media (min-width: 600px) {
+  h2 { font-size: 36px; }
+  p { font-size: 18px; }
 }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
+@media (min-width: 992px) {
+  h2 { font-size: 48px; }
+  p { font-size: 20px; }
 }
 
-.nav a:hover {
-  text-decoration: underline;
-}
-
- /* главный блок */
+ /* main block */
 .master {
   text-align: center;
   padding: 60px 20px;
@@ -49,39 +45,94 @@ body {
   background: #ff7043;
 }
 
-   /* популярные направления */
+/* popular destinations */
+/* Card Group (Task 2) */
 .highlights {
-  padding: 40px 20px;
+  padding: 60px 20px;
+  background: white;
   text-align: center;
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+.highlights h3 {
+  color: #0b3a5b;
+  margin-bottom: 40px;
 }
 
+.highlights h2 {
+  color: #0b3a5b;
+  margin-bottom: 40px;
+}
+
+/* adaptive grid for cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* styles for cards */
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 250px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card h4 {
-  margin-top: 0;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 .card-img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;  
-  border-radius: 6px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  color: #0b3a5b;
   margin-bottom: 10px;
 }
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Card button */
+.card-button {
+  display: inline-block;
+  background-color: #0b3a5b;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.card-button:hover {
+  background: #ff8a65;
+}
+
 
 #top-banner{
   background: #0b3a5b;
@@ -107,6 +158,18 @@ body {
   margin-top: 10px;
 }
 
+#link{
+  color: #f8f9fa;
+}
+
 #github:hover{
   color: blue;
+}
+
+/* Task 5: Date & Time Block */
+.datetime-block {
+  margin-top: 15px;
+  font-size: 16px;
+  color:#f8f9fa;
+  font-weight: 500;
 }
