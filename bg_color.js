@@ -47,3 +47,22 @@
     if (e.target === overlay) close();
   });
 })();
+
+// READ MORE toggle
+(() => {
+  const btn = document.getElementById('readMoreBtn');
+  const moreText = document.getElementById('moreText');
+
+  if (!btn || !moreText) return;
+
+  btn.addEventListener('click', () => {
+    if (moreText.style.display === 'none' || moreText.style.display === '') {
+      moreText.style.display = 'block';
+      btn.textContent = 'Read Less';
+    } else {
+      moreText.style.display = 'none';
+      btn.textContent = 'Read More';
+    }
+  });
+})();
+
