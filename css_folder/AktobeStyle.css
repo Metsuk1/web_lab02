@@ -378,3 +378,30 @@ html, body { transition: background-color .25s ease, color .25s ease; }
 @media (prefers-reduced-motion: reduce){
   .popup{ transition:none; }
 }
+
+/* Read More button  */
+#readMoreBtn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #0b486b;       
+  color: #fff;              
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .25s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+#readMoreBtn:hover {  /* hover effect */
+  background: #0e5c89;       
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+#readMoreBtn:focus-visible {  /* focus effect */
+  outline: 3px solid rgba(11,72,107,.35);
+  outline-offset: 2px;
+}
+

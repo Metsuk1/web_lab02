@@ -95,3 +95,47 @@ body{  /*removing default margin (white lines)*/
 #github01:hover{
   color: blue;
 }
+
+/* Overall grid container */
+.page-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+  
+}
+
+/* Sidebar */
+.page-sidebar {
+  background: #fff;
+  border: 1px solid #e9eef3;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+.side-nav ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.side-nav a {
+  display: block;
+  text-decoration: none;
+  color: #0b486b;
+  background: #f6fbff;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.side-nav a:hover {
+  background: #e9f5ff;
+}
+
+/* Main content area */
+.page-main {
+  background: #fff;
+  border: 1px solid #e9eef3;
+  border-radius: 12px;
+  padding: 16px;
+}
