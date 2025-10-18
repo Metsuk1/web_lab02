@@ -61,6 +61,29 @@ function getGreetingForHour(date = new Date()) {
   }
 }
 
+  //update date for every second
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+
+// Task 3 - Arrays and Loops (Footer Team List)
+// Create array with team
+const teamMembers = ["Bayazit", "Arslan", "Daryn"];
+const teamContainer = document.getElementById("team-list");
+
+// clear text and insert participants through a loop
+teamContainer.textContent = "Team: "; 
+
+teamMembers.forEach((member, index) => {
+  // Create span for each guy
+  const span = document.createElement("span");
+  span.textContent = member;
+
+  if (index < teamMembers.length - 1) {
+    span.textContent += ", ";
+  }
+
+  teamContainer.appendChild(span);
+});
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('greeting');
   if (!el) return;
