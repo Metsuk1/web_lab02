@@ -39,7 +39,7 @@ body{  /*removing default margin (white lines)*/
     color:#0a6cff; 
 }  
 
-.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy {  /*card of each city*/
+.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay{  /*card of each city*/
     flex: 1 1 45%;   /* 2 cards in a row */
     max-width: 600px;            
     background: #fff;
@@ -52,23 +52,23 @@ body{  /*removing default margin (white lines)*/
     font-family: 'Montserrat', sans-serif;
 }
 
-.Astana:hover, .Almaty:hover, .Aktobe:hover, .Turkestan:hover, .AlmatyOblysy:hover {  /*gives a small interactive effect to make the card seem "alive".*/
+.Astana:hover, .Almaty:hover, .Aktobe:hover, .Turkestan:hover, .AlmatyOblysy:hover , .Kostanay:hover {  /*gives a small interactive effect to make the card seem "alive".*/
     transform: translateY(-5px);  /* slight lift on hover */
 }
 
-.Astana img, .Almaty img, .Aktobe img, .Turkestan img, .AlmatyOblysy img {  /*image inside the card*/
+.Astana img, .Almaty img, .Aktobe img, .Turkestan img, .AlmatyOblysy img, .Kostanay img{  /*image inside the card*/
     width: 100%;
     height: 140px;            
     object-fit: cover;        
 }
 
-.Astana h3, .Almaty h3, .Aktobe h3, .Turkestan h3, .AlmatyOblysy h3 {  /*city name*/
+.Astana h3, .Almaty h3, .Aktobe h3, .Turkestan h3, .AlmatyOblysy h3, .Kostanay h3 {  /*city name*/
     margin: 10px 0 5px;
     font-size: 18px;
     color: #0b486b;
 }
 
-.Astana p, .Almaty p, .Aktobe p, .Turkestan p, .AlmatyOblysy p {  /*description text*/
+.Astana p, .Almaty p, .Aktobe p, .Turkestan p, .AlmatyOblysy p , .Kostanay p{  /*description text*/
     font-size: 13px;
     color: #555;
     margin: 0 10px 15px;
@@ -94,4 +94,48 @@ body{  /*removing default margin (white lines)*/
 
 #github01:hover{
   color: blue;
+}
+
+/* Overall grid container */
+.page-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+  
+}
+
+/* Sidebar */
+.page-sidebar {
+  background: #fff;
+  border: 1px solid #e9eef3;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+.side-nav ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.side-nav a {
+  display: block;
+  text-decoration: none;
+  color: #0b486b;
+  background: #f6fbff;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.side-nav a:hover {
+  background: #e9f5ff;
+}
+
+/* Main content area */
+.page-main {
+  background: #fff;
+  border: 1px solid #e9eef3;
+  border-radius: 12px;
+  padding: 16px;
 }

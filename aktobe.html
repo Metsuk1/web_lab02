@@ -20,6 +20,17 @@
         <a href="#top-banner">About</a>
         <a href="#gallery">Gallery</a>
         <a href="#map">Map</a>
+
+        
+        <button id="bgToggle" type="button" title="Change background" class="bg-btn">  <!-- button for color -->
+        Change background
+        </button>
+
+        <button id="openPopup" type="button" class="bg-btn">
+        <i class="fa-regular fa-envelope"></i>&nbsp;Contact us
+        </button>
+
+
          </nav>
             
         </header>
@@ -48,6 +59,16 @@
 
         <div class = "Description">
          <p>Aktobe is a dynamic city in the west of Kazakhstan: modern spaces, parks, museums and steppe routes are nearby. Convenient logistics and a welcoming atmosphere.</p>
+        
+        <div id="moreText" style="display: none;">
+        <p>
+        The city combines modern infrastructure with the traditions of the Kazakh steppe. 
+        Here you can explore cultural landmarks, taste local cuisine and experience 
+        the hospitality of Western Kazakhstan.
+        </p>
+        </div>
+
+         <button id="readMoreBtn" class="bg-btn">Read More</button>
         </div>
 
 
@@ -185,7 +206,47 @@
   </p>
   </footer>
 
+<<<<<<< HEAD
   <script src="aktobe.js"></script>
+=======
+
+ 
+    <script src="bg_color.js" defer></script>  <!-- changing the color of the website + popup-->
+
+    <script src="scripts/bg_color.js" defer></script>  <!-- changing the color of the website-->
+
+    <div id="popupOverlay" class="popup-overlay" hidden>
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <button class="popup-close" type="button" aria-label="Close">&times;</button>
+    <h2 id="popupTitle">Contact us</h2>
+
+    <form id="popupForm" class="popup-form" novalidate>
+      <label>
+        Name
+        <input type="text" name="name" required placeholder="Your name">
+        <small class="error">Please enter your name</small>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required placeholder="you@example.com">
+        <small class="error">Please enter a valid email</small>
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" rows="4" placeholder="Your message"></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="button" id="cancelPopup">Cancel</button>
+        <button type="submit" class="primary">Send</button>
+      </div>
+    </form>
+    </div>
+    </div>
+
+>>>>>>> origin/master
 
     </body>
 </html>
