@@ -3,6 +3,21 @@
     --border_color: #e6e9ef;
 }
 
+.page-header {
+    position: relative;
+}
+
+.page-header .back-link {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+
 .form-check-card {
     position: relative;
 }
@@ -48,6 +63,30 @@
     object-fit: cover;
 }
 
+.foot {
+    background: #0b3a5b;
+}
+
+.foot a {
+    text-decoration: none;
+}
+
+/* small helper to show group-level error under radio groups */
+.group-invalid {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.group-invalid.show {
+    display: block;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
 @media (max-width: 768px) {
     .room-option .form-check-label {
         padding-left: 15px !important;
@@ -68,22 +107,18 @@
     }
 }
 
-.foot {
-    background: #0b3a5b;
-}
-
-.foot a {
-    text-decoration: none;
-}
-
-/* small helper to show group-level error under radio groups */
-.group-invalid {
-    color: #dc3545;
-    font-size: 0.875em;
-    margin-top: 0.25rem;
-    display: none;
-}
-
-.group-invalid.show {
-    display: block;
+@media (max-width: 576px) {
+    .d-flex.justify-content-end {
+        justify-content: center !important;
+    }
+    .gap-2 {
+        gap: 1rem;
+    }
+    .page-header .back-link {
+        left: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .page-header h1{
+        font-size: 1.5rem;
+    }
 }
