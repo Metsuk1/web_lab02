@@ -1,4 +1,3 @@
-
 // Task 5: Display Current Date and Time
 function updateDateTime() {
   const now = new Date();
@@ -60,10 +59,6 @@ function getGreetingForHour(date = new Date()) {
       return "Good night!";
   }
 }
-
-  //update date for every second
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
 
 // Task 3 - Arrays and Loops (Footer Team List)
 // Create array with team
