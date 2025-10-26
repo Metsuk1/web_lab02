@@ -233,6 +233,8 @@
             clearGroupError('durationError');
             clearGroupError('roomError');
 
+            showToast('Form is reset', 3500, 'neutral')
+
             // Reset focus to the first focusable element
             const firstFocusable = getFocusableElements()[0];
             if (firstFocusable) {
@@ -258,8 +260,10 @@
 
         // Get focusable elements from main container and footer, sorted by position
         function getFocusableElements() {
+            const orderBlock = document.querySelector('.order-confirmation');
             const elements = [
                 ...Array.from(mainContainer.querySelectorAll(focusableSelector)),
+                ...(orderBlock ? Array.from(orderBlock.querySelectorAll(focusableSelector)) : []),
                 ...Array.from(footer.querySelectorAll(focusableSelector))
             ];
 
@@ -484,5 +488,205 @@
 
     // Start keyboard navigation initialization
     initKeyboardNavigation();
+
+    // Simple toast
+    function showToast(message, timeoutMs, type) {
+        // search or create container
+        let $area = $('.toast-area');
+        if ($area.length === 0) {
+            $area = $('<div class="toast-area"></div>').appendTo('body');
+        }
+
+        // create tost
+        const $toast = $('<div class="custom-toast"></div>')
+            .text(message)
+            .addClass(type);
+
+        $area.append($toast);
+
+        // show toast
+        setTimeout(() => {
+            $toast.addClass('show');
+        }, 50);
+
+        // delete after timeOut
+        setTimeout(() => {
+            $toast.removeClass('show');
+
+            // wait css transition and delete
+            $toast.one('transitionend', function () {
+                $toast.remove();
+
+                if ($area.children().length === 0) {
+                    $area.remove();
+                }
+            });
+        }, timeoutMs);
+    }
+
+    // Order confirmation + copy button logic
+
+    // Format: YYYYMMDD-XXXXXX
+    function generateOrderCode() {
+        const now = new Date();
+        // jQuery не используется для этой логики, так как это чистая работа с JS Date
+        const yyyy = now.getFullYear().toString();
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const dd = String(now.getDate()).padStart(2, '0');
+        // 6 random digits
+        const rand = String(Math.floor(Math.random() * 900000) + 100000);
+        return `${yyyy}${mm}${dd}-${rand}`;
+    }
+
+    /**
+     * Copies text to clipboard uses navigator.clipboard, otherwise fallback
+     * Changes icon/shows tooltip on the button, then resets
+     */
+    function copyTextToClipboard(text, btnElement) {
+        const $btn = $(btnElement);
+
+        // Resets the 'copied' state of a button, clears timer, reverts icon
+        function resetCopiedUI($btn) {
+            if (!$btn || !$btn.hasClass('copied')) {
+                return;
+            }
+
+            clearTimeout($btn.data('_copyTimeout'));
+
+            const $icon = $btn.find('.icon');
+            const $tip = $btn.find('.copied-tooltip');
+
+            const origIcon = $icon.data('orig') || '📋';
+
+            $icon.text(origIcon);
+            $tip.attr('aria-hidden', 'true');
+            $btn.removeClass('copied');
+        }
+
+        // Shows the "Copied!" UI state on the button
+        function showCopiedUI($btn) {
+            if (!$btn.length) return;
+            const $icon = $btn.find('.icon');
+            const $tip = $btn.find('.copied-tooltip');
+
+            if (!$icon.data('orig')) {
+                $icon.data('orig', $icon.text() || '📋');
+            }
+
+            const resetTimer = () => {
+                clearTimeout($btn.data('_copyTimeout'));
+                const timeout = setTimeout(() => {
+                    resetCopiedUI($btn);
+                }, 1800);
+                $btn.data('_copyTimeout', timeout);
+            };
+
+            // if already copied
+            if ($btn.hasClass('copied')) {
+                $tip.attr('aria-hidden', 'false');
+                resetTimer();
+                return;
+            }
+
+            $btn.addClass('copied');
+            $icon.text('✅');
+            $tip.attr('aria-hidden', 'false');
+
+            resetTimer();
+        }
+
+        function fallbackCopy() {
+            try {
+                // create textarea
+                const $ta = $('<textarea>')
+                    .val(text)
+                    .css({ position: 'absolute', left: '-9999px' })
+                    .appendTo('body');
+
+                $ta.trigger('select');
+                document.execCommand('copy');
+                $ta.remove();
+
+                showCopiedUI($btn);
+            } catch (err) {
+                console.warn('Copy failed', err);
+                // last resort: show toast
+                if (typeof showToast === 'function') {
+                    showToast('Could not copy to clipboard', 3000, 'error');
+                }
+            }
+        }
+
+        // Use Clipboard API when available
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+                showCopiedUI($btn);
+            }, function (err) {
+                fallbackCopy();
+            });
+        } else {
+            fallbackCopy();
+        }
+    }
+
+    // Creates/updates the order confirmation block and scrolls to it
+    function renderOrderConfirmation(orderCode, humanMessage) {
+        // remove old block
+        $('.order-confirmation').remove();
+
+        // search footer
+        const $footer = $('footer.foot, footer').first();
+        const $target = $footer.length ? $footer : $('body');
+
+        // creating block
+        const blockHTML = `
+        <div class="order-confirmation">
+            <div class="order-info">
+                <div class="order-title">${humanMessage}</div>
+                <div>
+                    <span class="order-code" id="latest-order-code">${orderCode}</span>
+                </div>
+            </div>
+            <div class="order-actions">
+                <button class="copy-order-btn" type="button" aria-label="Copy order code" data-code="${orderCode}">
+                    <span class="icon">📋</span>
+                    <span class="copied-tooltip" aria-hidden="true">Copied!</span>
+                </button>
+            </div>
+        </div>
+        `;
+
+        const $block = $(blockHTML);
+
+        if ($footer.length) {
+            // before footer
+            $block.insertBefore($footer);
+        } else {
+            $block.appendTo($target);
+        }
+
+        // scroll to block
+        $('html, body').animate({
+            scrollTop: $block.offset().top - ($(window).height() / 2) + ($block.height() / 2)
+        }, 500); // 500ms duration
+
+        // focus to button
+        const $copyBtn = $block.find('.copy-order-btn');
+
+        if ($copyBtn.length) {
+            $copyBtn.focus();
+
+            $copyBtn.on('click', function () {
+                const $self = $(this);
+                const code = $self.data('code') || $('#latest-order-code').text();
+
+                if (!code) return;
+
+                copyTextToClipboard(code, this);
+            });
+        }
+
+        return $block;
+    }
 
 })();
