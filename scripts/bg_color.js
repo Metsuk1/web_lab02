@@ -72,7 +72,7 @@ $(document).ready(function() {
   const $cards = $('.theBestPlaces a'); // every card city
   const $suggestions = $('#suggestions');
 
-  // filtering on keyup
+  // Search 
   $input.on('keyup', function() {
     const value = $(this).val().toLowerCase();
     $cards.each(function() {
