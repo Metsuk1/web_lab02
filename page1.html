@@ -3,6 +3,7 @@
     <head>
         <title>Travel in Kazakhstan</title>
         <link rel="stylesheet" href="css_folder/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
 
@@ -26,6 +27,13 @@
         </ul>
       </nav>
     </aside>
+
+    <main class="page-main">
+   <div class="search-section">
+   <input type="text" id="searchInput" placeholder="Search cities..." autocomplete="off">
+   <ul id="suggestions" class="suggestion-box"></ul>
+   </div>
+
 
     <div class = "theBestPlaces">
         <h2 id = "cities">The best places to visit in Kazakhstan </h2>
@@ -67,6 +75,7 @@
         </a>
 
     </div>
+    </main>
 
 
     </div>
@@ -79,6 +88,8 @@
     <a id="github01" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
     </p>
     </footer>
+
+    <script src="scripts/bg_color.js" defer></script>
 
     </body>
 </html>
