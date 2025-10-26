@@ -66,6 +66,62 @@
   });
 })();
 
+// Search + Autocomplete + Highlight
+$(document).ready(function() {
+  const $input = $('#searchInput');
+  const $cards = $('.theBestPlaces a'); // every card city
+  const $suggestions = $('#suggestions');
+
+  // filtering on keyup
+  $input.on('keyup', function() {
+    const value = $(this).val().toLowerCase();
+    $cards.each(function() {
+      const cityName = $(this).find('h2').text().toLowerCase();  
+      $(this).toggle(cityName.indexOf(value) > -1); // show/hide card
+    });
+
+    showSuggestions(value);   // show autocomplete suggestions
+    highlightMatches(value);  // highlight matches
+  });
+
+  // Autocomplete 
+  function showSuggestions(value) {
+    $suggestions.empty(); // clear previous suggestions
+    if (!value) return;
+
+    const matches = [];
+    $cards.each(function() {
+      const cityName = $(this).find('h2').text();
+      if (cityName.toLowerCase().includes(value.toLowerCase())) {
+        matches.push(cityName);  // add to suggestions
+      }
+    });
+
+    matches.forEach(name => {
+      $suggestions.append(`<li>${name}</li>`);
+    });
+
+    // click on suggestion to fill input
+    $suggestions.find('li').on('click', function() {
+      $input.val($(this).text());
+      $suggestions.empty();
+      $input.trigger('keyup'); // trigger filtering and highlighting
+    });
+  }
+
+  // Highlight matches
+  function highlightMatches(keyword) {
+    $('.highlight').each(function() {
+      $(this).replaceWith($(this).text()); // remove previous highlights
+    });
+    if (!keyword) return;
+
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    $cards.find('h2, p').each(function() {
+      $(this).html($(this).text().replace(regex, '<span class="highlight">$1</span>'));
+    });
+  }
+});
 
 
 

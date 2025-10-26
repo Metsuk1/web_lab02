@@ -140,3 +140,80 @@ body{  /*removing default margin (white lines)*/
   padding: 16px;
 }
 
+
+/*Search bar */
+.search-section {
+  text-align: center;
+  margin: 10px 0 30px;
+  position: relative;            /* for .suggestion-box positioning */
+}
+
+#searchInput {  
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Autocomplete Dropdown*/
+.suggestion-box {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  position: absolute;
+  left: 50%;                     
+  transform: translateX(-50%);   
+  top: 45px;                     
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.suggestion-box li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+.suggestion-box li:hover {
+  background: #f0f0f0;
+}
+
+/* Highlit searched text*/
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* Page stucture fixes*/
+.page-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+.page-main {
+  background: #fff;
+  border: 1px solid #e9eef3;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;  
+}
+
+.theBestPlaces {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
