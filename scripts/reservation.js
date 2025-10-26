@@ -167,13 +167,28 @@
 
     if (form) {
         form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const ok = validate();
-            if (ok) {
-                alert('Form is valid! Data is ready to be sent');
-                // form.submit();
-            }
-        });
+    e.preventDefault();
+    const ok = validate();
+    if (!ok) return;
+
+    const btn = document.getElementById('submitBtn');
+    const text = btn.querySelector('.btn-text');
+    const spinner = btn.querySelector('.btn-spinner');
+
+    // Show spinner effect
+    spinner.style.display = "inline-block";
+    text.textContent = "Please wait...";
+    btn.disabled = true;
+
+    // Simulate sending request (2 sec)
+    setTimeout(() => {
+        spinner.style.display = "none";
+        text.textContent = "Save";
+        btn.disabled = false;
+
+        alert("Reservation successfully saved ");
+    }, 2000);
+});
 
         form.addEventListener('input', function (e) {
             const target = e.target;
