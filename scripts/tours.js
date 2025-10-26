@@ -6,6 +6,7 @@ $(window).on("scroll", function () {
   $("#scroll-progress").css("width", scrollPercent + "%");
 });
 
+//task 5 animated number
 $(document).ready(function () {
   $('.stat-number').each(function () {
     let $this = $(this);
@@ -14,7 +15,7 @@ $(document).ready(function () {
 
     let updateCounter = setInterval(() => {
       if (count < target) {
-        count += Math.ceil(target / 100); // скорость
+        count += Math.ceil(target / 100); // speed
         $this.text(count);
       } else {
         $this.text(target);
