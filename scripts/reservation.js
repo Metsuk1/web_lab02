@@ -167,24 +167,28 @@
 
     if (form) {
         form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const ok = validate();
-            if (ok) {
-                const orderCode = generateOrderCode();
+    e.preventDefault();
+    const ok = validate();
+    if (!ok) return;
 
-                showToast('Form submitted successfully', 3500, 'success');
+    const btn = document.getElementById('submitBtn');
+    const text = btn.querySelector('.btn-text');
+    const spinner = btn.querySelector('.btn-spinner');
 
-                renderOrderConfirmation(orderCode, 'Reservation confirmed — your order number');
+    // Show spinner effect
+    spinner.style.display = "inline-block";
+    text.textContent = "Please wait...";
+    btn.disabled = true;
 
-                form.reset();
-                document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-                document.querySelectorAll('.invalid-feedback').forEach(fb => { fb.textContent = ''; });
-                clearGroupError('durationError');
-                clearGroupError('roomError');
-            } else {
-                showToast('Form is invalid', 3500, 'error')
-            }
-        });
+    // Simulate sending request (2 sec)
+    setTimeout(() => {
+        spinner.style.display = "none";
+        text.textContent = "Save";
+        btn.disabled = false;
+
+        alert("Reservation successfully saved ");
+    }, 2000);
+});
 
         form.addEventListener('input', function (e) {
             const target = e.target;
