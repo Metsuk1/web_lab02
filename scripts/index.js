@@ -44,21 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
   el.textContent = greet;
 });
 
-function getGreetingForHour(date = new Date()) {
-  const h = date.getHours();
-
-  // switch(true) lets us use ranges in cases
-  switch (true) {
-    case (h >= 5 && h < 12):
-      return "Good morning!";
-    case (h >= 12 && h < 17):
-      return "Good afternoon!";
-    case (h >= 17 && h < 22):
-      return "Good evening!";
-    default:
-      return "Good night!";
-  }
-}
 
 // Task 3 - Arrays and Loops (Footer Team List)
 // Create array with team
