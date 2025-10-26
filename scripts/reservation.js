@@ -167,6 +167,61 @@
 
     if (form) {
         form.addEventListener('submit', function (e) {
+<<<<<<< HEAD
+            e.preventDefault();
+
+            // validation
+            const ok = validate();
+            if (!ok) {
+                showToast('Form is invalid', 3500, 'error');
+                return;
+            }
+
+            // spinner UI preparation / button blocking
+            const btn = document.getElementById('submitBtn');
+            const btnTextEl = btn ? btn.querySelector('.btn-text') : null;
+            const btnSpinnerEl = btn ? btn.querySelector('.btn-spinner') : null;
+
+            // Save original text if no .btn-text
+            if (btn && !btnTextEl && typeof btn.dataset.origText === 'undefined') {
+                btn.dataset.origText = btn.textContent.trim();
+            }
+
+            if (btn) {
+                btn.disabled = true;
+                // show spinner
+                if (btnSpinnerEl) btnSpinnerEl.style.display = 'inline-block';
+                // change button text
+                if (btnTextEl) btnTextEl.textContent = 'Please wait...';
+                else btn.textContent = 'Please wait...';
+            }
+
+            // submission simulation
+            const SIMULATED_MS = 2000;
+            setTimeout(() => {
+                // button UI restoration
+                if (btn) {
+                    if (btnSpinnerEl) btnSpinnerEl.style.display = 'none';
+                    if (btnTextEl) btnTextEl.textContent = 'Save';
+                    else btn.textContent = (btn.dataset.origText || 'Save');
+                    btn.disabled = false;
+                }
+
+                // actions on successful submission
+                const orderCode = generateOrderCode();
+                showToast('Form submitted successfully', 3500, 'success');
+                renderOrderConfirmation(orderCode, 'Reservation confirmed — your order number');
+
+                // Form and error cleanup
+                form.reset();
+                document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+                document.querySelectorAll('.invalid-feedback').forEach(fb => { fb.textContent = ''; });
+                clearGroupError('durationError');
+                clearGroupError('roomError');
+
+            }, SIMULATED_MS);
+        });
+=======
     e.preventDefault();
     const ok = validate();
     if (!ok) return;
@@ -189,6 +244,7 @@
         alert("Reservation successfully saved ");
     }, 2000);
 });
+>>>>>>> 021efd7ac8237c79f52cb7e0ed129b8f27f30e8c
 
         form.addEventListener('input', function (e) {
             const target = e.target;
@@ -538,10 +594,8 @@
         return `${yyyy}${mm}${dd}-${rand}`;
     }
 
-    /**
-     * Copies text to clipboard uses navigator.clipboard, otherwise fallback
-     * Changes icon/shows tooltip on the button, then resets
-     */
+    // Copies text to clipboard uses navigator.clipboard, otherwise fallback
+    // Changes icon/shows tooltip on the button, then resets
     function copyTextToClipboard(text, btnElement) {
         const $btn = $(btnElement);
 
