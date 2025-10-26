@@ -167,6 +167,7 @@
 
     if (form) {
         form.addEventListener('submit', function (e) {
+<<<<<<< HEAD
             e.preventDefault();
 
             // validation
@@ -220,6 +221,30 @@
 
             }, SIMULATED_MS);
         });
+=======
+    e.preventDefault();
+    const ok = validate();
+    if (!ok) return;
+
+    const btn = document.getElementById('submitBtn');
+    const text = btn.querySelector('.btn-text');
+    const spinner = btn.querySelector('.btn-spinner');
+
+    // Show spinner effect
+    spinner.style.display = "inline-block";
+    text.textContent = "Please wait...";
+    btn.disabled = true;
+
+    // Simulate sending request (2 sec)
+    setTimeout(() => {
+        spinner.style.display = "none";
+        text.textContent = "Save";
+        btn.disabled = false;
+
+        alert("Reservation successfully saved ");
+    }, 2000);
+});
+>>>>>>> 021efd7ac8237c79f52cb7e0ed129b8f27f30e8c
 
         form.addEventListener('input', function (e) {
             const target = e.target;
