@@ -165,19 +165,18 @@
         return valid;
     }
 
-    if (form) {
+     if (form) {
         form.addEventListener('submit', function (e) {
-<<<<<<< HEAD
             e.preventDefault();
 
-            // validation
+            // 1) validation
             const ok = validate();
             if (!ok) {
                 showToast('Form is invalid', 3500, 'error');
                 return;
             }
 
-            // spinner UI preparation / button blocking
+            // 2) spinner UI preparation / button blocking
             const btn = document.getElementById('submitBtn');
             const btnTextEl = btn ? btn.querySelector('.btn-text') : null;
             const btnSpinnerEl = btn ? btn.querySelector('.btn-spinner') : null;
@@ -189,17 +188,17 @@
 
             if (btn) {
                 btn.disabled = true;
-                // show spinner
+                // show spinner, if available
                 if (btnSpinnerEl) btnSpinnerEl.style.display = 'inline-block';
-                // change button text
+                // change button text (if there is span .btn-text — to it, otherwise the text itself)
                 if (btnTextEl) btnTextEl.textContent = 'Please wait...';
                 else btn.textContent = 'Please wait...';
             }
 
-            // submission simulation
+            // 3) submission simulation (or here you can perform the actual fetch/axios)
             const SIMULATED_MS = 2000;
             setTimeout(() => {
-                // button UI restoration
+                // 4) button UI restoration
                 if (btn) {
                     if (btnSpinnerEl) btnSpinnerEl.style.display = 'none';
                     if (btnTextEl) btnTextEl.textContent = 'Save';
@@ -207,12 +206,12 @@
                     btn.disabled = false;
                 }
 
-                // actions on successful submission
+                // 5) actions on successful submission
                 const orderCode = generateOrderCode();
                 showToast('Form submitted successfully', 3500, 'success');
                 renderOrderConfirmation(orderCode, 'Reservation confirmed — your order number');
 
-                // Form and error cleanup
+                // Form and error cleanup (as it was)
                 form.reset();
                 document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
                 document.querySelectorAll('.invalid-feedback').forEach(fb => { fb.textContent = ''; });
@@ -221,31 +220,8 @@
 
             }, SIMULATED_MS);
         });
-=======
-    e.preventDefault();
-    const ok = validate();
-    if (!ok) return;
 
-    const btn = document.getElementById('submitBtn');
-    const text = btn.querySelector('.btn-text');
-    const spinner = btn.querySelector('.btn-spinner');
-
-    // Show spinner effect
-    spinner.style.display = "inline-block";
-    text.textContent = "Please wait...";
-    btn.disabled = true;
-
-    // Simulate sending request (2 sec)
-    setTimeout(() => {
-        spinner.style.display = "none";
-        text.textContent = "Save";
-        btn.disabled = false;
-
-        alert("Reservation successfully saved ");
-    }, 2000);
-});
->>>>>>> 021efd7ac8237c79f52cb7e0ed129b8f27f30e8c
-
+        // the rest of the logic (input/change handlers) remains unchanged
         form.addEventListener('input', function (e) {
             const target = e.target;
             if (target && target.classList.contains('form-control')) {
@@ -266,7 +242,7 @@
             }
         });
     }
-
+    
     // Reset button behavior and focus reset
     const resetBtn = document.getElementById('resetBtn');
     if (resetBtn) {
