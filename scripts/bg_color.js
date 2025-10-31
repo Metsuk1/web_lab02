@@ -126,7 +126,7 @@ $(document).ready(function() {
 const toggleBtn = document.getElementById('themeToggle');
   const body = document.body;
 
-  // Проверка сохранённой темы
+  // Initialize theme based on localStorage
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark-mode');
     toggleBtn.textContent = '☀️ Light Mode';
