@@ -3,6 +3,21 @@
     --border_color: #e6e9ef;
 }
 
+.page-header {
+    position: relative;
+}
+
+.page-header .back-link {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+
 .form-check-card {
     position: relative;
 }
@@ -48,6 +63,145 @@
     object-fit: cover;
 }
 
+.foot {
+    background: #0b3a5b;
+}
+
+.foot a {
+    text-decoration: none;
+}
+
+/* small helper to show group-level error under radio groups */
+.group-invalid {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.group-invalid.show {
+    display: block;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+/* toast */
+.toast-area {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1080;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.custom-toast {
+    min-width: 220px;
+    max-width: 340px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    color: #fff;
+    font-weight: 500;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.custom-toast.success {
+    background: #198754;
+}
+
+.custom-toast.error {
+    background: #dc3545;
+}
+
+.custom-toast.neutral {
+    background: #676d71;
+}
+
+/* visible state */
+.custom-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Order confirmation block */
+.order-confirmation {
+    position: relative;
+    margin: 18px auto;
+    max-width: 750px;
+    background: #fff;
+    border: 1px solid var(--border_color);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+/* Text area */
+.order-confirmation .order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.order-confirmation .order-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.order-confirmation .order-code {
+    font-family: "Courier New", monospace;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+}
+
+/* Copy button style */
+.order-confirmation .copy-order-btn {
+    background: transparent;
+    border: 1px solid var(--border_color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 44px;
+    justify-content: center;
+    user-select: none;
+}
+
+/* icon change */
+.copy-order-btn .icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* small tooltip next to button */
+.copy-order-btn .copied-tooltip {
+    font-size: 0.85rem;
+    margin-left: 8px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .18s, transform .18s;
+}
+
+.copy-order-btn.copied .copied-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 @media (max-width: 768px) {
     .room-option .form-check-label {
         padding-left: 15px !important;
@@ -68,22 +222,51 @@
     }
 }
 
-.foot {
-    background: #0b3a5b;
+@media (max-width: 576px) {
+    .d-flex.justify-content-end {
+        justify-content: center !important;
+    }
+
+    .gap-2 {
+        gap: 1rem;
+    }
+
+    .page-header .back-link {
+        left: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .order-confirmation {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .order-confirmation .copy-order-btn {
+        width: 100%;
+    }
 }
 
-.foot a {
-    text-decoration: none;
+.btn-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  display: none;
+  animation: spin 0.8s linear infinite;
 }
 
-/* small helper to show group-level error under radio groups */
-.group-invalid {
-    color: #dc3545;
-    font-size: 0.875em;
-    margin-top: 0.25rem;
-    display: none;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.group-invalid.show {
-    display: block;
+#submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

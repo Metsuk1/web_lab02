@@ -238,6 +238,39 @@ body {
   z-index: 2;
 }
 
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(to right, #00e1ff, #0066ff);
+  z-index: 9999;
+  transition: width 0.2s linear;
+}
+
+.stats-section {
+  text-align: center;
+  padding: 50px 0;
+  background: #0b3a5b;
+  color: white;
+  margin-top: 40px;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
 
 .footer-site {
   grid-area: footer;
@@ -256,4 +289,13 @@ body {
 
 #github4:hover {
   color: #cfe0ff;
+}
+
+img.lazy {
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+img.lazy.lazy-loaded {
+  opacity: 1;
 }

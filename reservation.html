@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css_folder/style_reservation.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Hotel Reservation — Validation</title>
 </head>
 
 <body>
     <div class="container mt-4 mb-4">
         <header class="page-header bg-primary text-white text-center py-3 rounded-top">
+            <a href="tours.html" class="back-link">Back</a>
             <h1 class="mb-0">Making a reservation</h1>
         </header>
 
@@ -21,20 +23,15 @@
 
         <form id="bookingForm" class="booking-form bg-white p-4 rounded-bottom" novalidate>
             <div class="row g-3 mb-4 pb-3 border-bottom" id="form-top">
-                <div class="col-md-2 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="day" class="form-label fw-bold">Day</label>
                     <select id="day" name="day" class="form-select" required>
                         <option value="">Select a day</option>
-                        <script>
-                            for (let day = 1; day <= 31; day++) {
-                                document.write(`<option value="${day}">${day}</option>`);
-                            }
-                        </script>
                     </select>
                     <div class="invalid-feedback"></div>
                 </div>
 
-                <div class="col-md-2 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="month" class="form-label fw-bold">Month</label>
                     <select id="month" name="month" class="form-select" required>
                         <option value="">Select a month</option>
@@ -54,50 +51,57 @@
                     <div class="invalid-feedback"></div>
                 </div>
 
-                <div class="col-md-2 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="people" class="form-label fw-bold">Number of people</label>
-                    <input id="people" type="number" min="1" value="2" name="people" class="form-control" required>
+                    <input id="people" type="number" placeholder="Number of people" name="people"
+                        class="form-control" required>
                     <div class="invalid-feedback"></div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="from" class="form-label fw-bold">From</label>
-                    <input id="from" type="text" placeholder="Departure city" name="from" class="form-control" required>
+                <select id="from" name="from" class="form-select" required>
+                    <option value="">Select departure city</option>
+                    <option>Astana</option>
+                    <option>Almaty</option>
+                    <option>Aktobe</option>
+                    <option>Balkash</option>
+                    <option>Kostanay</option>
+                    <option>Shymkent</option>
+                    <option>Karaganda</option>
+                </select>
                     <div class="invalid-feedback"></div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="client_name" class="form-label fw-bold">Name</label>
                     <input id="client_name" type="text" placeholder="You're name" name="client_name"
                         class="form-control" required>
                     <div class="invalid-feedback"></div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="client_email" class="form-label fw-bold">Email</label>
                     <input id="client_email" type="email" placeholder="you@example.com" name="client_email"
                         class="form-control" required>
                     <div class="invalid-feedback"></div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="client_password" class="form-label fw-bold">Password</label>
                     <input id="client_password" type="password" placeholder="Minimum 8 characters"
                         name="client_password" class="form-control" required>
                     <div class="invalid-feedback"></div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-12 col-md-3">
                     <label for="confirm_password" class="form-label fw-bold">Confirm Password</label>
                     <input id="confirm_password" type="password" placeholder="Confirm password" name="confirm_password"
                         class="form-control" required>
                     <div class="invalid-feedback"></div>
                 </div>
-
-                <div class="col-md-3 col-sm-12 d-flex align-items-end">
-                    <button id="submitBtn" type="submit" class="btn btn-primary w-100 py-2">Save</button>
-                </div>
             </div>
+
 
             <div class="duration-selection mb-4 p-3 bg-light rounded">
                 <h3 class="duration-title mb-3">Select duration of stay</h3>
@@ -151,7 +155,7 @@
                                     <div class="col-md-9">
                                         <div class="room-content">
                                             <p class="room-description mb-3">A comfortable one-room suite with or
-                                                without a balcony...</p>
+                                                without a balcony</p>
                                             <div class="row g-2">
                                                 <div class="col-md-4">
                                                     <div class="price-option text-center p-2 border rounded">
@@ -194,8 +198,8 @@
                                     </div>
                                     <div class="col-md-9">
                                         <div class="room-content">
-                                            <p class="room-description mb-3">A spacious, comfortable room with two
-                                                bedrooms...</p>
+                                            <p class="room-description mb-3">A spacious, comfortable room with foure
+                                                bedrooms</p>
                                             <div class="row g-2">
                                                 <div class="col-md-4">
                                                     <div class="price-option text-center p-2 border rounded">
@@ -228,6 +232,16 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row mt-4">
+                <div class="col-12 d-flex justify-content-end gap-2">
+                    <button id="resetBtn" type="button" class="btn btn-secondary px-4">Reset Form</button>
+                    <button id="submitBtn" type="submit" class="btn btn-primary px-4 d-flex align-items-center gap-2">
+                        <span class="btn-text">Save</span>
+                        <span class="btn-spinner"></span>
+                    </button>    
+                </div>
+            </div>
         </form>
     </div>
 
@@ -244,196 +258,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        (function () {
-            'use strict';
-
-            const form = document.getElementById('bookingForm');
-
-            function isValidEmail(email) {
-                // email pattern check
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            }
-
-            function showFieldError(el, message) {
-                el.classList.add('is-invalid');
-                const fb = el.parentElement.querySelector('.invalid-feedback');
-                if (fb) {
-                    fb.textContent = message;
-                }
-            }
-
-            function clearFieldError(el) {
-                el.classList.remove('is-invalid');
-                const fb = el.parentElement.querySelector('.invalid-feedback');
-                if (fb) {
-                    fb.textContent = '';
-                }
-            }
-
-            function showGroupError(selectorId, message) {
-                const el = document.getElementById(selectorId);
-                if (el) {
-                    el.textContent = message;
-                    el.classList.add('show');
-                }
-            }
-
-            function clearGroupError(selectorId) {
-                const el = document.getElementById(selectorId);
-                if (el) {
-                    el.textContent = '';
-                    el.classList.remove('show');
-                }
-            }
-
-            function validate() {
-                let valid = true;
-                // clear old errors
-                const invalids = form.querySelectorAll('.is-invalid');
-                invalids.forEach(i => i.classList.remove('is-invalid'));
-                clearGroupError('durationError');
-                clearGroupError('roomError');
-
-                // day
-                const day = form.day;
-                if (!day.value) {
-                    showFieldError(day, 'Please, select a day');
-                    valid = false;
-                } else {
-                    clearFieldError(day);
-                }
-
-                // month
-                const month = form.month;
-                if (!month.value) {
-                    showFieldError(month, 'Please, select a month');
-                    valid = false;
-                } else {
-                    clearFieldError(month);
-                }
-
-                // people
-                const people = form.people;
-                if (!people.value || Number(people.value) < 1) {
-                    showFieldError(people, 'Please, enter the correct number of people (minimum 1)');
-                    valid = false;
-                } else {
-                    clearFieldError(people);
-                }
-
-                // name
-                const name = form.client_name;
-                if (!name.value.trim()) {
-                    showFieldError(name, 'Please, write youre name');
-                    valid = false;
-                } else {
-                    clearFieldError(name);
-                }
-
-                // from
-                const from = form.from;
-                if (!from.value.trim()) {
-                    showFieldError(from, 'Please, indicate the departure city');
-                    valid = false;
-                } else {
-                    clearFieldError(from);
-                }
-
-                // email
-                const email = form.client_email;
-                if (!email.value.trim()) {
-                    showFieldError(email, 'Email is required');
-                    valid = false;
-                } else if (!isValidEmail(email.value.trim())) {
-                    showFieldError(email, 'Incorrect email format');
-                    valid = false;
-                } else {
-                    clearFieldError(email);
-                }
-
-                // password
-                const password = form.client_password;
-                const confirmPassword = form.confirm_password;
-                const MIN_PASSWORD_LENGTH = 8;
-                if (!password.value) {
-                    showFieldError(password, 'Password is required');
-                    valid = false;
-                } else if (password.value.length < MIN_PASSWORD_LENGTH) {
-                    showFieldError(password, `Password must be at least ${MIN_PASSWORD_LENGTH} characters long`);
-                    valid = false;
-                } else {
-                    clearFieldError(password);
-                }
-
-                // confirm
-                if (!confirmPassword.value) {
-                    showFieldError(confirmPassword, 'Confirm password');
-                    valid = false;
-                } else if (password.value !== confirmPassword.value) {
-                    showFieldError(confirmPassword, 'Passwords dont match');
-                    valid = false;
-                } else {
-                    clearFieldError(confirmPassword);
-                }
-
-                // duration radio group
-                const durationChecked = form.querySelector('input[name="duration"]:checked');
-                if (!durationChecked) {
-                    showGroupError('durationError', 'Please, select duration');
-                    valid = false;
-                } else {
-                    clearGroupError('durationError');
-                }
-
-                // room radio group
-                const roomChecked = form.querySelector('input[name="room"]:checked');
-                if (!roomChecked) {
-                    showGroupError('roomError', 'Please, select room type');
-                    valid = false;
-                } else {
-                    clearGroupError('roomError');
-                }
-
-                return valid;
-            }
-
-            // validate and submit
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const ok = validate();
-                if (ok) {
-                    alert('Form is valid! Data is ready to be sent');
-                    form.submit();
-                }
-            });
-
-            // clear error when changing data
-            form.addEventListener('input', function (e) {
-                const target = e.target;
-
-                if (target && target.classList.contains('form-control')) {
-                    clearFieldError(target);
-                }
-                if (target && target.type === 'radio' && target.name === 'duration') {
-                    clearGroupError('durationError');
-                }
-
-                if (target && target.type === 'radio' && target.name === 'room') {
-                    clearGroupError('roomError');
-                }
-            });
-
-            form.addEventListener('change', function (e) {
-                const target = e.target;
-
-                if (target && target.classList.contains('form-select')) {
-                    clearFieldError(target);
-                }
-            });
-        })();
-    </script>
+    <script src="scripts/reservation.js"></script>
 </body>
 
 </html>
