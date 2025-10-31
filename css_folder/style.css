@@ -271,3 +271,121 @@ header { grid-area: header; }
     max-width: 1200px;
   }
 }
+
+/* TOGGLE BUTTON Dark/Light Mode */
+.theme-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/* ======== DARK MODE ======== */
+body.dark-mode {
+  background: #0f172a;
+  color: #f1f5f9;  
+}
+
+/* Header */
+body.dark-mode header {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #f1f5f9;
+}
+
+/* Sidebar & Main sections */
+body.dark-mode .page-main,
+body.dark-mode .page-sidebar {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+/* Sidebar links */
+body.dark-mode .side-nav a {
+  background: #334155;
+  color: #f8fafc;
+}
+body.dark-mode .side-nav a:hover {
+  background: #475569;
+  color: #ffffff;
+}
+
+/* City cards */
+body.dark-mode .theBestPlaces a {
+  background: #1e293b;
+  color: #f1f5f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+body.dark-mode .theBestPlaces h2 {
+  color: #93c5fd;  
+}
+body.dark-mode .theBestPlaces p {
+  color: #e2e8f0;  
+}
+
+/* Footer */
+body.dark-mode .footer01 {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+body.dark-mode #github01 {
+  color: #93c5fd;
+}
+body.dark-mode #github01:hover {
+  color: #60a5fa;
+}
+
+/* Input & Search */
+body.dark-mode #searchInput {
+  background: #334155;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+body.dark-mode #searchInput::placeholder {
+  color: #cbd5e1;
+}
+body.dark-mode .suggestion-box {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+body.dark-mode .suggestion-box li:hover {
+  background: #475569;
+}
+
+/* Highlight for search results */
+body.dark-mode .highlight {
+  background-color: #facc15; 
+  color: #000; 
+}
+
+/* Toggle button (same look for both modes) */
+.theme-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/* Smooth transitions for theme change */
+* {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}

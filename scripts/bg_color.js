@@ -123,5 +123,19 @@ $(document).ready(function() {
   }
 });
 
+const toggleBtn = document.getElementById('themeToggle');
+  const body = document.body;
 
+  // Проверка сохранённой темы
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️ Light Mode';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
 
