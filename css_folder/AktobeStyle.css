@@ -3,7 +3,7 @@
   display: flex; align-items: center; justify-content: space-between;
   gap: 24px;
   padding: 14px 24px;
-  background: #0b486b; /* фирменный цвет — можно поменять */
+  background: #0b486b; /* dark blue gradient */
   color: #fff;
   border-bottom: 1px solid rgba(255,255,255,.12);
   font-family: 'Montserrat', sans-serif;
@@ -410,7 +410,8 @@ html, body { transition: background-color .25s ease, color .25s ease; }
 @media (max-width: 560px) {
   .headerAktobe {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 10px;
   }
 
@@ -456,3 +457,135 @@ html, body { transition: background-color .25s ease, color .25s ease; }
   }
 }
 
+
+/* DARK MODE Button*/
+.theme-btn {
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+  align-self: center;
+  margin: 0;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/*  DARK MODE */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark-mode .headerAktobe {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #f8fafc;
+}
+
+body.dark-mode .main-nav a {
+  color: #f8fafc;
+}
+body.dark-mode .main-nav a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+
+body.dark-mode .InfoContainer {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+body.dark-mode .InfoContainer i {
+  color: #60a5fa; 
+}
+body.dark-mode .InfoContainer h2 {
+  color: #e2e8f0;
+}
+body.dark-mode .InfoContainer p {
+  color: #cbd5e1;
+}
+
+
+body.dark-mode .Description,
+body.dark-mode .LeftBankDescription,
+body.dark-mode .RightBankDescription,
+body.dark-mode .CultureDescription,
+body.dark-mode .EventsDescription {
+  color: #f1f5f9;
+}
+
+
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #60a5fa; 
+}
+
+
+body.dark-mode .GalleryItem {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode .GalleryItem h3 {
+  color: #93c5fd;
+}
+body.dark-mode .GalleryItem p {
+  color: #e2e8f0;
+}
+
+
+body.dark-mode .bg-btn,
+body.dark-mode .GalleryItem .btn {
+  background: #2563eb; 
+  color: #fff;
+  border: none;
+}
+body.dark-mode .bg-btn:hover,
+body.dark-mode .GalleryItem .btn:hover {
+  background: #1d4ed8;
+}
+
+
+body.dark-mode .theme-btn {
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #f8fafc;
+}
+body.dark-mode .theme-btn:hover {
+  background: #334155;
+}
+
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #1e293b;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+body.dark-mode .contact-form button {
+  background: #2563eb;
+  color: #fff;
+}
+body.dark-mode .contact-form button:hover {
+  background: #1d4ed8;
+}
+
+
+body.dark-mode .footer02 {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+body.dark-mode #github02 {
+  color: #60a5fa;
+}
+body.dark-mode #github02:hover {
+  color: #93c5fd;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
