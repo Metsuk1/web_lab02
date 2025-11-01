@@ -1,117 +1,43 @@
-header{
-    width : 100%;
-    padding: 40px 0;
-    text-align: center;
-    color: white;
-    background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);  /* background */
-    font-family: 'Montserrat', sans-serif;
-}
-
-body{  /*removing default margin (white lines)*/
-    margin: 0; 
-    padding: 0;
-}
-
-.theBestPlaces {
-    display: flex;  /*flexbox for cards*/
-    flex-wrap: wrap;  /*allows wrapping to next line*/
-    justify-content: center;  
-    gap: 20px;  /*space between cards*/
-    padding: 20px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.theBestPlaces h2 {
-    flex-basis: 100%;    /* makes the header take full width */
-    text-align: center;
-    margin-bottom: 20px;
-    color: #0b486b;
-}
-
-.theBestPlaces a {
-    text-decoration: none; /* removing the underscore */
-    color: inherit;        /* text without color */
-    display: block;        /* making the entire card clickable */
-}
-
-
-.theBestPlaces a:hover h2{  /* changing the color of the title when hovering over */
-    color:#0a6cff; 
-}  
-
-.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay{  /*card of each city*/
-    flex: 1 1 45%;   /* 2 cards in a row */
-    max-width: 600px;            
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    overflow: hidden;
-    margin: 15px;
-    transition: transform 0.2s;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.Astana:hover, .Almaty:hover, .Aktobe:hover, .Turkestan:hover, .AlmatyOblysy:hover , .Kostanay:hover {  /*gives a small interactive effect to make the card seem "alive".*/
-    transform: translateY(-5px);  /* slight lift on hover */
-}
-
-.Astana img, .Almaty img, .Aktobe img, .Turkestan img, .AlmatyOblysy img, .Kostanay img{  /*image inside the card*/
-    width: 100%;
-    height: 140px;            
-    object-fit: cover;        
-}
-
-.Astana h3, .Almaty h3, .Aktobe h3, .Turkestan h3, .AlmatyOblysy h3, .Kostanay h3 {  /*city name*/
-    margin: 10px 0 5px;
-    font-size: 18px;
-    color: #0b486b;
-}
-
-.Astana p, .Almaty p, .Aktobe p, .Turkestan p, .AlmatyOblysy p , .Kostanay p{  /*description text*/
-    font-size: 13px;
-    color: #555;
-    margin: 0 10px 15px;
-}
-
-/* footer */
-.footer01{
+header {
+  width: 100%;
+  padding: 40px 0;
   text-align: center;
-  padding: 15px;
-  background: #0b3a5b;
   color: white;
-  margin-top: 30px;
+  background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);
   font-family: 'Montserrat', sans-serif;
 }
 
-#github01{
-  display: inline-block;
-  color: #f8f9fa;
-  text-decoration: none;
-  margin-top: 10px;
+body {
+  margin: 0;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
-#github01:hover{
-  color: blue;
-}
-
-/* Overall grid container */
+/* PAGE GRID LAYOUT */
 .page-grid {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 250px 1fr;         /* sidebar + main */
+  grid-template-rows: auto 1fr auto;        /* header | content | footer */
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
   gap: 20px;
   padding: 20px;
-  
+  align-items: start;
 }
 
-/* Sidebar */
+header { grid-area: header; }
+.page-sidebar { grid-area: sidebar; }
+.page-main { grid-area: main; }
+.footer01 { grid-area: footer; }
+
+
 .page-sidebar {
   background: #fff;
   border: 1px solid #e9eef3;
   border-radius: 12px;
   padding: 16px;
-  font-family: 'Montserrat', sans-serif;
 }
 .side-nav ul {
   list-style: none;
@@ -127,28 +53,28 @@ body{  /*removing default margin (white lines)*/
   background: #f6fbff;
   padding: 8px 10px;
   border-radius: 8px;
+  transition: background-color 0.2s ease;
 }
 .side-nav a:hover {
   background: #e9f5ff;
 }
 
-/* Main content area */
+/* MAIN CONTENT */
 .page-main {
   background: #fff;
   border: 1px solid #e9eef3;
   border-radius: 12px;
   padding: 16px;
+  position: relative;
 }
 
-
-/*Search bar */
+/* SEARCH BAR */
 .search-section {
   text-align: center;
   margin: 10px 0 30px;
-  position: relative;            /* for .suggestion-box positioning */
+  position: relative;
 }
-
-#searchInput {  
+#searchInput {
   padding: 10px;
   width: 60%;
   border: 1px solid #ccc;
@@ -157,7 +83,7 @@ body{  /*removing default margin (white lines)*/
   box-sizing: border-box;
 }
 
-/* Autocomplete Dropdown*/
+/* AUTOCOMPLETE DROPDOWN */
 .suggestion-box {
   list-style: none;
   margin: 0;
@@ -168,47 +94,26 @@ body{  /*removing default margin (white lines)*/
   border-radius: 8px;
   background: white;
   position: absolute;
-  left: 50%;                     
-  transform: translateX(-50%);   
-  top: 45px;                     
+  left: 50%;
+  transform: translateX(-50%);
+  top: 45px;
   z-index: 10;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-
 .suggestion-box li {
   padding: 8px 12px;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
 }
-
 .suggestion-box li:hover {
   background: #f0f0f0;
 }
-
-/* Highlit searched text*/
 .highlight {
   background-color: yellow;
   font-weight: bold;
 }
 
-/* Page stucture fixes*/
-.page-grid {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 20px;
-  padding: 20px;
-  align-items: start;
-}
-
-.page-main {
-  background: #fff;
-  border: 1px solid #e9eef3;
-  border-radius: 12px;
-  padding: 16px;
-  position: relative;  
-}
-
+/* CITY CARDS */
 .theBestPlaces {
   display: flex;
   flex-wrap: wrap;
@@ -216,4 +121,271 @@ body{  /*removing default margin (white lines)*/
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+}
+.theBestPlaces h2 {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b486b;
+}
+.theBestPlaces a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.theBestPlaces a:hover h2 {
+  color: #0a6cff;
+}
+.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay {
+  flex: 1 1 45%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  margin: 15px;
+  transition: transform 0.2s;
+}
+.Astana:hover, .Almaty:hover, .Aktobe:hover,
+.Turkestan:hover, .AlmatyOblysy:hover, .Kostanay:hover {
+  transform: translateY(-5px);
+}
+.Astana img, .Almaty img, .Aktobe img,
+.Turkestan img, .AlmatyOblysy img, .Kostanay img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.Astana h3, .Almaty h3, .Aktobe h3,
+.Turkestan h3, .AlmatyOblysy h3, .Kostanay h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #0b486b;
+}
+.Astana p, .Almaty p, .Aktobe p,
+.Turkestan p, .AlmatyOblysy p, .Kostanay p {
+  font-size: 13px;
+  color: #555;
+  margin: 0 10px 15px;
+}
+
+/* FOOTER */
+.footer01 {
+  text-align: center;
+  padding: 15px;
+  background: #0b3a5b;
+  color: white;
+  margin-top: 30px;
+}
+#github01 {
+  display: inline-block;
+  color: #f8f9fa;
+  text-decoration: none;
+  margin-top: 10px;
+}
+#github01:hover {
+  color: blue;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Phones */
+@media (max-width: 560px) {
+  header {
+    padding: 20px 10px;
+    font-size: 14px;
+  }
+
+  .page-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    padding: 10px;
+  }
+
+  #searchInput { width: 90%; }
+  .suggestion-box { width: 90%; }
+
+  .theBestPlaces {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .Astana img, .Almaty img, .Aktobe img,
+  .Turkestan img, .AlmatyOblysy img, .Kostanay img {
+    height: 180px;
+  }
+
+  .footer01 {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 561px) and (max-width: 1100px) {
+  .page-grid {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    padding: 16px;
+    gap: 16px;
+  }
+
+  #searchInput { width: 80%; }
+  .suggestion-box { width: 80%; }
+
+  .theBestPlaces {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay {
+    flex: 1 1 calc(50% - 20px);
+    max-width: 500px;
+  }
+
+  .footer01 {
+    font-size: 15px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1101px) {
+  .theBestPlaces {
+    max-width: 1200px;
+  }
+}
+
+/* TOGGLE BUTTON Dark/Light Mode */
+.theme-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background: #0f172a;
+  color: #f1f5f9;  
+}
+
+/* Header */
+body.dark-mode header {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #f1f5f9;
+}
+
+/* Sidebar & Main sections */
+body.dark-mode .page-main,
+body.dark-mode .page-sidebar {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+/* Sidebar links */
+body.dark-mode .side-nav a {
+  background: #334155;
+  color: #f8fafc;
+}
+body.dark-mode .side-nav a:hover {
+  background: #475569;
+  color: #ffffff;
+}
+
+/* City cards */
+body.dark-mode .theBestPlaces a {
+  background: #1e293b;
+  color: #f1f5f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+body.dark-mode .theBestPlaces h2 {
+  color: #93c5fd;  
+}
+body.dark-mode .theBestPlaces p {
+  color: #e2e8f0;  
+}
+
+/* Footer */
+body.dark-mode .footer01 {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+body.dark-mode #github01 {
+  color: #93c5fd;
+}
+body.dark-mode #github01:hover {
+  color: #60a5fa;
+}
+
+/* Input & Search */
+body.dark-mode #searchInput {
+  background: #334155;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+body.dark-mode #searchInput::placeholder {
+  color: #cbd5e1;
+}
+body.dark-mode .suggestion-box {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+body.dark-mode .suggestion-box li:hover {
+  background: #475569;
+}
+
+/* Highlight for search results */
+body.dark-mode .highlight {
+  background-color: #facc15; 
+  color: #000; 
+}
+
+/* Toggle button (same look for both modes) */
+.theme-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/* Smooth transitions for theme change */
+* {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }

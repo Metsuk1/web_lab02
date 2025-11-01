@@ -1,261 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Kostanay</title>
-         <!-- Bootstrap CSS (CDN) -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <title>Kostanay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css_folder/kostanay.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-         <!-- icons -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css_folder/kostanay.css">
-    </head>
-    
 <body>
 
- <!-- navbar -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" aria-label="Main navigation">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <span class="brand-logo">KZ</span>
-          <span class="ms-2">Kostanay</span>
-        </a>
+<header class="headerKostanay">
+  <div class="brend">
+    <i class="fa-solid fa-city"></i>
+    Kostanay
+  </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="main-nav">
+    <a href="page1.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#map">Map</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    <button id="openPopup" type="button" class="bg-btn">
+      <i class="fa-regular fa-envelope"></i>&nbsp;Contact us
+    </button>
+  </nav>
+</header>
 
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="page1.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link" href="page1.html">Categories</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-        </div>
+
+<div class="InfoContainer">
+  <div>
+    <i class="fa-solid fa-location-dot"></i>
+    <h2>Region</h2>
+    <p>North Kazakhstan</p>
+  </div>
+  <div>
+    <i class="fa-solid fa-users"></i>
+    <h2>Population</h2>
+    <p>≈ 220,000</p>
+  </div>
+  <div>
+    <i class="fa-solid fa-landmark"></i>
+    <h2>Famous Place</h2>
+    <p>Kostanay Arch</p>
+  </div>
+</div>
+
+
+<h2 id="about">About Kostanay</h2>
+<div class="Description">
+  <p>Kostanay is a city in northern Kazakhstan, located on the Tobol River. It has grown into an important cultural and industrial center, combining history, modern architecture, and beautiful parks.</p>
+
+  <div id="moreText" style="display:none;">
+    <p>The city is known for its agricultural industry, museums, and landmarks such as the Regional Museum of Local History. Kostanay remains one of Kazakhstan’s educational and cultural hubs.</p>
+  </div>
+
+  <button id="readMoreBtn" class="bg-btn">Read More</button>
+</div>
+
+
+<section id="gallery" class="GallerySection">
+  <h2 class="GalleryTitle">Gallery</h2>
+
+  <div class="Gallery">
+    <article class="GalleryItem">
+      <img src="images2/kostanay2.jpg" alt="Kostanay View 1">
+      <div class="card-body">
+        <h3>Kostanay Arch</h3>
+        <p>Symbol of the city — modern architecture with classic style.</p>
+        <a class="btn" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B0%D0%B9"><i class="fa-solid fa-globe"></i> More Info</a>
       </div>
-    </nav>
-  </header>
+    </article>
 
-  <!-- Sidebar -->
-  <aside class="page-sidebar p-3 p-md-4">        
-        <nav class="side-nav" aria-label="Section navigation">
-            <h3>Sidebar</h3>
-            <ul>
-                <li><a href="#content">About</a></li>
-                <li><a href="#cardsSection">Cards</a></li>
-                <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </aside>
-
-  <!-- Main Content -->
-  <div class="content">
-    <section id="about" class="container mt-0 mb-5">
-      <h2>About Kostanay</h2>
-      <p>Kostanay is a city in northern Kazakhstan, located on the Tobol River. Founded in the 19th century, it has grown into a significant cultural and economic center in the region. With a population of approximately 220,000 people, Kostanay is known for its rich history, including its role as a key agricultural hub, and its diverse architecture reflecting Russian and Kazakh influences. The city features beautiful parks, museums, and landmarks such as the Regional Museum of Local History and the Kostanay Arch. Today, it serves as an important educational and industrial center, with a vibrant community life.</p>
-    </section>
-
-  <!-- bootstrap Carousel -->
-  <section id="carouselSection" class="container my-5">
-    <div class="carousel-container">
-      <div id="kostanayCarousel" class="carousel slide" data-bs-ride="carousel">
-
-       <div class="carousel-indicators">
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-           <button type="button" data-bs-target="#kostanayCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-       </div>
-
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images2/kostanay1.jpg" class="d-block w-100" alt="Kostanay 1">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 1</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kostanay2.jpg" class="d-block w-100" alt="Kostanay 2">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 2</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kosta3.jpg" class="d-block w-100" alt="Kostanay 3">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 3</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kosta2.jpg" class="d-block w-100" alt="Kostanay 4">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 4</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kosta1.jpg" class="d-block w-100" alt="Kostanay 5">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 5</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kosta.jpg" class="d-block w-100" alt="Kostanay 6">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 6</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kostanay7.jpg" class="d-block w-100" alt="Kostanay 7">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 7</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kosta2.jpg" class="d-block w-100" alt="Kostanay 8">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 8</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images2/kostanay2.jpg" class="d-block w-100" alt="Kostanay 9">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Kostanay View 9</h5>
-          </div>
-        </div>
+    <article class="GalleryItem">
+      <img src="images2/kostanay0125.jpeg" alt="Park">
+      <div class="card-body">
+        <h3>City Park</h3>
+        <p>Green spaces and cultural places where locals enjoy leisure.</p>
+        <a class="btn" href="https://ru.pinterest.com/pin/597078863121304989/"><i class="fa-solid fa-tree"></i> More Photo</a>
       </div>
+    </article>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#kostanayCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#kostanayCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-            </div>
-        </div>
-    </div>
-  </section>
-   
-
-  <!-- Bootstrap Cards -->
-  <section id="cardsSection" class="container my-5">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <img src="images2/kostanay1.jpg" class="card-img-top" alt="Kostanay Card 1">
-          <div class="card-body">
-            <h5 class="card-title">Kostanay place</h5>
-            <p class="card-text">A beautiful view of a famous landmark in Kostanay.</p>
-          </div>
-        </div>
+    <article class="GalleryItem">
+      <img src="images2/kostanay1.jpg" alt="City view">
+      <div class="card-body">
+        <h3>Kostanay Center</h3>
+        <p>Combination of modern buildings and historical architecture.</p>
+        <a class="btn" href="#map"><i class="fa-solid fa-city"></i> View on Map</a>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="images2/kostanay8.jpg" class="card-img-top" alt="Kostanay Card 2">
-          <div class="card-body">
-            <h5 class="card-title">Kostanay Arch</h5>
-            <p class="card-text">view on the Kostanay Arch </p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="images2/kostanay3.jpg" class="card-img-top" alt="Kostanay Card 3">
-          <div class="card-body">
-            <h5 class="card-title">Kostanay  popular stores</h5>
-            <p class="card-text">Most popular stores in the city</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--Bootstrap Buttons  -->
-  <section id="buttonSection" class="container my-5 text-center">
-    <div class="btn-group" role="group" aria-label="Action buttons">
-      <button type="button" class="btn btn-outline-primary btn-sm">Learn More</button>
-    <a href="reservation.html" class="btn btn-primary btn-lg">Explore Now</a>
-    </div>
-  </section>
-
-  <section id="contact" class="container my-5">  
-  <h2 class="FormTitle text-center mb-3">Contact us</h2>  
-
-   <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8">
-      <form class="needs-validation" novalidate>
-        <div class="row g-3">
-          <!-- Name -->
-          <div class="col-sm-6">
-            <label for="name" class="form-label">Name</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
-              <div class="invalid-feedback">Please enter your name.</div>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="col-sm-6">
-            <label for="email" class="form-label">Email</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
-              <div class="invalid-feedback">Please provide a valid email.</div>
-            </div>
-          </div>
-
-          <!-- Message -->
-          <div class="col-12">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message"></textarea>
-          </div>
-
-          <!-- Radios -->
-          <div class="col-12">
-            <label class="form-label d-block">Preferred contact method</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="contact_pref" id="prefEmail" value="email" checked>
-              <label class="form-check-label" for="prefEmail">Email</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="contact_pref" id="prefPhone" value="phone">
-              <label class="form-check-label" for="prefPhone">Phone</label>
-            </div>
-          </div>
-         
-
-          <!-- Buttons -->
-          <div class="col-12 d-grid d-sm-flex gap-2 justify-content-sm-end">
-            <button type="submit" class="btn btn-primary btn-lg">Send</button>
-          </div>
-        </div>
-      </form>
-    </div>
+    </article>
   </div>
 </section>
 
 
-  <footer class="footer02 py-3 px-3 px-sm-4">
-    <p>Team: Bayazit, Arslan , Daryn</p>
-    <p>© 2025 Discover Kazakhstan</p>
-     <p>Contact us: 
+<h2 id="map" class="MapTitle">Kostanay on the Map</h2>
+<div class="MapContainer">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d137943.97037374213!2d63.523!3d53.219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43cc8c7b945d5f11%3A0x33a8e132932930a8!2sKostanay!5e0!3m2!1sen!2skz!4v1700000000000!5m2!1sen!2skz"
+          allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+
+<h2 class="FormTitle">Contact us</h2>
+<form class="contact-form" action="#" method="post">
+  <label>Name <input type="text" name="name" placeholder="Your name"></label>
+  <label>Email <input type="email" name="email" placeholder="you@example.com"></label>
+  <label>Message <textarea name="message" rows="4" placeholder="Your message"></textarea></label>
+  <button type="submit">Send</button>
+</form>
+
+
+<footer class="footer02">
+  <p>Team: Bayazit, Arslan, Daryn</p>
+  <p>© 2025 Discover Kazakhstan</p>
+  <p>Contact us:
     <a href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
     <a id="github02" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
   </p>
-  </footer>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+<div id="popupOverlay" class="popup-overlay" hidden>
+  <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <button class="popup-close" type="button" aria-label="Close">&times;</button>
+    <h2 id="popupTitle">Contact us</h2>
+
+    <form id="popupForm" class="popup-form" novalidate>
+      <label>Name <input type="text" name="name" required placeholder="Your name"></label>
+      <label>Email <input type="email" name="email" required placeholder="you@example.com"></label>
+      <label>Message <textarea name="message" rows="4" placeholder="Your message"></textarea></label>
+      <div class="actions">
+        <button type="button" id="cancelPopup">Cancel</button>
+        <button type="submit" class="primary">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="scripts/bg_color.js" defer></script>
+
+</body>
 </html>

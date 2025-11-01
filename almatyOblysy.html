@@ -3,114 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <title>Almaty Oblysy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css_folder/almatyOblysy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
- <div class="container-fluid">
-    <header class="header py-4">
-      <h1>Kazakhstan Tourist Guide</h1>
-    </header>
 
-    <div class="row mt-4">
-      <aside class="sidebar col-lg-3 col-md-4 col-sm-12 p-4">
-        <nav>
-          <ul>
-            <li><a href="page1.html">Home</a></li>
-            <li><a href="astana.html">Astana</a></li>
-            <li><a href="almaty.html">Almaty</a></li>
-          </ul>
-        </nav>
-      </aside>
-
-      <main class="main col-lg-9 col-md-8 col-sm-12 p-4">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 mb-4">
-            <h2>Charyn Canyon</h2>
-            <p>
-              Charyn Canyon, often called the "Grand Canyon of Central Asia", 
-              is located about 200 km east of Almaty. 
-              It stretches for over 150 km and offers breathtaking views of 
-              red sandstone cliffs shaped by wind, water, and time.
-              The most famous part of the canyon is the Valley of Castles, 
-              where rock formations resemble ancient fortresses. 
-              Visitors can hike, take guided tours, or simply enjoy 
-              the spectacular natural scenery.
-            </p>
-          </div>
-          
-        </div>
-
-        <h3 class="mt-4">Gallery</h3>
-        <div class="row mt-3">
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch1.jpg" alt="Charyn Canyon view 1">
-              <div class="caption">Canyon view 1</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch2.jpg" alt="Charyn Canyon view 2">
-              <div class="caption">Canyon view 2</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch3.jpg" alt="Charyn Canyon view 3">
-              <div class="caption">Canyon view 3</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch4.jpg" alt="Charyn Canyon view 4">
-              <div class="caption">Canyon view 4</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch5.jpg" alt="Charyn Canyon view 5">
-              <div class="caption">Canyon view 5</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch6.jpg" alt="Charyn Canyon view 6">
-              <div class="caption">Canyon view 6</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch7.jpg" alt="Charyn Canyon view 7">
-              <div class="caption">Canyon view 7</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch8.jpg" alt="Charyn Canyon view 8">
-              <div class="caption">Canyon view 8</div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-            <div class="gallery-item">
-              <img src="images/ch9.jpg" alt="Charyn Canyon view 9">
-              <div class="caption">Canyon view 9</div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-
-    <footer class="footer-almatyOblysy py-4 mt-4">
-      <p class="mb-2">Team: Bayazit, Arslan, Daryn</p>
-      <p class="mb-2">© 2025 Discover Kazakhstan</p>
-      <p class="mb-0">
-        Contact us: 
-        <a href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
-        <a id="github7" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
-      </p>
-    </footer>
+<header class="headerAlmatyOblysy">
+  <div class="brend">
+    <i class="fa-solid fa-mountain-sun"></i>
+    Almaty Oblysy
   </div>
+
+  <nav class="main-nav">
+    <a href="page1.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#map">Map</a>
+
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    <button id="openPopup" type="button" class="bg-btn">
+      <i class="fa-regular fa-envelope"></i>&nbsp;Contact us
+    </button>
+  </nav>
+</header>
+
+<div class="InfoContainer">
+  <div class="TimeZone">
+    <i class="fa-solid fa-clock"></i>
+    <h2>Time Zone</h2>
+    <p>GMT +5</p>
+  </div>
+  <div class="Region">
+    <i class="fa-solid fa-location-dot"></i>
+    <h2>Center of the Region</h2>
+    <p>Taldykorgan</p>
+  </div>
+  <div class="Centers">
+    <i class="fa-solid fa-landmark"></i>
+    <h2>Touristic Centers</h2>
+    <p>7+</p>
+  </div>
+</div>
+
+<h2 id="about">Almaty Oblysy</h2>
+<div class="Description">
+  <p>Almaty Oblysy is a picturesque region of mountains, canyons and lakes surrounding the city of Almaty. It offers a diverse mix of natural wonders, from snow-capped peaks to desert valleys.</p>
+
+  <div id="moreText" style="display:none;">
+    <p>
+      The region includes famous landmarks such as the Charyn Canyon, Kolsai Lakes and Big Almaty Lake. It is a paradise for hikers and travelers who want to see Kazakhstan’s true beauty - with national parks, glaciers and unique flora and fauna.
+    </p>
+  </div>
+
+  <button id="readMoreBtn" class="bg-btn">Read More</button>
+</div>
+
+<section class="GallerySection" id="gallery">
+  <h2 class="GalleryTitle">Photo Gallery</h2>
+
+  <div class="Gallery">
+    <article class="GalleryItem">
+      <img src="images2/AlmatyOblysys1.jpeg" alt="Charyn Canyon">
+      <div class="card-body">
+        <h3>Charyn Canyon</h3>
+        <p>The “Grand Canyon of Central Asia” - red sandstone cliffs and Valley of Castles.</p>
+        <a class="btn" href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%80%D1%8B%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BD%D1%8C%D0%BE%D0%BD"><i class="fa-solid fa-location-dot"></i> More Info</a>
+      </div>
+    </article>
+
+    <article class="GalleryItem">
+      <img src="images2/AlmatyOblysys2.jpeg" alt="Kolsai Lakes">
+      <div class="card-body">
+        <h3>Kolsai Lakes</h3>
+        <p>Crystal clear mountain lakes surrounded by pine forests - perfect for hiking.</p>
+        <a class="btn" href="https://ru.pinterest.com/search/pins/?q=kolsai%20lake%20kazakhstan&rs=rs&source_id=rs_lNiCS643&top_pin_ids=626352260714996734&eq=&etslf=1795"><i class="fa-solid fa-water"></i> More Photo</a>
+      </div>
+    </article>
+
+    <article class="GalleryItem">
+      <img src="images2/AlmatyOblysys3.jpeg" alt="Big Almaty Lake">
+      <div class="card-body">
+        <h3>Big Almaty Lake</h3>
+        <p>Famous turquoise reservoir at high altitude with stunning mountain views.</p>
+        <a class="btn" href="https://www.youtube.com/results?search_query=big+almty+lake"><i class="fa-solid fa-mountain"></i> Videos</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<h2 class="AttractionsTitle">Nature and Adventure</h2>
+<div class="LeftBankDescription">
+  <ul>
+    <li>Visit Charyn Canyon - one of the most spectacular landscapes in Kazakhstan.</li>
+    <li>Explore Kolsai and Kaindy Lakes - ideal for camping and eco-tourism.</li>
+    <li>See the Big Almaty Lake - a high-mountain symbol of the region.</li>
+  </ul>
+</div>
+
+<h2 id="map" class="MapTitle">Almaty Oblysy on the Map</h2>
+<div class="MapContainer">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877875.834!2d75.2!3d44.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4293b69a1dd3d3b9%3A0x8f6ea2f!2sAlmaty%20Region!5e0!3m2!1sen!2skz!4v1700000000000!5m2!1sen!2skz"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<h2 class="FormTitle">Contact us</h2>
+<form class="contact-form" action="#" method="post">
+  <label>Name <input type="text" name="name" placeholder="Your name"></label>
+  <label>Email <input type="email" name="email" placeholder="you@example.com"></label>
+  <label>Message <textarea name="message" rows="4" placeholder="Your message"></textarea></label>
+  <button type="submit">Send</button>
+</form>
+
+<footer class="footer02">
+  <p>Team: Bayazit, Arslan, Daryn</p>
+  <p>© 2025 Discover Kazakhstan</p>
+  <p>Contact us: 
+    <a href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
+    <a id="github02" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
+  </p>
+</footer>
+
+<div id="popupOverlay" class="popup-overlay" hidden>
+  <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <button class="popup-close" type="button" aria-label="Close">&times;</button>
+    <h2 id="popupTitle">Contact us</h2>
+
+    <form id="popupForm" class="popup-form" novalidate>
+      <label>Name <input type="text" name="name" required placeholder="Your name"><small class="error">Please enter your name</small></label>
+      <label>Email <input type="email" name="email" required placeholder="you@example.com"><small class="error">Please enter a valid email</small></label>
+      <label>Message <textarea name="message" rows="4" placeholder="Your message"></textarea></label>
+      <div class="actions">
+        <button type="button" id="cancelPopup">Cancel</button>
+        <button type="submit" class="primary">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="scripts/bg_color.js" defer></script>
+
 </body>
 </html>
