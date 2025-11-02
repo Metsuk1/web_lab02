@@ -97,8 +97,14 @@
         }
 
         const name = form.client_name;
-        if (!name.value.trim()) {
+        const nameValue = name.value.trim();
+        const nameRegex = /^[a-zA-Zа-яА-Я\s]+$/;
+
+        if (!nameValue) {
             showFieldError(name, 'Please, write youre name');
+            valid = false;
+        } else if (!nameRegex.test(nameValue)) { // Проверка на символы
+            showFieldError(name, 'Name must contain only letters (A-Z, А-Я) and spaces.');
             valid = false;
         } else {
             clearFieldError(name);
@@ -165,7 +171,7 @@
         return valid;
     }
 
-     if (form) {
+    if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -242,7 +248,7 @@
             }
         });
     }
-    
+
     // Reset button behavior and focus reset
     const resetBtn = document.getElementById('resetBtn');
     if (resetBtn) {

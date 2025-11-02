@@ -2,7 +2,6 @@
   --bg: #ffffff;
   --card: #fff;
   --muted: #6b6b6b;
-  --blue: rgb(39, 90, 255);
   --radius: 14px;
   --shadow: 0 8px 24px rgba(8, 20, 40, .08);
   font-family: Inter, Roboto, Arial, sans-serif;
@@ -33,7 +32,7 @@ body {
 
 .navbar {
   grid-area: header;
-  background: var(--blue);
+  background: #0b3a5b;
   padding: 20px 0;
   color: #fff;
   border-bottom-left-radius: 14px;
@@ -68,6 +67,7 @@ body {
   padding: 8px 12px;
   border-radius: 4px;
   font-weight: 500;
+  font-size: 15px;
 }
 
 .nav-links a:hover {
@@ -84,7 +84,7 @@ body {
 .sidebar h3 {
   margin-top: 0;
   color: #333;
-  border-bottom: 2px solid var(--blue);
+  border-bottom: 2px solid #0b3a5b;
   padding-bottom: 8px;
 }
 
@@ -100,10 +100,11 @@ body {
   color: #555;
   padding: 8px 6px;
   border-radius: 4px;
+  font-size: 16px;
 }
 
 .sidebar-nav a:hover {
-  background: var(--blue);
+  background: #0b3a5b;
   color: #fff;
 }
 
@@ -206,7 +207,7 @@ body {
   z-index: 3;
   display: inline-block;
   text-decoration: none;
-  background: #007bff;
+  background: #0b3a5b;
   color: white;
   border-radius: 6px;
   padding: 12px 24px;
@@ -219,7 +220,7 @@ body {
 }
 
 .card-button:hover {
-  background: #0056b3;
+  background: rgb(0, 62, 127);
 }
 
 .card-link-overlay {
@@ -271,7 +272,6 @@ body {
   margin-bottom: 5px;
 }
 
-
 .footer-site {
   grid-area: footer;
   text-align: center;
@@ -280,22 +280,139 @@ body {
   color: white;
 }
 
-#github4 {
-  color: #f8f9fa;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
+.footer-site a {
+    text-decoration: none;
+    color: inherit;
 }
 
-#github4:hover {
-  color: #cfe0ff;
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 100;
 }
 
-img.lazy {
-  opacity: 0;
-  transition: opacity .4s ease;
+@media (max-width: 992px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    min-height: auto;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--blue);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 90;
+  }
+
+  .nav-links.open {
+    display: block;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 0;
+    font-size: 18px;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+    padding: 10px 20px;
+  }
+
+  .sidebar h3 {
+    display: none;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: center;
+  }
+
+  .sidebar-nav a {
+    padding: 5px 10px;
+    font-size: 19px;
+  }
 }
 
-img.lazy.lazy-loaded {
-  opacity: 1;
+@media (max-width: 576px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stats-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo h1 {
+    font-size: 22px;
+  }
+
+  .tours-section h2 {
+    font-size: 26px;
+
+    .nav-links a {
+      font-size: 19px;
+    }
+
+    .sidebar-nav a {
+      font-size: 20px;
+    }
+
+    .card-title {
+      font-size: 20px;
+    }
+
+    .card-desc {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .stat-number {
+      font-size: 50px;
+    }
+
+    .footer-site p {
+      font-size: 15px;
+    }
+  }
 }
