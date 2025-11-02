@@ -1,6 +1,14 @@
 :root {
-    --accent: rgb(39, 90, 255);
+    --accent: #0b3a5b;
     --border_color: #e6e9ef;
+}
+
+.bg-brand{
+    background-color: #0b3a5b;
+}
+
+.text-brand{
+    color: #0b3a5b;
 }
 
 .page-header {

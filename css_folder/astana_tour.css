@@ -1,91 +1,134 @@
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #0056b3;
     --text-color: #333;
     --light-gray: #f8f9fa;
     --white: #ffffff;
 }
 
+.navbar{
+    background-color: #0b3a5b;
+}
+
+.navbar .navbar-brand{
+    color: #ffffff;
+}
+
+.navbar .nav-link{
+    color: #ffffff;
+}
+
+.navbar .nav-link:hover{
+    color: #ddd;
+}
+
 .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 400;
     opacity: 0.9;
 }
 
 .section-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
 }
 
-.description-text {
-    font-size: 1rem;
+.description-text,
+.card-text,
+.card-title,
+.card-footer small {
+    font-size: 1.2rem;
     line-height: 1.6;
 }
 
+.card-title {
+    font-weight: 700;
+}
+
 .itinerary-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 600;
 }
 
 .itinerary-text {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.3rem !important;
+    padding: 10px 15px !important;
 }
 
 @media (min-width: 768px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-    
+
     .hero-subtitle {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
-    
+
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
-    
-    .description-text {
+
+    .description-text,
+    .card-text,
+    .card-footer small {
         font-size: 1.1rem;
     }
-    
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
     .itinerary-subtitle {
         font-size: 1.4rem;
     }
-    
+
     .itinerary-text {
         font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem !important;
+        padding: 8px 12px !important;
     }
 }
 
 @media (min-width: 1024px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 2rem;
     }
-    
+
     .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
         font-size: 1.5rem;
     }
-    
-    .section-title {
-        font-size: 2.2rem;
+
+    .description-text,
+    .card-text,
+    .card-footer small {
+        font-size: 1rem;
     }
-    
-    .description-text {
-        font-size: 1.2rem;
+
+    .card-title {
+        font-size: 1.05rem;
     }
-    
+
     .itinerary-subtitle {
-        font-size: 1.6rem;
-    }
-    
-    .itinerary-text {
         font-size: 1.2rem;
+    }
+
+    .itinerary-text {
+        font-size: 1rem;
     }
 }
 
@@ -125,7 +168,7 @@
     background: var(--white);
 }
 
-.footer-site{
+.footer-site {
     background: #0b3a5b;
 }
 

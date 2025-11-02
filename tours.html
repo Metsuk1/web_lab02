@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!--Task 4 - Scroll Progress Bar-->
+  <!--Task 4 - Scroll Progress Bar-->
   <div id="scroll-progress"></div>
 
   <div class="page-layout">
@@ -18,7 +18,10 @@
         <div class="logo">
           <h1>Book a tour in Kazakhstan!</h1>
         </div>
-        <nav class="nav-links">
+        <button class="hamburger-menu" aria-label="Toggle navigation" id="hamburgerBtn">
+          ☰
+        </button>
+        <nav class="nav-links" id="mainNav">
           <ul>
             <li><a href="index.html" target="_self">Home</a></li>
             <li><a href="about.html" target="_self">About</a></li>
@@ -77,7 +80,7 @@
               <h3 id="almaty-best-title" class="card-title">Almaty - Nature Tour</h3>
               <p class="card-desc">This tour combines central park, outdoor markets, Tien Shan mountains, Shymbulak and
                 Kok-Tobe. A great single-day tour to see Almaty highlights.</p>
-              <a class="card-button" href="almaty_tour.html">More</a>
+              <a class="card-button" href="almaty.html">More</a>
             </div>
           </article>
 
@@ -93,7 +96,7 @@
               <h3 id="altai-best-title" class="card-title">Altai forests — Nature Tour</h3>
               <p class="card-desc">Multi-day Altai tour with guided hikes, horseback rides, mountain views, overnight
                 stays in guesthouses and traditional yurts.</p>
-              <a class="card-button" href="altai_tour.html">More</a>
+              <a class="card-button" href="about.html">More</a>
             </div>
           </article>
         </div>
@@ -133,23 +136,24 @@
               <h3 id="almaty-city-title" class="card-title">Almaty - City Tour</h3>
               <p class="card-desc">Explore lively markets, leafy boulevards and city viewpoints with local cafés and
                 culture.</p>
-              <a class="card-button" href="almaty_city_tour.html">More</a>
+              <a class="card-button" href="almaty.html">More</a>
             </div>
           </article>
 
-          <!-- Shymkent -->
+          <!-- Aktobe -->
           <article class="card">
             <a class="card-link-overlay" href="reservation.html"></a>
             <div class="card-top">
-              <div class="badge">Shymkent</div>
-              <img class="card-img lazy" src="images/placeholder.png" data-src="images/shymkent_city.jpg"
-                alt="Shymkent bazaar" width="600" height="400">
+              <div class="badge">Aktobe</div>
+              <img class="card-img lazy" src="images/placeholder.png" data-src="images/aktobe_tour.jpg"
+                alt="Aktobe city" width="600" height="400">
             </div>
             <div class="card-body">
-              <h3 id="shymkent-title" class="card-title">Shymkent - City Tour</h3>
-              <p class="card-desc">A southern city with vibrant bazaars, local cuisine and parks — authentic urban
-                experience.</p>
-              <a class="card-button" href="shymkent_tour.html">More</a>
+              <h3 id="aktobe-title" class="card-title">Aktobe - City Tour</h3>
+              <p class="card-desc">Aktobe coat of arms on road side sign at the city limit. The Mausoleum of Kazakh
+                War-leader Olzhas Batyr, outside Aktobe. Aktobe is a major city located on the Ilek River in western
+                Kazakhstan.</p>
+              <a class="card-button" href="aktobe.html">More</a>
             </div>
           </article>
         </div>
@@ -172,7 +176,7 @@
               <h3 id="burabay-title" class="card-title">Burabay - Nature Tour</h3>
               <p class="card-desc">Scenic lakes, rocky outcrops and pine forests offering walks, boating and peaceful
                 views.</p>
-              <a class="card-button" href="burabay_tour.html">More</a>
+              <a class="card-button" href="about.html">More</a>
             </div>
           </article>
 
@@ -188,7 +192,7 @@
             <div class="card-body">
               <h3 id="altai-nature-title" class="card-title">Altai forests — Nature Tour</h3>
               <p class="card-desc">Guided hikes and horseback rides with glacier views and cultural stays.</p>
-              <a class="card-button" href="altai_tour.html">More</a>
+              <a class="card-button" href="about.html">More</a>
             </div>
           </article>
 
@@ -205,7 +209,7 @@
               <h3 id="almaty-nature-title" class="card-title">Almaty - Nature Tour</h3>
               <p class="card-desc">A day of parks, markets and mountain beauty — a perfect intro to Almaty's outdoors.
               </p>
-              <a class="card-button" href="almaty_nature_tour.html">More</a>
+              <a class="card-button" href="almaty.html">More</a>
             </div>
           </article>
         </div>
@@ -228,7 +232,7 @@
               <h3 id="turkestan-title" class="card-title">Turkestan - Historical Tour</h3>
               <p class="card-desc">Home to the UNESCO-listed Khoja Ahmed Yasawi Mausoleum — Islamic architecture and
                 pilgrimage history.</p>
-              <a class="card-button" href="turkestan_tour.html">More</a>
+              <a class="card-button" href="turkestan.html">More</a>
             </div>
           </article>
 
@@ -236,15 +240,16 @@
             <a class="card-link-overlay" href="reservation.html"></a>
 
             <div class="card-top">
-              <div class="badge">Taraz</div>
-              <img class="card-img lazy" src="images/placeholder.png" data-src="images/taraz_hist.jpg"
-                alt="Taraz ancient ruins" width="600" height="400">
+              <div class="badge">Kostanay</div>
+              <img class="card-img lazy" src="images/placeholder.png" data-src="images/kostanay_tour.jpg"
+                alt="Kostanay city tour" width="600" height="400">
             </div>
             <div class="card-body">
-              <h3 id="taraz-title" class="card-title">Taraz - Historical Tour</h3>
-              <p class="card-desc">Ancient caravanserais and Silk Road heritage to explore — archaeology and history
-                lovers' choice.</p>
-              <a class="card-button" href="taraz_tour.html">More</a>
+              <h3 id="kostanay-title" class="card-title">Kostanay - Historical Tour</h3>
+              <p class="card-desc">Kostanay is a city located on the Tobol River in northern Kazakhstan. It is the
+                administrative center of the Kostanay Region. As of 24 March 2022, the city's governor is Marat
+                Zhundubayev.</p>
+              <a class="card-button" href="kostanay.html">More</a>
             </div>
           </article>
 
@@ -258,33 +263,33 @@
             <div class="card-body">
               <h3 id="otrar-title" class="card-title">Otrar - Historical Tour</h3>
               <p class="card-desc">Ruins of a medieval Silk Road city with fortifications and rich history.</p>
-              <a class="card-button" href="otrar_tour.html">More</a>
+              <a class="card-button" href="about.html">More</a>
             </div>
           </article>
         </div>
       </section>
 
-  <section class="stats-section">
-  <h2 class="section-title">Why Choose Our Tours?</h2>
-  <div class="stats-grid">
-    <div class="stat">
-      <span class="stat-number" data-target="9">0</span>
-      <p>Tours Available</p>
-    </div>
-    <div class="stat">
-      <span class="stat-number" data-target="1000">0</span>
-      <p>Attractions</p>
-    </div>
-    <div class="stat">
-      <span class="stat-number" data-target="5000">0</span>
-      <p>Happy Travelers</p>
-    </div>
-  </div>
-</section>
+      <section class="stats-section">
+        <h2 class="section-title">Why Choose Our Tours?</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-number" data-target="9">0</span>
+            <p>Tours Available</p>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="1000">0</span>
+            <p>Attractions</p>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="5000">0</span>
+            <p>Happy Travelers</p>
+          </div>
+        </div>
+      </section>
 
     </main>
 
- 
+
 
     <footer class="footer-site">
       <p>Team: Bayazit, Arslan, Daryn</p>
@@ -299,4 +304,5 @@
   <script src="scripts/tours.js"></script>
 
 </body>
+
 </html>
