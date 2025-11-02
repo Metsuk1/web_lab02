@@ -133,7 +133,7 @@
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images2/problem4.JPG');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images2/problem4.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -199,3 +199,155 @@
 .card-group.gap-4 .card {
     margin: 0 1rem;
 }
+
+/* TOGGLE BUTTON Dark/Light Mode */
+.theme-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/* === DARK MODE for Astana Tour page === */
+body.dark-mode {
+  background: #0f172a;
+  color: #f1f5f9;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+  color: #f1f5f9;
+}
+body.dark-mode .navbar .navbar-brand,
+body.dark-mode .navbar .nav-link {
+  color: #f1f5f9 !important;
+}
+body.dark-mode .navbar .nav-link:hover {
+  color: #93c5fd !important;
+}
+
+/* Hero section */
+body.dark-mode .hero {
+  background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), 
+              url('../images2/problem4.JPG');
+  background-size: cover;
+  background-position: center;
+  color: #e2e8f0;
+}
+
+/* Section backgrounds */
+body.dark-mode .tour-description,
+body.dark-mode .cards-section,
+body.dark-mode .carousel-section,
+body.dark-mode .itinerary {
+  background: #1e293b !important;
+  color: #f1f5f9;
+}
+
+/* Section titles */
+body.dark-mode .section-title {
+  color: #93c5fd;
+}
+
+/* Description & text */
+body.dark-mode .description-text,
+body.dark-mode .itinerary-text,
+body.dark-mode .card-text {
+  color: #e2e8f0;
+}
+
+/* Cards */
+body.dark-mode .card {
+  background: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+body.dark-mode .card-title {
+  color: #93c5fd;
+}
+body.dark-mode .card-footer small {
+  color: #cbd5e1;
+}
+
+/* Carousel captions */
+body.dark-mode .carousel-caption {
+  background: rgba(0, 0, 0, 0.45);
+  color: #f1f5f9;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+/* Buttons */
+body.dark-mode .btn-success {
+  background-color: #15803d;
+  border-color: #15803d;
+}
+body.dark-mode .btn-success:hover {
+  background-color: #16a34a;
+}
+body.dark-mode .btn-outline-info {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+body.dark-mode .btn-outline-info:hover {
+  background-color: #60a5fa;
+  color: #0f172a;
+}
+
+/* Footer */
+body.dark-mode .footer-site {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+body.dark-mode .footer-site a {
+  color: #93c5fd !important;
+  text-decoration: underline;
+}
+body.dark-mode .footer-site a:hover {
+  color: #60a5fa !important;
+}
+
+/* Dark mode toggle button */
+.theme-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/* Images adjustment */
+body.dark-mode img {
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* Small screen readability */
+@media (max-width: 576px) {
+  .hero-title { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 1rem; }
+}
+
+/* Smooth transitions for theme change */
+* {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
