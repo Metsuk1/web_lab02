@@ -178,3 +178,120 @@ p {
   font-weight: 500;
 }
 
+/* TOGGLE BUTTON Dark/Light Mode */
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s, color .2s;
+  height: 36px;              
+  margin: 0;                
+}
+
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+
+/* DARK MODE */
+body.dark-mode {
+  background: #0f172a;
+  color: #f1f5f9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+}
+body.dark-mode .navbar .nav-link {
+  color: #f1f5f9 !important;
+}
+body.dark-mode .navbar .nav-link:hover {
+  color: #93c5fd !important;
+}
+body.dark-mode .navbar-brand {
+  color: #bfdbfe !important;
+}
+
+/* Toggle button */
+body.dark-mode .theme-btn {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  transition: background 0.2s, transform 0.2s;
+}
+body.dark-mode .theme-btn:hover {
+  background: #475569;
+  color: #93c5fd;
+}
+
+/* Hero section */
+body.dark-mode .master {
+  background: linear-gradient(120deg, #1e293b, #0f172a);
+  color: #e2e8f0;
+}
+body.dark-mode .master .btn {
+  background: #2563eb;
+  color: #fff;
+}
+body.dark-mode .master .btn:hover {
+  background: #1d4ed8;
+}
+
+/* Cards */
+body.dark-mode .highlights {
+  background: #1e293b;
+}
+body.dark-mode .highlights h3,
+body.dark-mode .highlights h2 {
+  color: #93c5fd;
+}
+body.dark-mode .card {
+  background: #334155;
+  color: #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+body.dark-mode .card h4,
+body.dark-mode .card h3 {
+  color: #bfdbfe;
+}
+body.dark-mode .card p {
+  color: #e2e8f0;
+}
+body.dark-mode .card-button {
+  background: #2563eb;
+}
+body.dark-mode .card-button:hover {
+  background: #1d4ed8;
+}
+
+/* Footer */
+body.dark-mode .site-footer {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+body.dark-mode #link,
+body.dark-mode #github {
+  color: #93c5fd;
+}
+body.dark-mode #github:hover {
+  color: #60a5fa;
+}
+
+/* Date/time block */
+body.dark-mode .datetime-block {
+  color: #bfdbfe;
+}
+
+* {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
