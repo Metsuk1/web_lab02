@@ -2,8 +2,11 @@
 <html>
     <head>
         <title>Aktobe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css_folder/AktobeStyle.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
 
     </head>
 
@@ -22,9 +25,7 @@
         <a href="#map">Map</a>
 
         
-        <button id="bgToggle" type="button" title="Change background" class="bg-btn">  <!-- button for color -->
-        Change background
-        </button>
+        <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
 
         <button id="openPopup" type="button" class="bg-btn">
         <i class="fa-regular fa-envelope"></i>&nbsp;Contact us
@@ -81,7 +82,7 @@
         <div class="card-body">
             <h3>City View</h3>
             <p>The famous alley of harmony between the Mosque and the Orthodox Church.</p>
-            <a class="btn" href="#map"><i class="fa-solid fa-location-dot"></i> View on Map</a>
+            <a class="btn" href="https://ru.pinterest.com/pin/801288958683584122/"><i class="fa-solid fa-location-dot"></i> More Photo</a>
         </div>
             </article>
 
@@ -90,7 +91,7 @@
         <div class="card-body">
             <h3>Central Stadium</h3>
             <p>The best stadium by the atmosphere and football in Kazakhstan.</p>
-            <a class="btn" href="#map"><i class="fa-solid fa-futbol"></i> View on Map</a>
+            <a class="btn" href="https://kazahstan.net/attractions/tsentralnyy-stadion-im-koblandy-batyra/?ysclid=mhe0ahuaxk406600059"><i class="fa-solid fa-futbol"></i> More Info</a>
         </div>
             </article>
 
@@ -99,7 +100,7 @@
         <div class="card-body">
             <h3>Sazdy River Embankment</h3>
             <p>Magnificent views of the Sazdy River and the whole city.</p>
-            <a class="btn" href="#gallery"><i class="fa-solid fa-image"></i> More photo</a>
+            <a class="btn" href="#map"><i class="fa-solid fa-image"></i> View on Map</a>
         </div>
             </article>
 
@@ -206,13 +207,6 @@
   </p>
   </footer>
 
-<<<<<<< HEAD
-  <script src="aktobe.js"></script>
-=======
-
- 
-    <script src="bg_color.js" defer></script>  <!-- changing the color of the website + popup-->
-
     <script src="scripts/bg_color.js" defer></script>  <!-- changing the color of the website-->
 
     <div id="popupOverlay" class="popup-overlay" hidden>
@@ -245,8 +239,6 @@
     </form>
     </div>
     </div>
-
->>>>>>> origin/master
 
     </body>
 </html>

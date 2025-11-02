@@ -1,245 +1,399 @@
-header{
-    width : 100%;
-    padding: 40px 0;
-    text-align: center;
-    color: white;
-    background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);  /* background */
-    font-family: 'Montserrat', sans-serif;
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
 
-body{  /*removing default margin (white lines)*/
-    margin: 0; 
-    padding: 0;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: #333;
+  line-height: 1.6;
 }
 
-.FirstInfo{
-     width: 100%;
-    padding: 40px 20px;
-    text-align: center;
-    background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
-    font-family: 'Montserrat', sans-serif;
+/* HEADER */
+header {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);
+  margin: 0;
+  border: none;
+}
+header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+header h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 8px;
 }
 
+/* INFO SECTION */
 .InfoContainer {
-    display: flex;     /* in row */
-    justify-content: center;    
-    gap: 40px;       /* space between blocks */
-    background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
-    padding: 40px 20px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 100%;
+  background: linear-gradient(180deg, #F2EEE9 0%, #C9D6DF 100%);
 }
-
 .InfoContainer div {
-    flex: 1;
-    max-width: 200px;
+  flex: 1;
+  max-width: 200px;
+  border-radius: 10px;
+  padding: 16px;
 }
-
-.InfoContainer i {  
-    font-size: 40px;
-    color: #4682B4;
-    margin-bottom: 10px;
+.InfoContainer i {
+  font-size: 40px;
+  color: #4682B4;
+  margin-bottom: 10px;
 }
-
 .InfoContainer h2 {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #222;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #222;
 }
-
 .InfoContainer p {
-    font-size: 14px;
-    color: #555;
+  font-size: 14px;
+  color: #555;
 }
 
-.main-nav{
-  background:#0b486b;
-  display:flex;
-  justify-content:center;
-  gap:24px;
-  padding:12px 16px;
+/* NAVIGATION */
+.main-nav {
+  background: #0b486b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 16px;
+  flex-wrap: wrap;
 }
-.main-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  padding:6px 10px;
-  border-radius:6px;
-  transition:color .2s, 
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background .2s, color .2s;
 }
-.main-nav a:hover{
-  color:#C9D6DF;
-  background:rgba(255,255,255,.08);
-  text-decoration:underline;   /* underline on hover */
+.main-nav a:hover {
+  color: #C9D6DF;
+  background: rgba(255,255,255,.08);
+  text-decoration: underline;
+}
+
+/* TOGGLE BUTTON */
+.theme-btn {
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/* ABOUT ASTANA */
+#top-banner {
+  text-align: left;
+  font-size: 26px;
+  color: #0b486b;
+  margin: 40px auto 10px;
+  font-weight: bold;
+  max-width: 800px;
+  padding: 0 20px;
+}
+#top-banner::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0b486b, #16222A);
+  border-radius: 2px;
+  margin-top: 8px;
 }
 
 .Description {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 19px;
-    color: #66686b;
-    line-height: 1.6;
-    font-family: 'Montserrat', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 19px;
+  color: #66686b;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 20px;
 }
 
-#top-banner {
-    text-align: left;          
-    font-size: 26px;
-    color: #0b486b;
-    margin: 40px auto 10px;   
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    max-width: 800px;
- }
-
- #top-banner::after, .AttractionsTitle::after{
-  content:"";
-  display:block;
-  width:80px; height:4px;
-  background:linear-gradient(90deg,#0b486b,#16222A);
-  border-radius:2px;
-  margin-top:8px;
-}
-
-.Gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /* adaptive grid */
-    gap: 15px;   /* the distance between the pictures */
-    max-width: 1000px;
-    margin: 0 auto; 
-    padding: 20px;
-}
-
-.Gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;   /* ensures the image covers the area without distortion */
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.Gallery img:hover {
-    transform: scale(1.05);   /* slight zoom on hover */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
+/* ATTRACTIONS SECTION */
 .AttractionsTitle {
-   text-align: left;          
-    font-size: 26px;
-    color: #0b486b;
-    margin: 40px auto 10px;    
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    max-width: 800px;
+  text-align: left;
+  font-size: 26px;
+  color: #0b486b;
+  margin: 40px auto 10px;
+  font-weight: bold;
+  max-width: 800px;
+  padding: 0 20px;
+}
+.AttractionsTitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0b486b, #16222A);
+  border-radius: 2px;
+  margin-top: 8px;
 }
 
 .LeftBank, .RightBank, .Culture, .Events {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    font-size: 19px;
-    color: #687c99;
-    line-height: 1.6;
-    font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0b486b;
+  margin: 40px auto 10px;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-.LeftBankDescription, .RightBankDescription, .CultureDescription, .EventsDescription {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    font-size: 21px;
-    color: #435164;
-    line-height: 1.6;  /* increased line height for better readability */
-    font-family: 'Montserrat', sans-serif;
+.LeftBankDescription,
+.RightBankDescription,
+.CultureDescription,
+.EventsDescription {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 19px;
+  color: #435164;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 20px;
 }
 
+/* GALLERY */
 .GalleryTitle, .MapTitle {
-    text-align: center;
-    font-size: 28px;
-    color: #0b486b;
-    margin: 40px 0 20px;  /* spacing above and below */
-    font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 28px;
+  color: #0b486b;
+  margin: 40px 0 20px;
+}
+.Gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.Gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.Gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-
+/* MAP */
 .MapContainer {
-    width: 100%;
-    margin: 30px 0;
-    border-radius: 0;
-    overflow: hidden;   /* rounding the corners */
+  width: 100%;
+  margin: 30px 0;
+  overflow: hidden;
 }
-
 .MapContainer iframe {
-    width: 100%;       /* full width map*/
-    height: 500px;            
-    border: none;
+  width: 100%;
+  height: 500px;
+  border: none;
+  display: block;
 }
 
-.FormTitle{  /* contact form title */
-  text-align:center; 
-  font-size:28px; 
-  color:#0b486b; 
-  margin:40px 0 10px;
+/* CONTACT FORM */
+.FormTitle {
+  text-align: center;
+  font-size: 28px;
+  color: #0b486b;
+  margin: 40px 0 10px;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  display: grid;
+  gap: 12px;
+  padding: 0 20px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: #0b486b;
+  box-shadow: 0 0 0 3px rgba(11,72,107,.15);
+}
+.contact-form button {
+  padding: 12px 16px;
+  background: #0b486b;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .2s, transform .2s;
+}
+.contact-form button:hover {
+  background: #16222A;
+  transform: translateY(-2px);
 }
 
-.contact-form{
-  max-width:600px; 
-  margin:0 auto 40px;
-   display:grid;   /* grid layout for form elements */
-   gap:12px; 
-   padding:0 20px;
-  font-family:'Montserrat',sans-serif;
-}
-
-.contact-form input, .contact-form textarea{
-  width:100%; 
-  padding:12px 14px; 
-  border:1px solid #cbd5e1;   
-  border-radius:10px;
-}
-
-.contact-form input:focus, .contact-form textarea:focus{
-  outline:none; 
-  border-color:#0b486b; 
-  box-shadow:0 0 0 3px rgba(11,72,107,.15);  /* focus effect */
-}
-
-.contact-form button{
-  padding:12px 16px; 
-  background:#0b486b; 
-  color:#fff; 
-  border:0; 
-  border-radius:10px;
-  cursor:pointer; 
-  font-weight:600; 
-  transition:background .2s,transform .2s;
-}
-
-.contact-form button:hover{ 
-    background:#16222A; 
-    transform:translateY(-2px);   /* slight lift on hover */
-}
-
-/* footer */
+/* FOOTER */
 .footer02 {
+  width: 100%;
   text-align: center;
   padding: 15px;
   background: #0b3a5b;
   color: white;
   margin-top: 30px;
-  font-family: 'Montserrat', sans-serif;
 }
-
-#github02{
+#github02 {
   display: inline-block;
   color: #f8f9fa;
   text-decoration: none;
   margin-top: 10px;
-  font-family: 'Montserrat', sans-serif;
+}
+#github02:hover {
+  color: #60a5fa;
 }
 
-#github02:hover{
-  color: blue;
+/* RESPONSIVE DESIGN */
+@media (max-width: 560px) {
+  header { padding: 25px 10px; }
+  header h1 { font-size: 24px; }
+  header h3 { font-size: 16px; }
+  .InfoContainer { flex-direction: column; align-items: center; gap: 20px; }
+  .main-nav { flex-direction: column; gap: 10px; }
+  .main-nav a { display: block; width: 100%; text-align: center; }
+  .Description, .LeftBankDescription, .RightBankDescription, .CultureDescription, .EventsDescription {
+    font-size: 16px; padding: 0 10px;
+  }
+  iframe { height: 350px; }
+}
+@media (min-width: 561px) and (max-width: 900px) {
+  .InfoContainer { flex-wrap: wrap; gap: 25px; }
+  .Gallery img { height: 180px; }
 }
 
+/* DARK MODE */
+body.dark-mode {
+  background: #0f172a;
+  color: #f1f5f9;
+}
 
+/* Header */
+body.dark-mode header {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
 
+/* Navigation */
+body.dark-mode .main-nav {
+  background: #1e293b;
+}
+body.dark-mode .main-nav a {
+  color: #f8fafc;
+}
+body.dark-mode .main-nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: #bfdbfe;
+}
+
+/* Info Section */
+body.dark-mode .InfoContainer {
+  background: #0f172a; 
+}
+body.dark-mode .InfoContainer div {
+  background: transparent; 
+  box-shadow: none;        
+}
+body.dark-mode .InfoContainer i { color: #60a5fa; }
+body.dark-mode .InfoContainer h2 { color: #bfdbfe; }
+body.dark-mode .InfoContainer p { color: #e2e8f0; }
+
+/* Text and Titles */
+body.dark-mode #top-banner,
+body.dark-mode .AttractionsTitle,
+body.dark-mode .LeftBank,
+body.dark-mode .RightBank,
+body.dark-mode .Culture,
+body.dark-mode .Events {
+  color: #93c5fd;
+  text-align: left;
+}
+body.dark-mode .Description,
+body.dark-mode .LeftBankDescription,
+body.dark-mode .RightBankDescription,
+body.dark-mode .CultureDescription,
+body.dark-mode .EventsDescription {
+  color: #e2e8f0;
+  text-align: left;
+}
+
+/* Gallery */
+body.dark-mode .GalleryTitle { color: #93c5fd; }
+body.dark-mode .Gallery img {
+  filter: brightness(0.85);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Map */
+body.dark-mode .MapContainer { background: #1e293b; }
+
+/* Contact form */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #1e293b;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+body.dark-mode .contact-form button {
+  background: #2563eb;
+}
+body.dark-mode .contact-form button:hover {
+  background: #1d4ed8;
+}
+
+/* Footer */
+body.dark-mode .footer02 {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+body.dark-mode #github02 {
+  color: #60a5fa;
+}
+body.dark-mode #github02:hover {
+  color: #93c5fd;
+}
+
+/* Toggle Button */
+body.dark-mode .theme-btn {
+  background: #334155;
+  border-color: #475569;
+  color: #f8fafc;
+}
+body.dark-mode .theme-btn:hover {
+  background: #475569;
+}
