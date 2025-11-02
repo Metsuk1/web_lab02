@@ -16,6 +16,75 @@
     const mainContainer = document.querySelector('.container.mt-4.mb-4');
     const footer = document.querySelector('.foot');
 
+    const focusableSelector = [
+        'a[href]',
+        'button:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        'textarea:not([disabled])',
+        '[tabindex]:not([tabindex^="-"])'
+    ].join(',');
+
+    // Check if element is visible
+    function isVisible(el) {
+        if (!el) return false;
+        const style = window.getComputedStyle(el);
+        return style.display !== 'none' &&
+            style.visibility !== 'hidden' &&
+            style.opacity !== '0' &&
+            el.offsetWidth > 0 &&
+            el.offsetHeight > 0;
+    }
+
+    // Get focusable elements from main container and footer, sorted by position
+    function getFocusableElements() {
+        if (!mainContainer || !footer) return []; // Добавлена проверка на наличие контейнеров
+
+        const orderBlock = document.querySelector('.order-confirmation');
+        const elements = [
+            ...Array.from(mainContainer.querySelectorAll(focusableSelector)),
+            ...(orderBlock ? Array.from(orderBlock.querySelectorAll(focusableSelector)) : []),
+            ...Array.from(footer.querySelectorAll(focusableSelector))
+        ];
+
+        return elements
+            .filter(el => isVisible(el))
+            .sort((a, b) => {
+                const rectA = a.getBoundingClientRect();
+                const rectB = b.getBoundingClientRect();
+                return (rectA.top - rectB.top) || (rectA.left - rectB.left);
+            });
+    }
+
+    // Check if element is a text-editable control
+    function isTextEditable(el) {
+        if (!el) return false;
+        const tag = el.tagName;
+        const type = el.type?.toLowerCase();
+        return (tag === 'INPUT' &&
+            ['text', 'email', 'search', 'password', 'tel', 'url', 'number', 'textarea'].includes(type))
+            || tag === 'TEXTAREA'
+            || el.isContentEditable;
+    }
+
+    // Set roving tabindex: only target has tabindex=0
+    function setRovingTabindex(target) {
+        const list = getFocusableElements();
+        list.forEach(el => el.setAttribute('tabindex', '-1'));
+        if (target) {
+            target.setAttribute('tabindex', '0');
+            document.body.setAttribute('data-last-focused', target.id || '');
+        }
+    }
+
+    // Focus element and scroll into view
+    function focusElement(el) {
+        if (!el) return;
+        setRovingTabindex(el);
+        el.focus();
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
     // Validate basic email format
     function isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -286,73 +355,6 @@
     // Initialize keyboard navigation for the page scope
     function initKeyboardNavigation() {
         if (!mainContainer) return;
-
-        const focusableSelector = [
-            'a[href]',
-            'button:not([disabled])',
-            'input:not([disabled])',
-            'select:not([disabled])',
-            'textarea:not([disabled])',
-            '[tabindex]:not([tabindex^="-"])'
-        ].join(',');
-
-        // Get focusable elements from main container and footer, sorted by position
-        function getFocusableElements() {
-            const orderBlock = document.querySelector('.order-confirmation');
-            const elements = [
-                ...Array.from(mainContainer.querySelectorAll(focusableSelector)),
-                ...(orderBlock ? Array.from(orderBlock.querySelectorAll(focusableSelector)) : []),
-                ...Array.from(footer.querySelectorAll(focusableSelector))
-            ];
-
-            return elements
-                .filter(el => isVisible(el))
-                .sort((a, b) => {
-                    const rectA = a.getBoundingClientRect();
-                    const rectB = b.getBoundingClientRect();
-                    return (rectA.top - rectB.top) || (rectA.left - rectB.left);
-                });
-        }
-
-        // Check if element is visible
-        function isVisible(el) {
-            if (!el) return false;
-            const style = window.getComputedStyle(el);
-            return style.display !== 'none' &&
-                style.visibility !== 'hidden' &&
-                style.opacity !== '0' &&
-                el.offsetWidth > 0 &&
-                el.offsetHeight > 0;
-        }
-
-        // Check if element is a text-editable control
-        function isTextEditable(el) {
-            if (!el) return false;
-            const tag = el.tagName;
-            const type = el.type?.toLowerCase();
-            return (tag === 'INPUT' &&
-                ['text', 'email', 'search', 'password', 'tel', 'url', 'number', 'textarea'].includes(type))
-                || tag === 'TEXTAREA'
-                || el.isContentEditable;
-        }
-
-        // Set roving tabindex: only target has tabindex=0
-        function setRovingTabindex(target) {
-            const list = getFocusableElements();
-            list.forEach(el => el.setAttribute('tabindex', '-1'));
-            if (target) {
-                target.setAttribute('tabindex', '0');
-                document.body.setAttribute('data-last-focused', target.id || '');
-            }
-        }
-
-        // Focus element and scroll into view
-        function focusElement(el) {
-            if (!el) return;
-            setRovingTabindex(el);
-            el.focus();
-            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
 
         // Return index of element in list
         function indexOfElement(el, list) {
