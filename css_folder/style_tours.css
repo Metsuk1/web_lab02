@@ -252,24 +252,74 @@ body {
 
 .stats-section {
   text-align: center;
-  padding: 50px 0;
-  background: #0b3a5b;
+  padding: 50px 15px;
+  background: linear-gradient(135deg, #0b3a5b, #0f6da5);
   color: white;
-  margin-top: 40px;
+  border-radius: 16px;
+  margin: 0 0 40px 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.08), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06), transparent 60%);
+  z-index: 0;
+}
+
+.stats-section .section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1;
 }
 
 .stats-grid {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 35px;
   flex-wrap: wrap;
+  z-index: 1;
+  position: relative;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 18px 25px;
+  border-radius: 12px;
+  min-width: 160px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.stat-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 6px;
 }
 
 .stat-number {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: 800;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+}
+
+.stat p {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 500;
 }
 
 .footer-site {

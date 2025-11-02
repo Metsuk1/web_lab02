@@ -98,3 +98,13 @@ body {
   background-color: #0b3a5b;
   color: white;
 }
+
+.footer-site a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.footer-site a:hover {
+  color: #d0e8ff;
+}
