@@ -58,3 +58,65 @@ playBtn.addEventListener("click",() => {
   }, 300);
 
 });
+
+//Page Search
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+const searchResult = document.getElementById("searchResult");
+
+// reset highlights
+function removeHighlights() {
+  const highlights = document.querySelectorAll("mark");
+  highlights.forEach(mark => {
+    const parent = mark.parentNode;
+    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+    parent.normalize();
+  });
+}
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  removeHighlights();
+
+  const term = searchInput.value.trim();
+  if (term === "") {
+    searchResult.textContent = "Please enter a word to search.";
+    return;
+  }
+
+  
+  const bodyText = document.querySelector("main.about");
+  const regex = new RegExp(`(${term})`, "gi");
+  let matchCount = 0;
+
+  function highlightText(node) {
+    if (node.nodeType === 3) { 
+      const text = node.textContent;
+      if (text.match(regex)) {
+        const span = document.createElement("span");
+        span.innerHTML = text.replace(regex, "<mark>$1</mark>");
+        node.replaceWith(span);
+        matchCount++;
+      }
+    } else if (node.nodeType === 1 && node.childNodes && !["SCRIPT", "STYLE"].includes(node.tagName)) {
+      node.childNodes.forEach(highlightText);
+    }
+  }
+
+  highlightText(bodyText);
+
+  // print result
+  if (matchCount > 0) {
+    searchResult.textContent = `Found ${matchCount} match(es) for "${term}".`;
+  } else {
+    searchResult.textContent = `No matches found for "${term}".`;
+  }
+});
+
+// Responsive menu toggle
+const burger = document.getElementById("burgerMenu");
+const navLinks = document.querySelector(".nav-links");
+
+burger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
