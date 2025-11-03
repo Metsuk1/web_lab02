@@ -9,6 +9,8 @@
 
 * {
   box-sizing: border-box;
+  /* Smooth transitions for theme change */
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
 
 html,
@@ -59,6 +61,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-links a {
@@ -68,6 +71,7 @@ body {
   border-radius: 4px;
   font-weight: 500;
   font-size: 15px;
+  line-height: 1.5;
 }
 
 .nav-links a:hover {
@@ -266,8 +270,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.08), transparent 60%),
-              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06), transparent 60%);
+  background: radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.08), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.06), transparent 60%);
   z-index: 0;
 }
 
@@ -331,8 +335,8 @@ body {
 }
 
 .footer-site a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .hamburger-menu {
@@ -345,6 +349,123 @@ body {
   line-height: 1;
   z-index: 100;
 }
+
+/* TOGGLE BUTTON Dark/Light Mode */
+.theme-btn {
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
+}
+
+/*--- DARK MODE CSS STYLES ---*/
+.dark-mode {
+  --bg: #1e1e1e;
+  --card: #2c2c2c;
+  --muted: #b0b0b0;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  color: #f0f0f0;
+}
+
+.dark-mode html,
+.dark-mode body {
+  background: var(--bg);
+  color: #f0f0f0;
+}
+
+.dark-mode .sidebar {
+  background: #252526;
+  border-right: 1px solid #3d3d3d;
+}
+
+.dark-mode .sidebar h3 {
+  color: #f0f0f0;
+  border-bottom: 2px solid #0099ff;
+}
+
+.dark-mode .sidebar-nav a {
+  color: #ccc;
+}
+
+.dark-mode .sidebar-nav a:hover {
+  background: #0078d4;
+  color: #fff;
+}
+
+.dark-mode .main-content {
+  background: var(--bg);
+}
+
+.dark-mode .tours-section h2 {
+  color: #f0f0f0;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.dark-mode .card {
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .badge {
+  background: rgba(44, 44, 44, 0.9);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .card-title {
+  color: #fff;
+}
+
+.dark-mode .card-desc {
+  color: var(--muted);
+}
+
+.dark-mode .stats-section {
+  background: linear-gradient(135deg, #1f4a66, #305e7e);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .stat {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .stat:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .navbar,
+.dark-mode .footer-site {
+  background: #0a2436;
+}
+
+.dark-mode .theme-btn {
+  border: 1px solid #ffffff66;
+  background: #3d3d3d;
+  color: #fff;
+}
+
+.dark-mode .theme-btn:hover {
+  background: #505050;
+}
+
+/*--- END DARK MODE CSS STYLES ---*/
+
+/* MEDIA QUERIES */
 
 @media (max-width: 992px) {
   .page-layout {
@@ -372,11 +493,17 @@ body {
     top: 65px;
     left: 0;
     width: 100%;
-    background: var(--blue);
+    background: #0b3a5b;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     z-index: 90;
   }
+
+  /* Dark Mode Media Query Fix */
+  .dark-mode .nav-links {
+    background: #0d3047;
+  }
+
 
   .nav-links.open {
     display: block;
@@ -388,11 +515,22 @@ body {
     text-align: center;
   }
 
+  .nav-links li {
+    width: 100%;
+  }
+
   .nav-links a {
     display: block;
     padding: 10px 20px;
     border-radius: 0;
     font-size: 18px;
+    line-height: normal;
+  }
+
+  .theme-btn {
+    margin: 10px auto;
+    display: block;
+    width: 80%;
   }
 
   .sidebar {
@@ -439,30 +577,30 @@ body {
 
   .tours-section h2 {
     font-size: 26px;
+  }
 
-    .nav-links a {
-      font-size: 19px;
-    }
+  .nav-links a {
+    font-size: 19px;
+  }
 
-    .sidebar-nav a {
-      font-size: 20px;
-    }
+  .sidebar-nav a {
+    font-size: 20px;
+  }
 
-    .card-title {
-      font-size: 20px;
-    }
+  .card-title {
+    font-size: 20px;
+  }
 
-    .card-desc {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
+  .card-desc {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
 
-    .stat-number {
-      font-size: 50px;
-    }
+  .stat-number {
+    font-size: 50px;
+  }
 
-    .footer-site p {
-      font-size: 15px;
-    }
+  .footer-site p {
+    font-size: 15px;
   }
 }
