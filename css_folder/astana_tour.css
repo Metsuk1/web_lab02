@@ -1,208 +1,128 @@
 :root {
-    --text-color: #333;
-    --light-gray: #f8f9fa;
-    --white: #ffffff;
+  --text-color: #333;
+  --light-gray: #f8f9fa;
+  --white: #ffffff;
 }
 
-.navbar{
-    background-color: #0b3a5b;
+.navbar {
+  background-color: #0b3a5b;
 }
 
-.navbar .navbar-brand{
-    color: #ffffff;
+.navbar .navbar-brand {
+  color: #ffffff;
 }
 
-.navbar .nav-link{
-    color: #ffffff;
+.navbar .nav-link {
+  color: #ffffff;
 }
 
-.navbar .nav-link:hover{
-    color: #ddd;
+.navbar .nav-link:hover {
+  color: #ddd;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images2/problem4.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+  text-align: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
-    font-weight: 400;
-    opacity: 0.9;
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
 }
 
+/* Section Titles */
 .section-title {
-    font-size: 1.8rem;
-    font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
-.description-text,
-.card-text,
-.card-title,
-.card-footer small {
-    font-size: 1.2rem;
-    line-height: 1.6;
+/* Cards Section - FIXED */
+.cards-section .card {
+  margin-bottom: 1.5rem;
+  height: 100%;
+}
+
+.cards-section .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .card-title {
-    font-weight: 700;
+  font-weight: 700;
+  font-size: 1.25rem;
 }
 
-.itinerary-subtitle {
-    font-size: 1.6rem;
-    font-weight: 600;
+.card-text,
+.card-footer small {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-.itinerary-text {
-    font-size: 1.3rem;
-    line-height: 1.6;
-}
-
-.navbar-nav .nav-link {
-    font-size: 1.3rem !important;
-    padding: 10px 15px !important;
-}
-
-@media (min-width: 768px) {
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-    }
-
-    .description-text,
-    .card-text,
-    .card-footer small {
-        font-size: 1.1rem;
-    }
-
-    .card-title {
-        font-size: 1.15rem;
-    }
-
-    .itinerary-subtitle {
-        font-size: 1.4rem;
-    }
-
-    .itinerary-text {
-        font-size: 1.1rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1rem !important;
-        padding: 8px 12px !important;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .description-text,
-    .card-text,
-    .card-footer small {
-        font-size: 1rem;
-    }
-
-    .card-title {
-        font-size: 1.05rem;
-    }
-
-    .itinerary-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .itinerary-text {
-        font-size: 1rem;
-    }
-}
-
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images2/problem4.JPG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: var(--white);
-    text-align: center;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-}
-
-.feature-item {
-    transition: transform 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-3px);
-}
-
-.tour-description {
-    background: var(--white);
-}
-
-.cards-section {
-    background: var(--white);
-}
-
-.carousel-section {
-    background: var(--light-gray);
-}
-
-.itinerary {
-    background: var(--white);
-}
-
-.footer-site {
-    background: #0b3a5b;
-}
-
-.footer-site a {
-    text-decoration: none;
-}
-
+/* Carousel Section */
 .carousel-item img {
-    border-radius: 8px;
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%;
+  width: 5%;
 }
 
 .carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin: 0 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px;
 }
 
-.card-group.gap-3 .card {
-    margin: 0 0.5rem;
+/* Itinerary Section */
+.itinerary-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
-.card-group.gap-4 .card {
-    margin: 0 1rem;
+.itinerary-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.feature-item {
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.footer-site {
+  background: #0b3a5b;
+}
+
+.footer-site a {
+  text-decoration: none;
 }
 
 /* TOGGLE BUTTON Dark/Light Mode */
 .theme-btn {
-  margin-top: 10px;
   padding: 8px 14px;
   border: 1px solid #ffffff66;
   border-radius: 8px;
@@ -212,38 +132,180 @@
   cursor: pointer;
   transition: background .2s, transform .2s;
 }
+
 .theme-btn:hover {
   background: #ffffff2a;
   transform: translateY(-2px);
 }
 
-/* === DARK MODE for Astana Tour page === */
+/* === RESPONSIVE FIXES === */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-nav .theme-btn {
+    text-align: center;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .theme-btn {
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .carousel-item img {
+    height: 350px;
+  }
+
+  .cards-section .card-img-top {
+    height: 180px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 40vh;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .carousel-item img {
+    height: 250px;
+  }
+
+  .cards-section .card-img-top {
+    height: 160px;
+  }
+
+  .itinerary-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .itinerary-text {
+    font-size: 1rem;
+  }
+
+  .description-text {
+    font-size: 1rem;
+  }
+
+  /* Fix card layout for mobile */
+  .card-group {
+    flex-direction: column;
+  }
+
+  .card-group .card {
+    margin-bottom: 1rem;
+  }
+
+  /* Navigation fixes */
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .theme-btn {
+    display: block;
+    margin: 0.5rem auto;
+    width: 80%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .carousel-item img {
+    height: 200px;
+  }
+
+  .cards-section .card-img-top {
+    height: 140px;
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/* === DARK MODE FIXES === */
 body.dark-mode {
   background: #0f172a;
   color: #f1f5f9;
-  transition: background 0.3s, color 0.3s;
 }
 
 /* Navbar */
 body.dark-mode .navbar {
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
-  color: #f1f5f9;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
 }
+
 body.dark-mode .navbar .navbar-brand,
 body.dark-mode .navbar .nav-link {
   color: #f1f5f9 !important;
 }
+
 body.dark-mode .navbar .nav-link:hover {
   color: #93c5fd !important;
 }
 
 /* Hero section */
 body.dark-mode .hero {
-  background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), 
-              url('../images2/problem4.JPG');
+  background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)),
+    url('../images2/problem4.JPG');
   background-size: cover;
   background-position: center;
-  color: #e2e8f0;
 }
 
 /* Section backgrounds */
@@ -252,7 +314,6 @@ body.dark-mode .cards-section,
 body.dark-mode .carousel-section,
 body.dark-mode .itinerary {
   background: #1e293b !important;
-  color: #f1f5f9;
 }
 
 /* Section titles */
@@ -260,32 +321,24 @@ body.dark-mode .section-title {
   color: #93c5fd;
 }
 
-/* Description & text */
-body.dark-mode .description-text,
-body.dark-mode .itinerary-text,
-body.dark-mode .card-text {
-  color: #e2e8f0;
-}
-
 /* Cards */
 body.dark-mode .card {
   background: #1e293b;
   color: #f1f5f9;
   border: 1px solid #334155;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
 }
+
 body.dark-mode .card-title {
   color: #93c5fd;
 }
+
 body.dark-mode .card-footer small {
   color: #cbd5e1;
 }
 
-/* Carousel captions */
+/* Carousel */
 body.dark-mode .carousel-caption {
   background: rgba(0, 0, 0, 0.45);
-  color: #f1f5f9;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 /* Buttons */
@@ -293,61 +346,30 @@ body.dark-mode .btn-success {
   background-color: #15803d;
   border-color: #15803d;
 }
-body.dark-mode .btn-success:hover {
-  background-color: #16a34a;
-}
+
 body.dark-mode .btn-outline-info {
   border-color: #60a5fa;
   color: #60a5fa;
 }
-body.dark-mode .btn-outline-info:hover {
-  background-color: #60a5fa;
-  color: #0f172a;
-}
 
 /* Footer */
 body.dark-mode .footer-site {
-  background: #1e293b;
-  color: #f1f5f9;
-}
-body.dark-mode .footer-site a {
-  color: #93c5fd !important;
-  text-decoration: underline;
-}
-body.dark-mode .footer-site a:hover {
-  color: #60a5fa !important;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
 }
 
-/* Dark mode toggle button */
-.theme-btn {
-  margin-top: 10px;
-  padding: 8px 14px;
-  border: 1px solid #ffffff66;
-  border-radius: 8px;
-  background: #ffffff1a;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .2s, transform .2s;
-}
-.theme-btn:hover {
-  background: #ffffff2a;
-  transform: translateY(-2px);
-}
-
-/* Images adjustment */
-body.dark-mode img {
-  filter: brightness(0.95) contrast(1.05);
-}
-
-/* Small screen readability */
-@media (max-width: 576px) {
-  .hero-title { font-size: 1.8rem; }
-  .hero-subtitle { font-size: 1rem; }
-}
-
-/* Smooth transitions for theme change */
+/* Smooth transitions */
 * {
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for Bootstrap container fluid padding */
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}

@@ -368,14 +368,6 @@ body {
 }
 
 /*--- DARK MODE CSS STYLES ---*/
-.dark-mode {
-  --bg: #1e1e1e;
-  --card: #2c2c2c;
-  --muted: #b0b0b0;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-
-  color: #f0f0f0;
-}
 
 .dark-mode html,
 .dark-mode body {
@@ -384,8 +376,8 @@ body {
 }
 
 .dark-mode .sidebar {
-  background: #252526;
-  border-right: 1px solid #3d3d3d;
+  background: #1e293b;
+  border-right: 1px solid #334155;
 }
 
 .dark-mode .sidebar h3 {
@@ -403,17 +395,17 @@ body {
 }
 
 .dark-mode .main-content {
-  background: var(--bg);
+  background: #1e293b;
 }
 
 .dark-mode .tours-section h2 {
   color: #f0f0f0;
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid #334155;
 }
 
 .dark-mode .card {
-  background: var(--card);
-  box-shadow: var(--shadow);
+  background: #334155;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .dark-mode .card:hover {
@@ -421,7 +413,7 @@ body {
 }
 
 .dark-mode .badge {
-  background: rgba(44, 44, 44, 0.9);
+  background: #334155;
   color: #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
@@ -431,11 +423,19 @@ body {
 }
 
 .dark-mode .card-desc {
-  color: var(--muted);
+  color: #ebebeb;
+}
+
+.dark-mode .card-button{
+  background: #2563eb;
+}
+
+.dark-mode .card-button:hover{
+  background: #1d4ed8;
 }
 
 .dark-mode .stats-section {
-  background: linear-gradient(135deg, #1f4a66, #305e7e);
+  background: #1e293b;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
@@ -450,17 +450,20 @@ body {
 
 .dark-mode .navbar,
 .dark-mode .footer-site {
-  background: #0a2436;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
 }
 
 .dark-mode .theme-btn {
-  border: 1px solid #ffffff66;
-  background: #3d3d3d;
-  color: #fff;
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  transition: background 0.2s, transform 0.2s;
+  padding: 8px 14px;
+  border-radius: 8px;
 }
-
 .dark-mode .theme-btn:hover {
-  background: #505050;
+  background: #475569;
+  color: #93c5fd;
 }
 
 /*--- END DARK MODE CSS STYLES ---*/
@@ -470,13 +473,11 @@ body {
 @media (max-width: 992px) {
   .page-layout {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
       "header"
       "sidebar"
       "main"
       "footer";
-    min-height: auto;
   }
 
   .hamburger-menu {
@@ -536,18 +537,22 @@ body {
   .sidebar {
     border-right: none;
     border-bottom: 1px solid #e9ecef;
-    padding: 10px 20px;
+    padding: 15px 20px;
+  }
+  
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .sidebar-nav li {
+    margin-bottom: 0;
   }
 
   .sidebar h3 {
     display: none;
-  }
-
-  .sidebar-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    justify-content: center;
   }
 
   .sidebar-nav a {
@@ -558,21 +563,31 @@ body {
 
 @media (max-width: 576px) {
   .main-content {
-    padding: 10px;
+    padding: 15px;
+  }
+
+  .nav-container {
+    padding: 0 15px;
   }
 
   .card-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
+  }
+
+  .stat {
+    width: 100%;
+    max-width: 250px;
   }
 
   .stats-grid {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
   }
 
   .logo h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .tours-section h2 {
@@ -602,5 +617,34 @@ body {
 
   .footer-site p {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 18px;
+  }
+  
+  .nav-links a {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+  
+  .main-content {
+    padding: 10px;
+  }
+  
+  .tours-section {
+    padding: 5px 10px;
+    margin-bottom: 30px;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-button {
+    width: 100%;
+    text-align: center;
   }
 }

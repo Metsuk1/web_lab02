@@ -668,63 +668,64 @@
     }
 
     // Creates/updates the order confirmation block and scrolls to it
-    function renderOrderConfirmation(orderCode, humanMessage) {
-        // remove old block
-        $('.order-confirmation').remove();
+    // Creates/updates the order confirmation block and scrolls to it
+function renderOrderConfirmation(orderCode, humanMessage) {
+    // remove old block
+    $('.order-confirmation').remove();
 
-        // search footer
-        const $footer = $('footer.foot, footer').first();
-        const $target = $footer.length ? $footer : $('body');
+    const $bookingForm = $('.booking-form').first(); 
+    const $footer = $('footer.foot, footer').first(); 
+    const $target = $bookingForm.length ? $bookingForm : ($footer.length ? $footer : $('body'));
 
-        // creating block
-        const blockHTML = `
-        <div class="order-confirmation">
-            <div class="order-info">
-                <div class="order-title">${humanMessage}</div>
-                <div>
-                    <span class="order-code" id="latest-order-code">${orderCode}</span>
-                </div>
-            </div>
-            <div class="order-actions">
-                <button class="copy-order-btn" type="button" aria-label="Copy order code" data-code="${orderCode}">
-                    <span class="icon">📋</span>
-                    <span class="copied-tooltip" aria-hidden="true">Copied!</span>
-                </button>
+    const blockHTML = `
+    <div class="order-confirmation">
+        <div class="order-info">
+            <div class="order-title">${humanMessage}</div>
+            <div>
+                <span class="order-code" id="latest-order-code">${orderCode}</span>
             </div>
         </div>
-        `;
+        <div class="order-actions">
+            <button class="copy-order-btn" type="button" aria-label="Copy order code" data-code="${orderCode}">
+                <span class="icon">📋</span>
+                <span class="copied-tooltip" aria-hidden="true">Copied!</span>
+            </button>
+        </div>
+    </div>
+    `;
 
-        const $block = $(blockHTML);
+    const $block = $(blockHTML);
 
-        if ($footer.length) {
-            // before footer
-            $block.insertBefore($footer);
-        } else {
-            $block.appendTo($target);
-        }
-
-        // scroll to block
-        $('html, body').animate({
-            scrollTop: $block.offset().top - ($(window).height() / 2) + ($block.height() / 2)
-        }, 500); // 500ms duration
-
-        // focus to button
-        const $copyBtn = $block.find('.copy-order-btn');
-
-        if ($copyBtn.length) {
-            $copyBtn.focus();
-
-            $copyBtn.on('click', function () {
-                const $self = $(this);
-                const code = $self.data('code') || $('#latest-order-code').text();
-
-                if (!code) return;
-
-                copyTextToClipboard(code, this);
-            });
-        }
-
-        return $block;
+    if ($bookingForm.length) {
+        $bookingForm.append($block); 
+    } else if ($footer.length) {
+        $block.insertBefore($footer);
+    } else {
+        $block.appendTo($target);
     }
+
+    // scroll to block
+    $('html, body').animate({
+        scrollTop: $block.offset().top - ($(window).height() / 2) + ($block.height() / 2)
+    }, 500); // 500ms duration
+
+    // focus to button
+    const $copyBtn = $block.find('.copy-order-btn');
+
+    if ($copyBtn.length) {
+        $copyBtn.focus();
+
+        $copyBtn.on('click', function () {
+            const $self = $(this);
+            const code = $self.data('code') || $('#latest-order-code').text();
+
+            if (!code) return;
+
+            copyTextToClipboard(code, this);
+        });
+    }
+
+    return $block;
+}
 
 })();
