@@ -280,6 +280,10 @@ header h3 {
   color: #60a5fa;
 }
 
+#email{
+  color: #fafafa;
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 560px) {
   header { padding: 25px 10px; }

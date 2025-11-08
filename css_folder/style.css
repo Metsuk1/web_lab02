@@ -189,6 +189,10 @@ header { grid-area: header; }
   color: blue;
 }
 
+#email{
+  color: #f9f7f7;
+}
+
 /* RESPONSIVE DESIGN */
 
 /* Phones */

@@ -259,6 +259,10 @@ body {
   color: blue;
 }
 
+#email{
+  color: #f9f9f9;
+}
+
 /* POPUP */
 .popup-overlay[hidden] {
   display: none !important;

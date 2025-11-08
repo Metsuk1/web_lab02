@@ -226,6 +226,10 @@ body{  /*removing default margin (white lines)*/
   color: blue;
 }
 
+#email{
+  color: #f2f2f2;
+}
+
 /*3rd assignment*/
 
 /* so that the padding/border fits into the width and doesnt break the calculation */

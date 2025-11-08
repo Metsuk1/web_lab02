@@ -267,6 +267,10 @@ ul {
   color: blue;
 }
 
+#email{
+  color: #fafafa;
+}
+
 /* POPUP */
 .popup-overlay[hidden] {
   display: none !important;
