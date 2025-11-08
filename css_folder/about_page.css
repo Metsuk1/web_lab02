@@ -455,7 +455,7 @@ body.dark-mode .fun-facts li:hover {
 
 /* Footer */
 body.dark-mode .ftr {
-  background: #1e293b;
+  background: #0f172a;
   color: #f1f5f9;
 }
 body.dark-mode #github5,
@@ -475,19 +475,6 @@ mark {
   color: #000;
   padding: 0 3px;
   border-radius: 3px;
-}
-
-/* Responsive adjustments for API info */
-@media (max-width: 600px) {
-  #about-text {
-    font-size: 14px;
-    max-width: 95%;
-    padding: 0 15px;
-  }
-  
-  #about-text.visible {
-    padding: 20px 15px;
-  }
 }
 
 /* --- Small screens (phones) --- */
