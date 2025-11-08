@@ -395,19 +395,48 @@ body.dark-mode .search-box button:hover {
 }
 
 /* About section */
-body.dark-mode .about-section {
-  color: #e2e8f0;
-}
-body.dark-mode #show-info-btn {
-  background: #2563eb;
-}
-body.dark-mode #show-info-btn:hover {
-  background: #1d4ed8;
-}
-body.dark-mode #about-text {
-  color: #f1f5f9;
+#about-text {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.6s ease;
+  margin: 15px auto 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.8;
+  white-space: pre-line;
+  text-align: left;
+  max-width: 600px;
+  padding: 0 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+#about-text.visible {
+  max-height: 600px; 
+  opacity: 1;
+  padding: 25px;
+}
+
+/* Loading state for button */
+#show-info-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #6c757d;
+}
+
+#show-info-btn:disabled:hover {
+  background-color: #6c757d;
+  transform: none;
+}
+
+/* Dark mode for about text */
+body.dark-mode #about-text {
+  background: #1e293b;
+  color: #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
 /* Fun facts */
 body.dark-mode .fun-facts {
   background: #1e293b;
@@ -446,6 +475,19 @@ mark {
   color: #000;
   padding: 0 3px;
   border-radius: 3px;
+}
+
+/* Responsive adjustments for API info */
+@media (max-width: 600px) {
+  #about-text {
+    font-size: 14px;
+    max-width: 95%;
+    padding: 0 15px;
+  }
+  
+  #about-text.visible {
+    padding: 20px 15px;
+  }
 }
 
 /* --- Small screens (phones) --- */
