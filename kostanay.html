@@ -122,21 +122,33 @@
 
 
 <div id="popupOverlay" class="popup-overlay" hidden>
-  <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
     <button class="popup-close" type="button" aria-label="Close">&times;</button>
     <h2 id="popupTitle">Contact us</h2>
 
     <form id="popupForm" class="popup-form" novalidate>
-      <label>Name <input type="text" name="name" required placeholder="Your name"></label>
-      <label>Email <input type="email" name="email" required placeholder="you@example.com"></label>
-      <label>Message <textarea name="message" rows="4" placeholder="Your message"></textarea></label>
+      <label>
+        Name
+        <input type="text" name="name" required placeholder="Your name">
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required placeholder="you@example.com">
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" rows="4" placeholder="Your message"></textarea>
+      </label>
+
       <div class="actions">
         <button type="button" id="cancelPopup">Cancel</button>
         <button type="submit" class="primary">Send</button>
       </div>
     </form>
-  </div>
-</div>
+    </div>
+    </div>
 
 <script src="scripts/bg_color.js" defer></script>
 
