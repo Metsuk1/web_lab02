@@ -486,8 +486,12 @@ body.dark-mode .Gallery img {
 
 /* Map */
 body.dark-mode .MapContainer { background: #1e293b; }
+body.dark-mode .MapTitle { color: #93c5fd; }
 
 /* Contact form */
+body.dark-mode .FormTitle {
+  color: #93c5fd;
+}
 body.dark-mode .contact-form input,
 body.dark-mode .contact-form textarea {
   background: #1e293b;
