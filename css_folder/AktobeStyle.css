@@ -486,6 +486,10 @@ body.dark-mode {
   color: #f8fafc;
 }
 
+body.dark-mode #top-banner {
+  color: #93c5fd;
+}
+
 body.dark-mode .headerAktobe {
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   color: #f8fafc;
