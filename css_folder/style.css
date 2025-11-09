@@ -1,62 +1,86 @@
-header {
-  width: 100%;
-  padding: 40px 0;
-  text-align: center;
-  color: white;
-  background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);
-  font-family: 'Montserrat', sans-serif;
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: #333;
 }
 
-/* PAGE GRID LAYOUT */
-.page-grid {
-  display: grid;
-  grid-template-columns: 250px 1fr;         /* sidebar + main */
-  grid-template-rows: auto 1fr auto;        /* header | content | footer */
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  gap: 20px;
-  padding: 20px;
-  align-items: start;
+/* HEADER */
+header {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);
+}
+header h1 {
+  margin: 0;
+}
+header h3 {
+  margin-top: 10px;
+  font-weight: 400;
 }
 
-header { grid-area: header; }
-.page-sidebar { grid-area: sidebar; }
-.page-main { grid-area: main; }
-.footer01 { grid-area: footer; }
-
-
-.page-sidebar {
-  background: #fff;
-  border: 1px solid #e9eef3;
-  border-radius: 12px;
-  padding: 16px;
+/* NAVIGATION BAR */
+.main-nav {
+  background: linear-gradient(180deg, #0b486b 0%, #16222A 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 16px;
+  flex-wrap: wrap;
 }
-.side-nav ul {
-  list-style: none;
-  margin: 8px 0 0;
-  padding: 0;
-  display: grid;
-  gap: 8px;
-}
-.side-nav a {
-  display: block;
+.main-nav a {
+  color: #fff;
   text-decoration: none;
-  color: #0b486b;
-  background: #f6fbff;
-  padding: 8px 10px;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background .2s, color .2s;
 }
-.side-nav a:hover {
-  background: #e9f5ff;
+.main-nav a:hover {
+  color: #C9D6DF;
+  background: rgba(255,255,255,.08);
+  text-decoration: underline;
+}
+
+/* BUTTONS */
+.bg-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ffffff66;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.bg-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-1px);
+}
+
+.theme-btn {
+  padding: 8px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  background: #ffffff1a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.theme-btn:hover {
+  background: #ffffff2a;
+  transform: translateY(-2px);
 }
 
 /* MAIN CONTENT */
@@ -65,7 +89,7 @@ header { grid-area: header; }
   border: 1px solid #e9eef3;
   border-radius: 12px;
   padding: 16px;
-  position: relative;
+  margin: 20px;
 }
 
 /* SEARCH BAR */
@@ -113,62 +137,168 @@ header { grid-area: header; }
   font-weight: bold;
 }
 
-/* CITY CARDS */
+/* CITY CARDS - wider and flatter */
 .theBestPlaces {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 40px;
+  max-width: 1500px; 
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
+
 .theBestPlaces h2 {
-  flex-basis: 100%;
+  grid-column: 1 / -1;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #0b486b;
+  font-size: 28px;
+  font-weight: 700;
 }
+
 .theBestPlaces a {
   text-decoration: none;
   color: inherit;
-  display: block;
-}
-.theBestPlaces a:hover h2 {
-  color: #0a6cff;
-}
-.Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay {
-  flex: 1 1 45%;
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   overflow: hidden;
-  margin: 15px;
-  transition: transform 0.2s;
+  transition: transform 0.25s, box-shadow 0.25s;
+  max-width: 700px; 
+  margin: 0 auto;
 }
-.Astana:hover, .Almaty:hover, .Aktobe:hover,
-.Turkestan:hover, .AlmatyOblysy:hover, .Kostanay:hover {
-  transform: translateY(-5px);
+
+.theBestPlaces a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
 }
-.Astana img, .Almaty img, .Aktobe img,
-.Turkestan img, .AlmatyOblysy img, .Kostanay img {
+
+.theBestPlaces img {
   width: 100%;
-  height: 140px;
+  height: 170px; 
   object-fit: cover;
 }
-.Astana h3, .Almaty h3, .Aktobe h3,
-.Turkestan h3, .AlmatyOblysy h3, .Kostanay h3 {
-  margin: 10px 0 5px;
-  font-size: 18px;
+
+.theBestPlaces h2 {
+  font-size: 22px;
+  margin: 14px 0 8px;
   color: #0b486b;
 }
-.Astana p, .Almaty p, .Aktobe p,
-.Turkestan p, .AlmatyOblysy p, .Kostanay p {
-  font-size: 13px;
+
+.theBestPlaces p {
+  font-size: 15px;
   color: #555;
-  margin: 0 10px 15px;
+  margin: 0 18px 20px;
+  line-height: 1.5;
+}
+
+/* POPUP STYLES */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  place-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+
+.popup-overlay.show {
+  display: grid;
+  opacity: 1;
+}
+
+
+.popup {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 28px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: popupFade 0.3s ease;
+}
+
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 26px;
+  border: none;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.popup-close:hover {
+  color: #0b486b;
+}
+
+
+.popup-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #0b486b;
+}
+.popup-form input,
+.popup-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  margin-top: 4px;
+}
+.popup-form input:focus,
+.popup-form textarea:focus {
+  border-color: #0b486b;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(11, 72, 107, 0.15);
+}
+
+.popup-form .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+.popup-form button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.popup-form button.primary {
+  background: #0b486b;
+  color: #fff;
+}
+.popup-form button.primary:hover {
+  background: #0e5c89;
+}
+.popup-form #cancelPopup {
+  background: #e5e7eb;
+}
+.popup-form #cancelPopup:hover {
+  background: #d1d5db;
+}
+
+@keyframes popupFade {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* FOOTER */
@@ -188,109 +318,47 @@ header { grid-area: header; }
 #github01:hover {
   color: blue;
 }
-
-#email{
+#email {
   color: #f9f7f7;
 }
 
 /* RESPONSIVE DESIGN */
+@media (max-width: 1100px) {
+  .theBestPlaces {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .theBestPlaces a {
+    max-width: 90%;
+  }
+  .theBestPlaces img {
+    height: 190px;
+  }
+}
 
-/* Phones */
 @media (max-width: 560px) {
   header {
     padding: 20px 10px;
     font-size: 14px;
   }
 
-  .page-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "sidebar"
-      "main"
-      "footer";
-    padding: 10px;
+  .main-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main-nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 
   #searchInput { width: 90%; }
   .suggestion-box { width: 90%; }
 
-  .theBestPlaces {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 10px;
-  }
-
-  .Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay {
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .Astana img, .Almaty img, .Aktobe img,
-  .Turkestan img, .AlmatyOblysy img, .Kostanay img {
-    height: 180px;
-  }
-
   .footer01 {
     font-size: 14px;
     padding: 10px;
   }
-}
-
-/* Tablet */
-@media (min-width: 561px) and (max-width: 1100px) {
-  .page-grid {
-    grid-template-columns: 200px 1fr;
-    grid-template-areas:
-      "header header"
-      "sidebar main"
-      "footer footer";
-    padding: 16px;
-    gap: 16px;
-  }
-
-  #searchInput { width: 80%; }
-  .suggestion-box { width: 80%; }
-
-  .theBestPlaces {
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .Astana, .Almaty, .Aktobe, .Turkestan, .AlmatyOblysy, .Kostanay {
-    flex: 1 1 calc(50% - 20px);
-    max-width: 500px;
-  }
-
-  .footer01 {
-    font-size: 15px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1101px) {
-  .theBestPlaces {
-    max-width: 1200px;
-  }
-}
-
-/* TOGGLE BUTTON Dark/Light Mode */
-.theme-btn {
-  margin-top: 10px;
-  padding: 8px 14px;
-  border: 1px solid #ffffff66;
-  border-radius: 8px;
-  background: #ffffff1a;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .2s, transform .2s;
-}
-.theme-btn:hover {
-  background: #ffffff2a;
-  transform: translateY(-2px);
 }
 
 /* DARK MODE */
@@ -305,35 +373,56 @@ body.dark-mode header {
   color: #f1f5f9;
 }
 
-/* Sidebar & Main sections */
-body.dark-mode .page-main,
-body.dark-mode .page-sidebar {
+/* Navigation */
+body.dark-mode .main-nav {
+  background: #1e293b;
+}
+body.dark-mode .main-nav a {
+  color: #f8fafc;
+}
+body.dark-mode .main-nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: #bfdbfe;
+}
+
+/* Main content */
+body.dark-mode .page-main {
   background: #1e293b;
   border-color: #334155;
   color: #f1f5f9;
-}
-
-/* Sidebar links */
-body.dark-mode .side-nav a {
-  background: #334155;
-  color: #f8fafc;
-}
-body.dark-mode .side-nav a:hover {
-  background: #475569;
-  color: #ffffff;
 }
 
 /* City cards */
 body.dark-mode .theBestPlaces a {
   background: #1e293b;
   color: #f1f5f9;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .6);
 }
 body.dark-mode .theBestPlaces h2 {
   color: #93c5fd;  
 }
 body.dark-mode .theBestPlaces p {
   color: #e2e8f0;  
+}
+
+body.dark-mode .popup {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+body.dark-mode .popup-form label {
+  color: #93c5fd;
+}
+body.dark-mode .popup-form input,
+body.dark-mode .popup-form textarea {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+body.dark-mode .popup-close {
+  color: #f1f5f9;
+}
+body.dark-mode .popup-close:hover {
+  color: #60a5fa;
 }
 
 /* Footer */
@@ -370,26 +459,4 @@ body.dark-mode .suggestion-box li:hover {
 body.dark-mode .highlight {
   background-color: #facc15; 
   color: #000; 
-}
-
-/* Toggle button (same look for both modes) */
-.theme-btn {
-  margin-top: 10px;
-  padding: 8px 14px;
-  border: 1px solid #ffffff66;
-  border-radius: 8px;
-  background: #ffffff1a;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .2s, transform .2s;
-}
-.theme-btn:hover {
-  background: #ffffff2a;
-  transform: translateY(-2px);
-}
-
-/* Smooth transitions for theme change */
-* {
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }

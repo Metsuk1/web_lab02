@@ -14,22 +14,18 @@
         <h1>Discover Kazakhstan</h1>
         <h1> Cities & Places</h1>
         <h3> Explore the beauty of Kazakhstan</h3>
-        <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
 
     </header>
     
-    <div class="page-grid">  <!-- overall grid container -->
-
-    <aside class="page-sidebar">        <!-- Sidebar: on the left -->
-      <nav class="side-nav">
-        <h3>Sidebar</h3>
-        <ul>
-          <li><a href="#cities">Places</a></li>
-          <li><a href="#contact">Contacts</a></li>
-          <li><a href="index.html">Home</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="#cities">Places</a>
+    <a href="#contact">Contacts</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    <button id="openPopup" type="button" class="bg-btn">
+      <i class="fa-regular fa-envelope"></i>&nbsp;Contact us
+    </button>
+  </nav>
 
     <main class="page-main">
    <div class="search-section">
@@ -79,6 +75,35 @@
 
     </div>
     </main>
+
+    <div id="popupOverlay" class="popup-overlay" hidden>
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <button class="popup-close" type="button" aria-label="Close">&times;</button>
+    <h2 id="popupTitle">Contact us</h2>
+
+    <form id="popupForm" class="popup-form" novalidate>
+      <label>
+        Name
+        <input type="text" name="name" required placeholder="Your name">
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required placeholder="you@example.com">
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" rows="4" placeholder="Your message"></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="button" id="cancelPopup">Cancel</button>
+        <button type="submit" class="primary">Send</button>
+      </div>
+    </form>
+    </div>
+    </div>
 
 
     </div>
