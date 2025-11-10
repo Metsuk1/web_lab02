@@ -29,6 +29,12 @@
   text-align: center;
 }
 
+/* Extra spacing before theme button */
+#themeToggle {
+  margin-left: 15px !important;
+}
+
+
 .profile-avatar {
   width: 100px;
   height: 100px;
@@ -239,6 +245,25 @@ body.dark-mode .toast-notification {
   
   .toast-notification.show {
     bottom: 20px;
+  }
+}
+
+/* Burger Menu Spacing Fix */
+@media (max-width: 991px) {
+  .navbar-nav .nav-item {
+    margin-bottom: 8px;
+  }
+  
+  .auth-nav .nav-link {
+    margin-right: 0 !important;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  #themeToggle {
+    margin-left: 0 !important;
+    margin-top: 10px;
+    width: 100%;
   }
 }
 
