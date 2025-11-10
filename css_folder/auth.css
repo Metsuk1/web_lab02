@@ -1,0 +1,320 @@
+/* Modal Footer */
+.modal-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.modal-footer p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.modal-footer a {
+  color: #0b3a5b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.modal-footer a:hover {
+  color: #ff8a65;
+  text-decoration: underline;
+}
+
+/* Profile Modal Specific Styles */
+.profile-info {
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #0b3a5b, #0f5a8f);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 15px rgba(11, 58, 91, 0.3);
+}
+
+.profile-info h2 {
+  color: #0b3a5b;
+  margin: 0 0 25px 0;
+  font-size: 1.8rem;
+}
+
+.profile-details {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.detail-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item strong {
+  color: #0b3a5b;
+}
+
+.detail-item span {
+  color: #666;
+}
+
+/* Danger Button */
+.btn-danger {
+  width: 100%;
+  padding: 12px 20px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Toast Notification */
+.toast-notification {
+  position: fixed;
+  bottom: -100px;
+  right: 20px;
+  background: #0b3a5b;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: bottom 0.3s ease;
+}
+
+.toast-notification.show {
+  bottom: 30px;
+}
+
+/* Auth Navigation Styling */
+.auth-nav .nav-link {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  margin-left: 5px;
+  transition: all 0.3s;
+}
+
+.auth-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Support */
+body.dark-mode .modal-box {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+body.dark-mode .modal-header {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .modal-header h3 {
+  color: #93c5fd;
+}
+
+body.dark-mode .close-btn {
+  color: #94a3b8;
+}
+
+body.dark-mode .close-btn:hover {
+  color: #ff6b6b;
+}
+
+body.dark-mode .form-group label {
+  color: #e2e8f0;
+}
+
+body.dark-mode .form-input {
+  background: #0f172a;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+body.dark-mode .form-input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+body.dark-mode .profile-details {
+  background: #0f172a;
+}
+
+body.dark-mode .detail-item {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .detail-item strong {
+  color: #93c5fd;
+}
+
+body.dark-mode .detail-item span {
+  color: #e2e8f0;
+}
+
+body.dark-mode .modal-footer {
+  border-top-color: #334155;
+}
+
+body.dark-mode .modal-footer p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .modal-footer a {
+  color: #60a5fa;
+}
+
+body.dark-mode .toast-notification {
+  background: #334155;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .modal-box {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    padding: 15px 20px;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .form-input {
+    font-size: 16px; 
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+  
+  .profile-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .toast-notification {
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+  
+  .toast-notification.show {
+    bottom: 20px;
+  }
+}
+
+/* === Modal Overlay (background) === */
+.modal-overlay {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* make sure it’s on top */
+}
+
+/* === Modal Box (the actual popup) === */
+.modal-box {
+  background: #fff;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: popupAppear 0.3s ease-out;
+}
+
+/* Animation */
+@keyframes popupAppear {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+}
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+/* Inputs */
+.form-group {
+  margin-bottom: 15px;
+}
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.btn-submit {
+  width: 100%;
+  background: #0b3a5b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-submit:hover {
+  background: #ff8a65;
+}
