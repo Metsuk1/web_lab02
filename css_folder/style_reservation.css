@@ -177,6 +177,7 @@ body {
 }
 
 .foot {
+    padding-top: 10px;
     background: var(--bg-header);
     color: var(--text-inverted);
 }
@@ -333,14 +334,11 @@ body {
     cursor: not-allowed;
 }
 
+/* Dark mode */
 .dark-mode {
-    --bg-main: #121212;
-    --bg-form: #1e1e1e;
-    --bg-header: #003657;
-    --bg-light: #2c2c2c;
-    --border_color: #444;
     --text-primary: #e0e0e0;
     --text-muted: #a0a0a0;
+    --bg-main:#1e293b;
 }
 
 .dark-mode .theme-btn {
@@ -357,12 +355,12 @@ body {
 
 .dark-mode .form-description,
 .dark-mode .duration-selection {
-    background-color: var(--bg-light) !important;
+    background-color: #1e293b !important;
     color: var(--text-primary);
 }
 
 .dark-mode .booking-form {
-    background-color: var(--bg-form) !important;
+    background-color:#1e293b !important;
 }
 
 .dark-mode .form-label {
@@ -371,7 +369,7 @@ body {
 
 .dark-mode .form-control,
 .dark-mode .form-select {
-    background-color: #333;
+    background-color: #151d2a;
     color: var(--text-primary);
     border-color: #555;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
@@ -379,7 +377,6 @@ body {
 
 .dark-mode .price {
     color: #007bff !important;
-    ;
 }
 
 .dark-mode .form-control::placeholder {
@@ -388,7 +385,7 @@ body {
 }
 
 .dark-mode .form-check-card .form-check-label {
-    background: var(--bg-form);
+    background: #151d2a;
     border: 1px solid var(--border_color);
     color: var(--text-primary);
 }
@@ -399,26 +396,46 @@ body {
     border-color: #007bff !important;
 }
 
-
-
 .dark-mode .form-check-input:checked+.form-check-label .price-option {
     background: #0364a4 !important;
 }
 
 .dark-mode .price-option {
-    background: #333;
+    background: #202d40;
     border-color: #555 !important;
     color: var(--text-primary);
 }
 
 .dark-mode .theme-btn {
-    border: 1px solid #ffffff66;
-    background: #3d3d3d;
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  transition: background 0.2s, transform 0.2s;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+.dark-mode .theme-btn:hover {
+  background: #475569;
+  color: #93c5fd;
+}
+
+.dark-mode .page-header,
+.dark-mode .foot{
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+
+.dark-mode .order-confirmation{
+    background: #151d2a;
+    border-color: #555;
     color: #fff;
 }
 
-.dark-mode .theme-btn:hover {
-    background: #505050;
+.dark-mode .order-confirmation .copied-tooltip{
+    color: #fff;
+}
+
+.dark-mode .order-confirmation .order-code{
+    color: #007bff;
 }
 
 @media (max-width: 768px) {
@@ -482,7 +499,6 @@ body {
         order: 1;
         margin-left: 0;
     }
-
 
     .order-confirmation {
         flex-direction: column;

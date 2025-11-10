@@ -286,6 +286,8 @@
                 showToast('Form submitted successfully', 3500, 'success');
                 renderOrderConfirmation(orderCode, 'Reservation confirmed — your order number');
 
+                saveOrderCodeToLocalStorage(orderCode);
+
                 // Form and error cleanup (as it was)
                 form.reset();
                 document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
@@ -564,6 +566,72 @@
         }, timeoutMs);
     }
 
+    // ---------- Persistence for order code ----------
+    function saveOrderCodeToLocalStorage(orderCode) {
+        try {
+            const payload = {
+                code: orderCode,
+                createdAt: Date.now()
+            };
+            localStorage.setItem('latestOrder', JSON.stringify(payload));
+        } catch (err) {
+            console.error('saveOrderCodeToLocalStorage error', err);
+        }
+    }
+
+    function loadOrderCodeFromLocalStorage() {
+        try {
+            const s = localStorage.getItem('latestOrder');
+            if (!s) return null;
+            const p = JSON.parse(s);
+            return p && p.code ? p.code : null;
+        } catch (err) {
+            console.error('loadOrderCodeFromLocalStorage error', err);
+            return null;
+        }
+    }
+
+    // call this on page load to restore order block
+    document.addEventListener('DOMContentLoaded', function () {
+        // ensure day options are created BEFORE loadFormFromLocalStorage is called
+        setTimeout(function () {
+            // restore form fields
+            if (typeof loadFormFromLocalStorage === 'function') {
+                try { loadFormFromLocalStorage(); } catch (e) {}
+            }
+
+            // restore order confirmation if code exists
+            const savedCode = loadOrderCodeFromLocalStorage();
+            if (savedCode) {
+                // render block using your existing renderer
+                if (typeof renderOrderConfirmation === 'function') {
+                    renderOrderConfirmation(savedCode, 'Reservation confirmed — your order number');
+                }
+            }
+        }, 60);
+    });
+
+    // Attach delegated click handler for copy button
+    document.addEventListener('click', function (ev) {
+        const btn = ev.target.closest && ev.target.closest('.copy-order-btn');
+        if (!btn) return;
+        const code = btn.dataset && btn.dataset.code ? btn.dataset.code : (document.getElementById('latest-order-code') ? document.getElementById('latest-order-code').textContent : null);
+        if (!code) return;
+        if (typeof copyTextToClipboard === 'function') {
+            copyTextToClipboard(code, btn);
+        } else {
+            // fallback simple copy
+            try {
+                navigator.clipboard.writeText(code).then(function () {
+                    // small UI feedback
+                    btn.classList.add('copied');
+                    setTimeout(() => btn.classList.remove('copied'), 1500);
+                });
+            } catch (err) { console.warn('copy fail', err); }
+        }
+    });
+
+
     // Order confirmation + copy button logic
 
     // Format: YYYYMMDD-XXXXXX
@@ -672,32 +740,32 @@
         // remove old block
         $('.order-confirmation').remove();
 
-        // search footer
+        const $bookingForm = $('.booking-form').first();
         const $footer = $('footer.foot, footer').first();
-        const $target = $footer.length ? $footer : $('body');
+        const $target = $bookingForm.length ? $bookingForm : ($footer.length ? $footer : $('body'));
 
-        // creating block
         const blockHTML = `
-        <div class="order-confirmation">
-            <div class="order-info">
-                <div class="order-title">${humanMessage}</div>
-                <div>
-                    <span class="order-code" id="latest-order-code">${orderCode}</span>
-                </div>
-            </div>
-            <div class="order-actions">
-                <button class="copy-order-btn" type="button" aria-label="Copy order code" data-code="${orderCode}">
-                    <span class="icon">📋</span>
-                    <span class="copied-tooltip" aria-hidden="true">Copied!</span>
-                </button>
+    <div class="order-confirmation">
+        <div class="order-info">
+            <div class="order-title">${humanMessage}</div>
+            <div>
+                <span class="order-code" id="latest-order-code">${orderCode}</span>
             </div>
         </div>
-        `;
+        <div class="order-actions">
+            <button class="copy-order-btn" type="button" aria-label="Copy order code" data-code="${orderCode}">
+                <span class="icon">📋</span>
+                <span class="copied-tooltip" aria-hidden="true">Copied!</span>
+            </button>
+        </div>
+    </div>
+    `;
 
         const $block = $(blockHTML);
 
-        if ($footer.length) {
-            // before footer
+        if ($bookingForm.length) {
+            $bookingForm.append($block);
+        } else if ($footer.length) {
             $block.insertBefore($footer);
         } else {
             $block.appendTo($target);
