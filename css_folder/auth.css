@@ -2,6 +2,7 @@
 .modal-footer {
   text-align: center;
   margin-top: 20px;
+  margin-right: 20px;
   padding-top: 15px;
   border-top: 1px solid #e0e0e0;
 }
@@ -28,6 +29,12 @@
 .profile-info {
   text-align: center;
 }
+
+/* Extra spacing before theme button */
+#themeToggle {
+  margin-left: 15px !important;
+}
+
 
 .profile-avatar {
   width: 100px;
@@ -239,6 +246,25 @@ body.dark-mode .toast-notification {
   
   .toast-notification.show {
     bottom: 20px;
+  }
+}
+
+/* Burger Menu Spacing Fix */
+@media (max-width: 991px) {
+  .navbar-nav .nav-item {
+    margin-bottom: 8px;
+  }
+  
+  .auth-nav .nav-link {
+    margin-right: 0 !important;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  #themeToggle {
+    margin-left: 0 !important;
+    margin-top: 10px;
+    width: 100%;
   }
 }
 
