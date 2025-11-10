@@ -25,9 +25,10 @@
       <a href="#map">Map</a>
 
       <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+
       <button id="openPopup" type="button" class="bg-btn">
         <i class="fa-regular fa-envelope"></i>&nbsp;Contact us
-      </button>
+        </button>
     </nav>
   </header>
 
@@ -180,43 +181,42 @@
     <p>© 2025 Discover Kazakhstan</p>
     <p>
       Contact us:
-      <a href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
+      <a id="email"   href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
       <a id="github02" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
     </p>
   </footer>
 
-  <!-- POPUP FORM -->
-  <div id="popupOverlay" class="popup-overlay" hidden>
+
+    <div id="popupOverlay" class="popup-overlay" hidden>
     <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
-      <button class="popup-close" type="button" aria-label="Close">&times;</button>
-      <h2 id="popupTitle">Contact us</h2>
+    <button class="popup-close" type="button" aria-label="Close">&times;</button>
+    <h2 id="popupTitle">Contact us</h2>
 
-      <form id="popupForm" class="popup-form" novalidate>
-        <label>
-          Name
-          <input type="text" name="name" required placeholder="Your name">
-          <small class="error">Please enter your name</small>
-        </label>
+    <form id="popupForm" class="popup-form" novalidate>
+      <label>
+        Name
+        <input type="text" name="name" required placeholder="Your name">
+      </label>
 
-        <label>
-          Email
-          <input type="email" name="email" required placeholder="you@example.com">
-          <small class="error">Please enter a valid email</small>
-        </label>
+      <label>
+        Email
+        <input type="email" name="email" required placeholder="you@example.com">
+      </label>
 
-        <label>
-          Message
-          <textarea name="message" rows="4" placeholder="Your message"></textarea>
-        </label>
+      <label>
+        Message
+        <textarea name="message" rows="4" placeholder="Your message"></textarea>
+      </label>
 
-        <div class="actions">
-          <button type="button" id="cancelPopup">Cancel</button>
-          <button type="submit" class="primary">Send</button>
-        </div>
-      </form>
+      <div class="actions">
+        <button type="button" id="cancelPopup">Cancel</button>
+        <button type="submit" class="primary">Send</button>
+      </div>
+    </form>
     </div>
-  </div>
+    </div>
 
-  <script src="scripts/bg_color.js" defer></script>
+    <script src="scripts/bg_color.js"> defer</script>  <!-- changing the color of the website-->
+
 </body>
 </html>

@@ -1,27 +1,102 @@
-const countryInfo = {
-    name : "Kazakhstan",
-    capital : "Astana",
-    population : "19 million",
-    area : "2.7 million km²",
-    showSummary : function(){
-    return `${this.name} is the largest landlocked country in the world. 
-    Its capital is ${this.capital}, with a population of ${this.population}. 
-    The country covers an area of ${this.area}.`; 
-       }
-};
+const API_URL = 'https://restcountries.com/v3.1/name/kazakhstan';
 
 // Button and text
 const showBtn = document.getElementById("show-info-btn");
 const aboutText = document.getElementById("about-text");
 
-showBtn.addEventListener("click", () => {
-  //If the text is hidden, show it
+// Loading state
+let isLoading = false;
+let cachedData = null;
+
+// Fetch Kazakhstan data from API
+async function fetchKazakhstanInfo() {
+  try {
+    isLoading = true;
+    showBtn.textContent = "Loading...";
+    showBtn.disabled = true;
+
+    const response = await fetch(API_URL);
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    
+    const data = await response.json();
+    const country = data[0]; // Get first result
+    
+    // Cache the data
+    cachedData = {
+      name: country.name.common,
+      officialName: country.name.official,
+      capital: country.capital ? country.capital[0] : 'N/A',
+      population: country.population.toLocaleString(),
+      area: country.area.toLocaleString() + ' km²',
+      region: country.region,
+      subregion: country.subregion,
+      languages: Object.values(country.languages || {}).join(', '),
+      currencies: Object.values(country.currencies || {}).map(c => c.name).join(', '),
+      timezones: country.timezones.join(', '),
+      borders: country.borders ? country.borders.length : 0,
+      flag: country.flag
+    };
+    
+    return cachedData;
+    
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      error: true,
+      message: 'Unable to load data. Please try again later.'
+    };
+  } finally {
+    isLoading = false;
+    showBtn.disabled = false;
+  }
+}
+
+// Format the country info for display
+function formatCountryInfo(data) {
+  if (data.error) {
+    return data.message;
+  }
+  
+  return `
+    ${data.flag} ${data.officialName}
+    
+    📍 Capital: ${data.capital}
+    👥 Population: ${data.population}
+    📏 Area: ${data.area}
+    🌍 Region: ${data.region} (${data.subregion})
+    💬 Languages: ${data.languages}
+    💰 Currency: ${data.currencies}
+    🕐 Timezones: ${data.timezones}
+    🗺️ Bordering Countries: ${data.borders}
+  `;
+}
+
+// Button click handler
+showBtn.addEventListener("click", async () => {
+  // Play sound
+  const clickSound = new Audio("sounds/bell-sound.mp3");
+  clickSound.play().catch(() => console.log('Sound not available'));
+  
+  // Animation
+  showBtn.style.transform = "scale(1.1)";
+  showBtn.style.transition = "transform 0.3s ease";
+  setTimeout(() => {
+    showBtn.style.transform = "scale(1)";
+  }, 300);
+
+  // If text is hidden, show it
   if (!aboutText.classList.contains("visible")) {
-    aboutText.textContent = countryInfo.showSummary();
+    // Use cached data if available, otherwise fetch from API
+    const data = cachedData || await fetchKazakhstanInfo();
+    
+    aboutText.textContent = formatCountryInfo(data);
     aboutText.classList.add("visible");
     showBtn.textContent = "Hide info";
   } 
-  // If the text is already visible, hide it.
+  // If the text is already visible, hide it
   else {
     aboutText.classList.remove("visible");
     showBtn.textContent = "Show info";
@@ -41,23 +116,6 @@ const factsList = document.getElementById("facts-list");
 
 factsList.innerHTML = facts.map(fact => `<li>${fact}</li>`).join("");
 
-// Task 4 play sounds
-const clickSound = new Audio("sounds/bell-sound.mp3");
-const playBtn = document.getElementById("show-info-btn");
-
-playBtn.addEventListener("click",() => {
-    clickSound.play();
-
-    //Task 3 - Animations
-     playBtn.style.transform = "scale(1.1)";
-     playBtn.style.transition = "transform 0.3s ease";
-
-  // After 300 ms we return to the normal state
-  setTimeout(() => {
-    playBtn.style.transform = "scale(1)";
-  }, 300);
-
-});
 
 //Page Search
 const searchForm = document.getElementById("searchForm");
