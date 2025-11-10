@@ -1,247 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <title>Almaty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css_folder/AlmatyStyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
 
 <body>
 
-  <div class="page-grid">
-
-    <header class="headerAlmaty"> <!-- header -->
-      <div class="brend">
-        <i class="fa-solid fa-mountain-city"></i>
-        Almaty
-      </div>
-      <nav class="main-nav">
-        <a href="page1.html">Home</a>
-        <a href="#top-banner">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#map">Map</a>
-        <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
-        <button id="openPopup" type="button" class="bg-btn">
+  <!-- HEADER -->
+  <header class="headerAlmaty">
+    <div class="brend">
+      <i class="fa-solid fa-mountain-city"></i>
+      Almaty
+    </div>
+    <nav class="main-nav">
+      <a href="page1.html">Home</a>
+      <a href="#top-banner">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#map">Map</a>
+      <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+      <button id="openPopup" type="button" class="bg-btn">
         <i class="fa-regular fa-envelope"></i>&nbsp;Contact us
-        </button>
-      </nav>
-    </header>
+      </button>
+    </nav>
+  </header>
 
-    <aside class="page-sidebar"> <!-- Sidebar: on the left -->
-      <nav class="side-nav">
-        <h3>Sidebar</h3>
-        <ul>
-          <li><a href="#top-banner">About</a></li>
-          <li><a href="#gallery">Gallery (Cards)</a></li>
-          <li><a href="#grid-gallery">Grid Gallery</a></li>
-          <li><a href="#map">Map</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </aside>
+  <!-- INFO SECTION  -->
+  <div class="InfoContainer">
+    <div>
+      <i class="fa-solid fa-clock"></i>
+      <h2>Time Zone</h2>
+      <p>GMT +5</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-location-dot"></i>
+      <h2>Center of the region</h2>
+      <p>Almaty</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-landmark"></i>
+      <h2>Touristic Centers</h2>
+      <p>25</p>
+    </div>
+  </div>
 
-    <main class="page-main"> <!-- Main content: in the center -->
-      <div class="InfoContainer">
-        <div class="TimeZone">
-          <i class="fa-solid fa-clock"></i>
-          <h2>Time Zone</h2>
-          <p>GMT +5</p>
+  <!-- ABOUT -->
+  <h2 id="top-banner">Almaty</h2>
+  <div class="Description">
+    <p>
+      Almaty is a city by the mountains with panoramas of Kok Tobe, the Medeu skating rink and the Shymbulak
+      resort, a pedestrian Arbat and museums/theaters in the center. Nature and urban rhythm are in one place.
+    </p>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="GallerySection" id="gallery">
+    <h2 class="GalleryTitle">Photo Gallery</h2>
+    <div class="Gallery">
+      <article class="GalleryItem">
+        <img src="images2/Almaty1.jpg" alt="City view" loading="lazy">
+        <div class="card-body">
+          <h3>View on Almaty</h3>
+          <p>Panoramic look at central Almaty with the mountains on the horizon.</p>
+          <a class="btn" href="#map"><i class="fa-solid fa-location-dot"></i> View on Map</a>
         </div>
+      </article>
 
-        <div class="Region">
-          <i class="fa-solid fa-location-dot"></i>
-          <h2>Center of the region</h2>
-          <p>Almaty</p>
+      <article class="GalleryItem">
+        <img src="images2/Almaty2.jpg" alt="Medeu" loading="lazy">
+        <div class="card-body">
+          <h3>Medeu</h3>
+          <p>Legendary high-altitude ice rink in the mountains above the city.</p>
+          <a class="btn" href="#map"><i class="fa-solid fa-mountain"></i> View on Map</a>
         </div>
+      </article>
 
-        <div class="Centers">
-          <i class="fa-solid fa-landmark"></i>
-          <h2>Touristic Centers</h2>
-          <p>25</p>
+      <article class="GalleryItem">
+        <img src="images2/Almaty3.jpg" alt="Stadium" loading="lazy">
+        <div class="card-body">
+          <h3>Central Stadium</h3>
+          <p>Home ground for football and major sports events.</p>
+          <a class="btn" href="https://centralstadium.kz/o-stadione/?lang=ru"><i class="fa-solid fa-futbol"></i> More Info</a>
         </div>
-      </div>
+      </article>
 
-      <h2 id="top-banner">Almaty</h2>
-      <div class="Description">
-        <p>Almaty is a city by the mountains with panoramas of Kok Tobe, the Medeu skating rink and the Shymbulak
-          resort, a pedestrian Arbat and museums/theaters in the center. Nature and urban rhythm are in one place.</p>
-      </div>
-
-
-      <section class="GallerySection" id="gallery">
-        <h2 class="GalleryTitle">Photo Gallery</h2>
-
-        <div class="Gallery">
-          <article class="GalleryItem">
-            <img src="images2/Almaty1.jpg" alt="City view" loading="lazy" width="600" height="380">
-            <div class="card-body">
-              <h3>View on Almaty</h3>
-              <p>Panoramic look at central Almaty with the mountains on the horizon.</p>
-              <a class="btn" href="#map"><i class="fa-solid fa-location-dot"></i> View on Map</a>
-            </div>
-          </article>
-
-          <article class="GalleryItem">
-            <img src="images2/Almaty2.jpg" alt="City view" loading="lazy" width="600" height="380">
-            <div class="card-body">
-              <h3>Medeu</h3>
-              <p>Legendary high-altitude ice rink in the mountains above the city.</p>
-              <a class="btn" href="#map"><i class="fa-solid fa-mountain"></i> View on Map</a>
-            </div>
-          </article>
-
-          <article class="GalleryItem">
-            <img src="images2/Almaty3.jpg" alt="City view" loading="lazy" width="600" height="380">
-            <div class="card-body">
-              <h3>Central Stadium</h3>
-              <p>Home ground for city football and major sports events.</p>
-              <a class="btn" href="https://centralstadium.kz/o-stadione/?lang=ru"><i class="fa-solid fa-futbol"></i>
-                More info</a>
-            </div>
-          </article>
-
-          <article class="GalleryItem">
-            <img src="images2/Almaty4.jpg" alt="City view" loading="lazy" width="600" height="380">
-            <div class="card-body">
-              <h3>Almaty Airport</h3>
-              <p>Main air gateway to the city and the mountain region.</p>
-              <a class="btn" href="https://alaport.com/kk-KZ/"><i class="fa-solid fa-plane-departure"></i> Web Site</a>
-            </div>
-          </article>
-
-          <article class="GalleryItem">
-            <img src="images2/Almaty5.jpg" alt="City view" loading="lazy" width="600" height="380">
-            <div class="card-body">
-              <h3>Night Cityscape</h3>
-              <p>Evening lights and skyline views from the hills.</p>
-              <a class="btn"
-                href="https://ru.pinterest.com/ideas/%D0%B0%D0%BB%D0%BC%D0%B0%D1%82%D1%8B-%D0%BD%D0%BE%D1%87%D0%BD%D0%BE%D0%B9-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4/932948463719/?ysclid=mhdvoyk9pd858718397"><i
-                  class="fa-solid fa-location-dot"></i> More Photo</a>
-            </div>
-          </article>
-
-          <article class="GalleryItem">
-            <img src="images2/Almaty6.jpg" alt="City view" loading="lazy" width="600" height="380">
-            <div class="card-body">
-              <h3>Nature</h3>
-              <p>Trails, rivers and alpine scenery near the city.</p>
-              <a class="btn" href="#map"><i class="fa-solid fa-mountain-sun"></i> View on Map</a>
-            </div>
-          </article>
+      <article class="GalleryItem">
+        <img src="images2/Almaty4.jpg" alt="Airport" loading="lazy">
+        <div class="card-body">
+          <h3>Almaty Airport</h3>
+          <p>Main air gateway to the city and the mountain region.</p>
+          <a class="btn" href="https://alaport.com/kk-KZ/"><i class="fa-solid fa-plane-departure"></i> Web Site</a>
         </div>
-      </section>
+      </article>
 
-
-
-      <h2 class="AttractionsTitle">From mountain modernity to heritage</h2>
-      <h3 class="LeftBank">City center & scenic viewpoints</h3>
-
-      <div class="LeftBankDescription">
-        <ul>
-          <li>Kok-Tobe - observation platforms above the city and a cable car from the center.</li>
-          <li>Arbat - main pedestrian street with street performers and cafes.</li>
-          <li>Panfilov Park — a green park in the center.</li>
-        </ul>
-      </div>
-
-      <h3 class="RightBank">History & heritage</h3>
-      <div class="RightBankDescription">
-        <ul>
-          <li>Central State Museum of Kazakhstan is one of the largest museums in the country.</li>
-          <li>The Green Bazaar (Kök Bazaar) is a historic city market and a popular chain of shops.</li>
-        </ul>
-      </div>
-
-      <h3 class="Culture"> Art and Culture</h3>
-      <div class="CultureDescription">
-        <ul>
-          <li>A. Kasteyev State Museum of Arts is the largest art museum in Kazakhstan.</li>
-          <li>Abai Opera and Ballet Theatre is the city's leading opera house with a classical repertoire.</li>
-        </ul>
-      </div>
-
-      <h3 class="Events"> Sports & Mountain leisure</h3>
-      <div class="EventsDescription">
-        <ul>
-          <li>Medeu is a high—altitude skating rink at an altitude of ~1,691 m above sea level.</li>
-          <li>Shymkent — ski resort (≈2260 m), ascent from Medeu by cable car.</li>
-          <li>Almaty Arena / Halyk Arena — multifunctional venues for hockey, concerts and tournaments.</li>
-        </ul>
-      </div>
-
-
-      <section id="grid-gallery" class="gallery-grid-section"> <!--Gallery: 3 columns-->
-
-        <h2 class="GalleryTitle">Image Gallery of Almaty</h2>
-        <div class="gallery-grid">
-          <figure class="gallery-item" data-caption="Kok-Tobe">
-            <img src="images2/Almaty7.jpg" alt="Kok-Tobe" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Medeu">
-            <img src="images2/Almaty8.jpg" alt="Medeu high-altitude rink" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Shymbulak">
-            <img src="images2/Almaty9.jpg" alt="Shymbulak ski resort" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Zenkov Cathedral">
-            <img src="images2/Almaty10.jpg" alt="Ascension (Zenkov) Cathedral" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Panfilov Park">
-            <img src="images2/Almaty11.jpg" alt="Panfilov Park" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Arbat">
-            <img src="images2/Almaty12.jpg" alt="Zhibek Zholy pedestrian street" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Kasteev Museum">
-            <img src="images2/Almaty13.jpg" alt="A. Kasteev State Museum of Arts" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Green Bazaar">
-            <img src="images2/Almaty14.jpg" alt="Green (Kök) Bazar" loading="lazy">
-          </figure>
-          <figure class="gallery-item" data-caption="Almaty Arena">
-            <img src="images2/Almaty15.jpg" alt="Almaty Arena" loading="lazy">
-          </figure>
+      <article class="GalleryItem">
+        <img src="images2/Almaty5.jpg" alt="Night City" loading="lazy">
+        <div class="card-body">
+          <h3>Night Cityscape</h3>
+          <p>Evening lights and skyline views from the hills.</p>
+          <a class="btn" href="#"><i class="fa-solid fa-image"></i> More Photo</a>
         </div>
-      </section>
+      </article>
 
-      <h2 id="map" class="MapTitle">Almaty on the Map</h2>
-      <div class="MapContainer">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186085.46041488586!2d76.78771045506132!3d43.21818631776583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e7d16c5cbab%3A0x3d44668fad986d76!2z0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1759092625605!5m2!1sru!2skz"
-          width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <article class="GalleryItem">
+        <img src="images2/Almaty6.jpg" alt="Nature" loading="lazy">
+        <div class="card-body">
+          <h3>Nature</h3>
+          <p>Trails, rivers and alpine scenery near the city.</p>
+          <a class="btn" href="#map"><i class="fa-solid fa-mountain-sun"></i> View on Map</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
-      <h2 id="contact" class="FormTitle">Contact us</h2>
-      <form class="contact-form" action="#" method="post">
-        <label> Name
-          <input type="text" name="name" placeholder="Your name">
-        </label>
-        <label> Email
-          <input type="email" name="email" placeholder="you@example.com">
-        </label>
-        <label> Message
-          <textarea name="message" rows="4" placeholder="Your message"></textarea>
-        </label>
-        <button type="submit">Send</button>
-      </form>
-    </main>
+  <!-- ATTRACTIONS -->
+  <h2 class="AttractionsTitle">From mountain modernity to heritage</h2>
 
+  <h3 class="LeftBank">City center & scenic viewpoints</h3>
+  <div class="LeftBankDescription">
+    <ul>
+      <li>Kok-Tobe — panoramic viewpoint and cable car.</li>
+      <li>Arbat — main pedestrian street with cafes and performances.</li>
+      <li>Panfilov Park — green area in the center.</li>
+    </ul>
+  </div>
 
-    <footer class="footer02">
-      <p>Team: Bayazit, Arslan , Daryn</p>
-      <p>© 2025 Discover Kazakhstan</p>
-      <p>Contact us:
-        <a id="email"  href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
-        <a id="github02" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
-      </p>
-    </footer>
+  <h3 class="RightBank">History & Heritage</h3>
+  <div class="RightBankDescription">
+    <ul>
+      <li>Central State Museum — one of the largest museums in Kazakhstan.</li>
+      <li>Green Bazaar — historical market in the old city center.</li>
+    </ul>
+  </div>
 
-    <div id="popupOverlay" class="popup-overlay" hidden>
+  <h3 class="Culture">Art & Culture</h3>
+  <div class="CultureDescription">
+    <ul>
+      <li>A. Kasteyev State Museum of Arts — leading art collection.</li>
+      <li>Abai Opera and Ballet Theatre — main cultural venue of Almaty.</li>
+    </ul>
+  </div>
+
+  <h3 class="Events">Sports & Mountain Leisure</h3>
+  <div class="EventsDescription">
+    <ul>
+      <li>Medeu — the highest ice rink in the world (~1,691 m).</li>
+      <li>Shymbulak — alpine ski resort (≈2260 m).</li>
+      <li>Almaty Arena — major concert and hockey venue.</li>
+    </ul>
+  </div>
+
+  <!-- MAP -->
+  <h2 id="map" class="MapTitle">Almaty on the Map</h2>
+  <div class="MapContainer">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186085.46041488586!2d76.78771045506132!3d43.21818631776583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e7d16c5cbab%3A0x3d44668fad986d76!2z0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1759092625605!5m2!1sru!2skz"
+      allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div id="popupOverlay" class="popup-overlay" hidden>
     <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
     <button class="popup-close" type="button" aria-label="Close">&times;</button>
     <h2 id="popupTitle">Contact us</h2>
@@ -270,8 +193,17 @@
     </div>
     </div>
 
+  <!--  FOOTER  -->
+  <footer class="footer02">
+    <p>Team: Bayazit, Arslan, Daryn</p>
+    <p>© 2025 Discover Kazakhstan</p>
+    <p>Contact us:
+      <a id="email" href="mailto:240918@astanait.edu.kz">240918@astanait.edu.kz</a><br>
+      <a id="github02" href="https://github.com/Metsuk1/web_lab02" target="_blank">GitHub</a>
+    </p>
+  </footer>
 
-    <script src="scripts/bg_color.js" defer></script>
+  <script src="scripts/bg_color.js" defer></script>
+
 </body>
-
 </html>
